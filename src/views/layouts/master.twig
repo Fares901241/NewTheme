@@ -348,10 +348,6 @@
             }
             }
 
-            {# .cimg{
-            height: 450px !important;
-            } #}
-
             .ccp-header,
             .ccn-header {
             width: 30px;
@@ -540,8 +536,180 @@
         .c1btn:active {
         transform: translateY(-1px);
         }
-        
+
         {# End Card2 #}
+
+        {# Start 2nd Slider #}
+
+        .slider-container-card {
+            position: relative;
+        }
+
+        #cardCarousel {
+            overflow: hidden;
+        }
+
+        #cardCarousel .custom-carousel-images {
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 0.5s ease;
+            gap: 1.5rem;
+        }
+
+        #cardCarousel .image-item {
+            flex: 0 0 auto;
+            text-align: center;
+            min-height: 250px;
+            width: 15rem;
+        }
+
+        .custom-prev-button-card,
+        .custom-next-button-card {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+        }
+
+        .custom-prev-button-card {
+            left: -5%;
+        }
+
+        .custom-next-button-card {
+            right: -5%;
+        }
+
+        /* like style */
+        .heart-container {
+            --heart-color: rgb(255, 91, 137);
+            position: relative;
+            width: 50px;
+            height: 50px;
+            transition: .3s;
+        }
+
+        .heart-container .checkbox {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 20;
+            cursor: pointer;
+        }
+
+        .heart-container .svg-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart-container .svg-outline,
+        .heart-container .svg-filled {
+            fill: var(--heart-color);
+            position: absolute;
+        }
+
+        .heart-container .svg-filled {
+            animation: keyframes-svg-filled 1s;
+            display: none;
+        }
+
+        .heart-container .svg-celebrate {
+            position: absolute;
+            animation: keyframes-svg-celebrate .5s;
+            animation-fill-mode: forwards;
+            display: none;
+            stroke: var(--heart-color);
+            fill: var(--heart-color);
+            stroke-width: 2px;
+        }
+
+        .heart-container .checkbox:checked~.svg-container .svg-filled {
+            display: block
+        }
+
+        .heart-container .checkbox:checked~.svg-container .svg-celebrate {
+            display: block
+        }
+
+        @keyframes keyframes-svg-filled {
+            0% {
+            transform: scale(0);
+            }
+
+            25% {
+            transform: scale(1.2);
+            }
+
+            50% {
+            transform: scale(1);
+            filter: brightness(1.5);
+            }
+        }
+
+        @keyframes keyframes-svg-celebrate {
+            0% {
+            transform: scale(0);
+            }
+
+            50% {
+            opacity: 1;
+            filter: brightness(1.5);
+            }
+
+            100% {
+            transform: scale(1.4);
+            opacity: 0;
+            display: none;
+            }
+        } 
+
+        @media (max-width: 1399px) {
+            #cardCarousel .image-item {
+            min-width: 23%;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            #cardCarousel .image-item {
+            min-width: 31%;
+            }
+        }
+
+        @media (max-width: 1000px) {
+
+            .custom-next-button-card,
+            .custom-prev-button-card {
+            background-color: transparent;
+            border: none
+            }
+
+            .custom-next-button-card {
+            right: 25px;
+            }
+
+            .custom-prev-button-card {
+            left: 25px;
+            }
+
+            #cardCarousel .image-item {
+            min-width: 47.5%;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            #cardCarousel .image-item {
+            min-width: 100%;
+            }
+        }
+
+        {# End 2nd Slider #}
       </style>
 
     {# tracking services, custom css feature. #}
@@ -666,6 +834,100 @@
     }
 
     {# end 1st slider #}
+
+    {# start 2nd slider #}
+
+    try{
+        document.addEventListener('DOMContentLoaded', function () {
+        const cardCarousel = document.getElementById('cardCarousel');
+        const cardPrevButton = cardCarousel.querySelector('.custom-prev-button-card');
+        const cardNextButton = cardCarousel.querySelector('.custom-next-button-card');
+        const cardImagesContainer = cardCarousel.querySelector(
+            '.custom-carousel-images'
+        );
+        const cardImageItems = cardCarousel.querySelectorAll('.image-item');
+
+        let cardCurrentIndex = 0;
+
+        function calculateCardDimensions() {
+            const cardCarouselWidth = cardCarousel.offsetWidth;
+            const style = window.getComputedStyle(cardImagesContainer);
+            const gap = parseFloat(style.getPropertyValue('gap'));
+            const cardImageWidth = cardImageItems[0].offsetWidth + gap;
+            let cardVisibleImages = Math.floor(cardCarouselWidth / cardImageWidth);
+
+            // Adjust the number of visible cards based on screen size
+            if (window.innerWidth < 768) {
+            cardVisibleImages = 1; // Show 1 card on small screens
+            } else if (window.innerWidth >= 768 && window.innerWidth < 992) {
+            cardVisibleImages = 2; // Show 2 cards on medium screens
+            } else {
+            cardVisibleImages = Math.floor(cardVisibleImages); // Show full cards on large screens
+            }
+
+            // Update the layout or state based on the new number of visible cards
+            updateButtonStates(cardVisibleImages);
+        }
+
+        function updateButtonStates(cardVisibleImages) {
+            cardPrevButton.disabled = cardCurrentIndex === 0;
+            cardNextButton.disabled =
+            cardCurrentIndex >= cardImageItems.length - cardVisibleImages - 1;
+        }
+
+        cardNextButton.addEventListener('click', () => {
+            const cardVisibleImages = calculateVisibleImages();
+            if (cardCurrentIndex < cardImageItems.length - cardVisibleImages - 1) {
+            cardCurrentIndex++;
+            }
+            updateCarouselTransform();
+        });
+
+        cardPrevButton.addEventListener('click', () => {
+            if (cardCurrentIndex > 0) {
+            cardCurrentIndex--;
+            }
+            updateCarouselTransform();
+        });
+
+        function updateCarouselTransform() {
+            const style = window.getComputedStyle(cardImagesContainer);
+            const gap = parseFloat(style.getPropertyValue('gap'));
+            const transformValue = -(
+            cardCurrentIndex *
+            (cardImageItems[0].offsetWidth + gap)
+            );
+            cardImagesContainer.style.transform = `translateX(${transformValue}px)`;
+            updateButtonStates(calculateVisibleImages());
+        }
+
+        function calculateVisibleImages() {
+            const cardCarouselWidth = cardCarousel.offsetWidth;
+            const style = window.getComputedStyle(cardImagesContainer);
+            const gap = parseFloat(style.getPropertyValue('gap'));
+            const cardImageWidth = cardImageItems[0].offsetWidth + gap;
+            let cardVisibleImages = Math.floor(cardCarouselWidth / cardImageWidth);
+
+            if (window.innerWidth < 768) {
+            cardVisibleImages = 1;
+            } else if (window.innerWidth >= 768 && window.innerWidth < 992) {
+            cardVisibleImages = 2;
+            } else {
+            cardVisibleImages = Math.max(3, cardVisibleImages);
+            }
+
+            return cardVisibleImages;
+        }
+
+        window.addEventListener('resize', calculateCardDimensions);
+        calculateCardDimensions(); // Initial call to set up the carousel
+        });
+
+    }catch(error){
+
+    }
+
+    {# end 2nd slider #}
 </script>
 
 {# Twilight Components #}
