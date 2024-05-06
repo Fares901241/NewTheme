@@ -348,9 +348,9 @@
             }
             }
 
-            .cimg{
+            {# .cimg{
             height: 450px !important;
-            }
+            } #}
 
             .ccp-header,
             .ccn-header {
@@ -389,6 +389,12 @@
             .ccn-header:hover {
             background-color: rgba(248, 249, 250, 0.3);
             opacity: 1;
+            }
+
+            @media screen and (max-width: 600px){
+                .cimg{
+                    object-fit: contain;
+                }
             }
 
         {# End HomeSlider #}
