@@ -1172,7 +1172,11 @@
                             "format": "image",
                             "required": true,
                             "placeholder": "",
-                            "description": ""
+                            "description": "200*250",
+                            "settings": {
+                                "height": 200,
+                                "width": 250
+                            }
                         },
                         {
                             "type": "string",
