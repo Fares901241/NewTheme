@@ -819,6 +819,13 @@
             "icon": "sicon-underline",
             "path": "header.custom-filter",
             "fields": []
+        },
+        {
+            "key": "57f6cb55-18b8-4e1f-8efd-36aa1ee8c6c3",
+            "title": "Home Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-home-slider",
+            "fields": []
         }
     ],
     "support_url": null,
