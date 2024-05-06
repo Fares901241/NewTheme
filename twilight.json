@@ -950,35 +950,6 @@
             "path": "home.custom-card1",
             "fields": [
                 {
-                    "type": "string",
-                    "icon": "sicon-format-text-alt",
-                    "label": "عنوان رئيسي",
-                    "multilanguage": true,
-                    "id": "title",
-                    "value": null,
-                    "required": false,
-                    "format": "text",
-                    "description": "",
-                    "placeholder": "يمكنك إضافة العنوان الرئيسي هنا...",
-                    "hide": false,
-                    "minLength": 0,
-                    "maxLength": 80
-                },
-                {
-                    "type": "string",
-                    "icon": "sicon-typography",
-                    "label": "نص توضيحي",
-                    "multilanguage": true,
-                    "id": "description",
-                    "value": null,
-                    "description": "",
-                    "format": "textarea",
-                    "required": false,
-                    "placeholder": "يمكنك إضافة وصف لهذا القسم هنا...",
-                    "minLength": 0,
-                    "maxLength": 255
-                },
-                {
                     "id": "slides",
                     "type": "collection",
                     "format": "collection",
@@ -1043,6 +1014,35 @@
             "icon": "sicon-image1",
             "path": "home.custom-images-slider",
             "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "عنوان رئيسي",
+                    "multilanguage": true,
+                    "id": "title",
+                    "value": null,
+                    "required": false,
+                    "format": "text",
+                    "description": "",
+                    "placeholder": "يمكنك إضافة العنوان الرئيسي هنا...",
+                    "hide": false,
+                    "minLength": 0,
+                    "maxLength": 80
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "نص توضيحي",
+                    "multilanguage": true,
+                    "id": "description",
+                    "value": null,
+                    "description": "",
+                    "format": "textarea",
+                    "required": false,
+                    "placeholder": "يمكنك إضافة وصف لهذا القسم هنا...",
+                    "minLength": 0,
+                    "maxLength": 255
+                },
                 {
                     "id": "slides",
                     "type": "collection",
