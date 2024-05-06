@@ -854,6 +854,13 @@
             "icon": "sicon-image1",
             "path": "home.custom-products-slider",
             "fields": []
+        },
+        {
+            "key": "06b19498-9687-497e-b046-ce198ef06e2d",
+            "title": "Brand Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-brands-slider",
+            "fields": []
         }
     ],
     "support_url": null,
