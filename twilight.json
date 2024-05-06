@@ -1172,10 +1172,9 @@
                             "format": "image",
                             "required": true,
                             "placeholder": "",
-                            "description": "200*250",
+                            "description": "max height 250",
                             "settings": {
-                                "height": 200,
-                                "width": 250
+                                "height": 250
                             }
                         },
                         {
