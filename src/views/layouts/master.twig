@@ -125,8 +125,8 @@
       });
     </script>
   
-    <script defer src="{{ 'product-card.js'|asset }}"></script>
-    <script defer src="{{ 'main-menu.js'|asset }}"></script>
+    <script defer src="{{ 'product-card.js'| asset }}"></script>
+    <script defer src="{{ 'main-menu.js'| asset }}"></script>
 
     <script data-cfasync="false">
         window.header_is_sticky = "{{theme.settings.get('header_is_sticky', 'Default Value')}}"
@@ -171,6 +171,7 @@
 </div>
 {% hook 'body:end' %}
 <script defer src="{{ 'app.js' | asset }}"></script>
+<script defer src="{{ 'navbar.js' | asset }}"></script>
 
 {# Twilight Components #}
 <salla-offer-modal></salla-offer-modal>
