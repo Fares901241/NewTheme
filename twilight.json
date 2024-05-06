@@ -1174,7 +1174,8 @@
                             "placeholder": "",
                             "description": "max height 250",
                             "settings": {
-                                "height": 250
+                                "height": 250,
+                                "width": 250
                             }
                         },
                         {
