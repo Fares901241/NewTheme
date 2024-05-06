@@ -897,7 +897,51 @@
             "title": "Home Slider",
             "icon": "sicon-image1",
             "path": "home.custom-home-slider",
-            "fields": []
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "label": "صورة رئيسيه",
+                    "id": "background",
+                    "format": "image",
+                    "required": true,
+                    "placeholder": "",
+                    "description": "* المقاس المناسب للصورة هو 1233×500 بكسل",
+                    "settings": {
+                        "height": 580,
+                        "width": 1400
+                    }
+                },
+                {
+                    "id": "slides",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 10,
+                    "label": "",
+                    "item_label": "صورة",
+                    "value": [],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "id": "slides.image",
+                            "label": "صورة البنر",
+                            "format": "image",
+                            "required": true,
+                            "placeholder": "",
+                            "description": "* المقاس المناسب للصورة هو 1233×500 بكسل",
+                            "settings": {
+                                "height": 580,
+                                "width": 1400
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             "key": "6c39a47b-9d93-46fc-bad5-c393f1168085",

@@ -323,6 +323,75 @@
             transition-property: width, left;
         }
         {# End Filter #}
+        
+        {# Start HomeSlider #}
+
+             .carousel-header {
+            transition: transform 2s ease-in-out;
+            }
+
+            .carousel-header img {
+            animation: zoom 10s infinite;
+            }
+
+            @keyframes zoom {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+            }
+
+            .cimg{
+            height: 450px !important;
+            }
+
+            .ccp-header,
+            .ccn-header {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 10px;
+            transform: translateY(-50%);
+            }
+
+            .ccp-header {
+            top: calc(50% + 5px);
+            right: 15px;
+            left: auto;
+            }
+
+            .ccn-header {
+            top: calc(50% - 35px);
+            right: 15px;
+            left: auto;
+            }
+
+            .ccp-header i,
+            .ccn-header i {
+            font-size: 16px;
+            color: #fff;
+            }
+
+            .ccp-header:hover,
+            .ccn-header:hover {
+            background-color: rgba(248, 249, 250, 0.3);
+            opacity: 1;
+            }
+
+        {# End HomeSlider #}
       </style>
 
     {# tracking services, custom css feature. #}

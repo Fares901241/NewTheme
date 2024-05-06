@@ -1,0 +1,28 @@
+<div class="container-fluid mt-5">
+<div class="row justify-content-center">
+    <div class="col-10">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item carousel-header active">
+                <img src="{{component.background}}" class="d-block w-100 cimg" alt="First slide">
+            </div>
+            {% for slide in component.slides %}
+                <div class="carousel-item carousel-header">
+                    <img src="{{slide.image}}" class="d-block w-100 cimg" alt="Second slide">
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev ccp-header" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <i class="bi bi-chevron-left"></i>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next ccn-header" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <i class="bi bi-chevron-right"></i>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+</div>
+</div>
