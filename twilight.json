@@ -875,6 +875,13 @@
             "icon": "sicon-combine_cells",
             "path": "home.custom-card4",
             "fields": []
+        },
+        {
+            "key": "be70fe44-d190-4bab-88a1-5725421ae0c7",
+            "title": "Subscribe Component",
+            "icon": "sicon-paper-plane-o",
+            "path": "home.custom-subscribe",
+            "fields": []
         }
     ],
     "support_url": null,
