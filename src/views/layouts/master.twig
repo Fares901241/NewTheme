@@ -559,7 +559,7 @@
         #cardCarousel .image-item {
             flex: 0 0 auto;
             text-align: center;
-            min-height: 340px;
+            min-width: 250px;
             width: 15rem;
         }
 
@@ -874,12 +874,12 @@
         function updateButtonStates(cardVisibleImages) {
             cardPrevButton.disabled = cardCurrentIndex === 0;
             cardNextButton.disabled =
-            cardCurrentIndex >= cardImageItems.length - cardVisibleImages - 1;
+            cardCurrentIndex >= cardImageItems.length - cardVisibleImages;
         }
 
         cardNextButton.addEventListener('click', () => {
             const cardVisibleImages = calculateVisibleImages();
-            if (cardCurrentIndex < cardImageItems.length - cardVisibleImages - 1) {
+            if (cardCurrentIndex < cardImageItems.length - cardVisibleImages) {
             cardCurrentIndex++;
             }
             updateCarouselTransform();
