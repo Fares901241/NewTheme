@@ -833,6 +833,13 @@
             "icon": "sicon-combine_cells",
             "path": "home.custom-card1",
             "fields": []
+        },
+        {
+            "key": "58b40398-aff0-4337-9636-79ab5e1c60cd",
+            "title": "Images Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-images-slider",
+            "fields": []
         }
     ],
     "support_url": null,
