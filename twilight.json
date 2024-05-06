@@ -896,6 +896,13 @@
             "icon": "sicon-arrow-up",
             "path": "home.custom-back-to-top",
             "fields": []
+        },
+        {
+            "key": "79daa9e4-05b3-49c7-a4b4-870198664185",
+            "title": "Card 5",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card5",
+            "fields": []
         }
     ],
     "support_url": null,
