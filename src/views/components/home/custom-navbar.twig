@@ -1,39 +1,41 @@
 <nav class="navbar navbar-expand-lg bg-light-subtle mt-4">
-    <div class="container justify-content-between align-items-center">
-        <a class="navbar-brand me-5" href="#"><img src="{{component.LogoImage}}" style="border-radius: 5px;" alt="Logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="col-1 collapse navbar-collapse" id="navbarSupportedContent"  style="position: relative;">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown ms-2">
-                    <button class="nav-link dropdown-toggle text-center bg-primary px-2 btn hbtn text-light" id="dropdownMenuButton" style="border-radius: 2em;" aria-expanded="false">
-                        All Catagories
-                    </button>
-                    <ul class="dropdown-menu text-center bg-primary" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">All Catagories</a></li>
-                        {% for catagory in component.Catagories %}
-                            <li><a class="dropdown-item" href="#">{{catagory.name}}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                <li class="nav-item w-auto mt-5 mt-lg-0">
-                    <form class="d-flex w-100 me-3 ms-lg-5" role="search">
-                        <div style="position:relative;display:inline">
-                            <input class="form-control w-100 mx-2 sch" id="searchAny" style="border-radius: 2em;" type="search" placeholder="Search Anything" aria-label="Search">
-                            <i class="bi bi-search fs-4 me-3" style="position:absolute; left:90%"></i>
-                        </div>
-                        <button class="hbtn px-2">Help</button>
-                        <div class="px-5 d-inline">
-                            <span class="onhov"><i class="bi bi-person fs-5 px-1"></i>Account</span>
-                        </div>
-                        <div class="px-5 d-inline position-relative">
-                            <span class="onhov"><i class="bi bi-handbag fs-5 px-1"></i>Shopping</span>
-                            <div class="bg-primary rounded-5 text-light px-2 py-1" style="position: absolute;top: -65%;left: 25%;">16</div>
-                        </div>
-                    </form>
-                </li>
-            </ul>
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <a class="navbar-brand me-5" href="#"><img src="{{component.LogoImage}}" style="border-radius: 5px;" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-1 collapse navbar-collapse" id="navbarSupportedContent"  style="position: relative;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown ms-2">
+                        <button class="nav-link dropdown-toggle text-center bg-primary px-3 btn hbtn text-light" id="dropdownMenuButton" style="border-radius: 2em; font-size:smaller" aria-expanded="false">
+                            All Catagories
+                        </button>
+                        <ul class="dropdown-menu text-center bg-primary" style="font-size:smaller" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">All Catagories</a></li>
+                            {% for catagory in component.Catagories %}
+                                <li><a class="dropdown-item" href="#">{{catagory.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="nav-item w-auto mt-5 mt-lg-0">
+                        <form class="d-flex w-100 me-3 ms-lg-5" role="search">
+                            <div style="position:relative;display:inline">
+                                <input class="form-control w-100 mx-2 sch" id="searchAny" style="border-radius: 2em;" type="search" placeholder="Search Anything" aria-label="Search">
+                                <i class="bi bi-search fs-4 me-3 mglass" style="position:absolute; left:85%; top:15%"></i>
+                            </div>
+                            <button class="hbtn px-3" style="font-size:smaller">Help</button>
+                            <div class="px-5 d-inline">
+                                <span class="onhov"><i class="bi bi-person fs-5 px-1"></i>Account</span>
+                            </div>
+                            <div class="px-5 d-inline position-relative">
+                                <span class="onhov"><i class="bi bi-handbag fs-5 px-1"></i>Shopping</span>
+                                <div class="bg-primary rounded-5 text-light px-2 py-1" style="position: absolute;top: -65%;left: 25%;">16</div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
