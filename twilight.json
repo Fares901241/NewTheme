@@ -805,6 +805,104 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "b98710f6-fb6a-42c7-a8a1-7fc32490d1e4",
+            "title": "Navbar Component",
+            "icon": "sicon-align-justify",
+            "path": "header.custom-navbar",
+            "fields": []
+        },
+        {
+            "key": "feb0acd6-42bd-41ed-b752-70bd8dc0d5fd",
+            "title": "Filter Component",
+            "icon": "sicon-underline",
+            "path": "header.custom-filter",
+            "fields": []
+        },
+        {
+            "key": "57f6cb55-18b8-4e1f-8efd-36aa1ee8c6c3",
+            "title": "Home Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-home-slider",
+            "fields": []
+        },
+        {
+            "key": "6c39a47b-9d93-46fc-bad5-c393f1168085",
+            "title": "Card 1",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card1",
+            "fields": []
+        },
+        {
+            "key": "58b40398-aff0-4337-9636-79ab5e1c60cd",
+            "title": "Images Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-images-slider",
+            "fields": []
+        },
+        {
+            "key": "a626538f-84d4-4c35-92a7-87f7490f191a",
+            "title": "Card 2",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card2",
+            "fields": []
+        },
+        {
+            "key": "4636d9ed-2f83-4cbc-94be-b8ca6faaf71d",
+            "title": "Products Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-products-slider",
+            "fields": []
+        },
+        {
+            "key": "06b19498-9687-497e-b046-ce198ef06e2d",
+            "title": "Brand Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-brands-slider",
+            "fields": []
+        },
+        {
+            "key": "aed8b9c8-6350-44c6-9fd2-2a564dcd6e9d",
+            "title": "Card 3",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card3",
+            "fields": []
+        },
+        {
+            "key": "ad29ac44-3a0b-4ed7-ba18-d7562941383a",
+            "title": "Card 4",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card4",
+            "fields": []
+        },
+        {
+            "key": "be70fe44-d190-4bab-88a1-5725421ae0c7",
+            "title": "Subscribe Component",
+            "icon": "sicon-paper-plane-o",
+            "path": "home.custom-subscribe",
+            "fields": []
+        },
+        {
+            "key": "c645dd87-56a9-44f7-9668-74d91abb3d4b",
+            "title": "Footer Component",
+            "icon": "sicon-arrow-down",
+            "path": "footer.custom-footer",
+            "fields": []
+        },
+        {
+            "key": "b8b5a0d4-b4e2-40f4-bc81-a5acd3b0feb1",
+            "title": "Back to Top Component",
+            "icon": "sicon-arrow-up",
+            "path": "home.custom-back-to-top",
+            "fields": []
+        },
+        {
+            "key": "79daa9e4-05b3-49c7-a4b4-870198664185",
+            "title": "Card 5",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card5",
+            "fields": []
         }
     ],
     "support_url": null,
