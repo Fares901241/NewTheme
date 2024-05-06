@@ -810,7 +810,7 @@
             "key": "b98710f6-fb6a-42c7-a8a1-7fc32490d1e4",
             "title": "Navbar Component",
             "icon": "sicon-align-justify",
-            "path": "header.custom-navbar",
+            "path": "home.custom-navbar",
             "fields": [
                 {
                     "type": "string",
@@ -820,7 +820,7 @@
                     "id": "LogoImage",
                     "format": "image",
                     "required": true,
-                    "placeholder": "",
+                    "placeholder": null,
                     "description": "* max width is 100 px",
                     "settings": {
                         "width": 100
@@ -833,7 +833,7 @@
                     "required": true,
                     "minLength": 1,
                     "maxLength": 10,
-                    "label": "",
+                    "label": null,
                     "item_label": "Catagories Names",
                     "value": [],
                     "fields": [
@@ -846,7 +846,7 @@
                             "multilanguage": true,
                             "required": false,
                             "format": "text",
-                            "description": "",
+                            "description": null,
                             "placeholder": "Enter catagory name:",
                             "hide": false,
                             "minLength": 0,
@@ -930,7 +930,7 @@
             "key": "c645dd87-56a9-44f7-9668-74d91abb3d4b",
             "title": "Footer Component",
             "icon": "sicon-arrow-down",
-            "path": "footer.custom-footer",
+            "path": "home.custom-footer",
             "fields": []
         },
         {
