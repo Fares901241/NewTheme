@@ -847,6 +847,13 @@
             "icon": "sicon-combine_cells",
             "path": "home.custom-card2",
             "fields": []
+        },
+        {
+            "key": "4636d9ed-2f83-4cbc-94be-b8ca6faaf71d",
+            "title": "Products Slider",
+            "icon": "sicon-image1",
+            "path": "home.custom-products-slider",
+            "fields": []
         }
     ],
     "support_url": null,
