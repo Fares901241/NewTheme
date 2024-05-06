@@ -882,6 +882,13 @@
             "icon": "sicon-paper-plane-o",
             "path": "home.custom-subscribe",
             "fields": []
+        },
+        {
+            "key": "c645dd87-56a9-44f7-9668-74d91abb3d4b",
+            "title": "Footer Component",
+            "icon": "sicon-arrow-down",
+            "path": "footer.custom-footer",
+            "fields": []
         }
     ],
     "support_url": null,
