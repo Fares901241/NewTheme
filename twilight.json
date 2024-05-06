@@ -1063,11 +1063,7 @@
                             "format": "image",
                             "required": true,
                             "placeholder": "",
-                            "description": "* المقاس المناسب للصورة هو 100*100 بكسل",
-                            "settings": {
-                                "height": 100,
-                                "width": 100
-                            }
+                            "description": ""
                         },
                         {
                             "type": "string",
