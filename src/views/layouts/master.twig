@@ -398,6 +398,102 @@
             }
 
         {# End HomeSlider #}
+
+        {# Start Image Slider #}
+
+            .slider-container {
+            position: relative;
+            }
+
+            .custom-carousel {
+                overflow: hidden;
+            }
+
+            .custom-carousel-images {
+                display: flex;
+                flex-wrap: nowrap;
+                transition: transform 0.5s ease;
+            }
+
+            .image-item {
+                flex: 0 0 auto;
+                width: 12.5%;
+                height: 200px;
+                text-align: center;
+            }
+
+            .image-item .first-slider-img {
+                width: 90%;
+                height: 75%;
+                object-fit: cover;
+                padding: 4px;
+                border: 1px solid #515151;
+                border-radius: 5px;
+            }
+
+            .image-title {
+                display: block;
+                margin-top: 8px;
+                font-size: 1rem;
+                color: #333;
+            }
+
+            .custom-prev-button,
+            .custom-next-button {
+                position: absolute;
+                top: 40%;
+                transform: translateY(-50%);
+                z-index: 2;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+            }
+
+            .custom-prev-button {
+                left: -5%;
+            }
+
+            .custom-next-button {
+                right: -5%;
+            }
+
+
+            @media (min-width: 768px) and (max-width: 991px) {
+
+                .image-item {
+                width: 20%;
+                }
+            }
+
+            @media (max-width: 767px) {
+
+                .custom-next-button,
+                .custom-prev-button {
+                background-color: transparent;
+                border: none
+                }
+
+                .custom-next-button {
+                right: 25px;
+                }
+
+                .custom-prev-button {
+                left: 25px;
+                }
+
+                .image-item {
+                width: 33.33%;
+                }
+            }
+
+            @media (max-width: 576px) {
+
+                .image-item {
+                width: 50%;
+                }
+            }
+
+        {# End Image Slider #}
       </style>
 
     {# tracking services, custom css feature. #}
@@ -423,6 +519,7 @@
 {% hook 'body:end' %}
 <script defer src="{{ 'app.js' | asset }}"></script>
 <script>
+    {# navbar #}
     try {
     document.addEventListener('DOMContentLoaded', function() {
         let dropdownButton = document.getElementById('dropdownMenuButton');
@@ -446,10 +543,81 @@
             dropdownMenu.classList.toggle('show');
         }
     });    
-} catch (error) {
-    
-}
+    } catch (error) {
+        
+    }
+    {# end navbar #}
 
+    {# 1st slider #}
+
+    try{
+        document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.getElementById('imageCarousel');
+        const prevButton = document.querySelector('.custom-prev-button');
+        const nextButton = document.querySelector('.custom-next-button');
+        const imagesContainer = document.querySelector('.custom-carousel-images');
+        const imageItems = document.querySelectorAll('.image-item');
+        const ImageCount = document.querySelectorAll('.image-count').length;
+
+        let currentIndex = 0;
+        let visibleImages;
+        let maxIndex;
+
+        function calculateDimensions() {
+            const totalImages = ImageCount;
+            const imageWidth =
+            imageItems[0].offsetWidth +
+            parseInt(getComputedStyle(imageItems[0]).marginLeft) * 2;
+            visibleImages = Math.floor(carousel.offsetWidth / imageWidth);
+            maxIndex = totalImages - visibleImages;
+            updateButtonStates();
+        }
+
+        function updateButtonStates() {
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled =
+            currentIndex === maxIndex && imageItems.length > visibleImages;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < maxIndex) {
+            currentIndex++;
+            } else {
+            currentIndex = 0; // Reset to the first image
+            }
+            const translateXValue =
+            -currentIndex *
+            (imageItems[0].offsetWidth +
+                parseInt(getComputedStyle(imageItems[0]).marginLeft) * 2);
+            imagesContainer.style.transition = 'transform 0.5s ease';
+            imagesContainer.style.transform = `translateX(${translateXValue}px)`;
+            updateButtonStates();
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+            currentIndex--;
+            } else {
+            currentIndex = maxIndex; // Set to the last image
+            }
+            const translateXValue =
+            -currentIndex *
+            (imageItems[0].offsetWidth +
+                parseInt(getComputedStyle(imageItems[0]).marginLeft) * 2);
+            imagesContainer.style.transition = 'transform 0.5s ease';
+            imagesContainer.style.transform = `translateX(${translateXValue}px)`;
+            updateButtonStates();
+        });
+
+        window.addEventListener('resize', calculateDimensions);
+        calculateDimensions();
+        });
+
+    }catch(error){
+        
+    }
+
+    {# end 1st slider #}
 </script>
 
 {# Twilight Components #}
