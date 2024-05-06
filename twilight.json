@@ -812,6 +812,13 @@
             "icon": "sicon-align-justify",
             "path": "header.custom-navbar",
             "fields": []
+        },
+        {
+            "key": "feb0acd6-42bd-41ed-b752-70bd8dc0d5fd",
+            "title": "Filter Component",
+            "icon": "sicon-underline",
+            "path": "header.custom-filter",
+            "fields": []
         }
     ],
     "support_url": null,
