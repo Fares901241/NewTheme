@@ -889,6 +889,13 @@
             "icon": "sicon-arrow-down",
             "path": "footer.custom-footer",
             "fields": []
+        },
+        {
+            "key": "b8b5a0d4-b4e2-40f4-bc81-a5acd3b0feb1",
+            "title": "Back to Top Component",
+            "icon": "sicon-arrow-up",
+            "path": "home.custom-back-to-top",
+            "fields": []
         }
     ],
     "support_url": null,
