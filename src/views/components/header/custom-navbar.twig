@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light-subtle mt-4">
     <div class="container justify-content-between">
-        <a class="navbar-brand me-5" href="#"><img src="" alt="Logo"></a>
+        <a class="navbar-brand me-5" href="#"><img src="{% component.LogoImage %}" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,14 +11,10 @@
                         All Catagories
                     </button>
                     <ul class="dropdown-menu text-center bg-primary mt-2" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">All Catagories</a></li>
-                        <li><a class="dropdown-item" href="#">Android</a></li>
-                        <li><a class="dropdown-item" href="#">Books&Audio</a></li>
-                        <li><a class="dropdown-item" href="#">Cameras&Video</a></li>
-                        <li><a class="dropdown-item" href="#">Computers</a></li>
-                        <li><a class="dropdown-item" href="#">Electronics</a></li>
-                        <li><a class="dropdown-item" href="#">Gadgets</a></li>
-                        <li><a class="dropdown-item" href="#">Headphones</a></li>
+                            <li><a class="dropdown-item" href="#">All Catagories</a></li>
+                        {% for category in component.Catagories %}
+                            <li><a class="dropdown-item" href="#">{% catagory.text %}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
                 <li class="nav-item w-auto mt-5 mt-lg-0">
