@@ -840,6 +840,13 @@
             "icon": "sicon-image1",
             "path": "home.custom-images-slider",
             "fields": []
+        },
+        {
+            "key": "a626538f-84d4-4c35-92a7-87f7490f191a",
+            "title": "Card 2",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card2",
+            "fields": []
         }
     ],
     "support_url": null,
