@@ -868,6 +868,13 @@
             "icon": "sicon-combine_cells",
             "path": "home.custom-card3",
             "fields": []
+        },
+        {
+            "key": "ad29ac44-3a0b-4ed7-ba18-d7562941383a",
+            "title": "Card 4",
+            "icon": "sicon-combine_cells",
+            "path": "home.custom-card4",
+            "fields": []
         }
     ],
     "support_url": null,
