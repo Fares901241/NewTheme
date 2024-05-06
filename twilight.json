@@ -805,6 +805,13 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "b98710f6-fb6a-42c7-a8a1-7fc32490d1e4",
+            "title": "Navbar Component",
+            "icon": "sicon-align-justify",
+            "path": "header.custom-navbar",
+            "fields": []
         }
     ],
     "support_url": null,
