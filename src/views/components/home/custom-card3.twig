@@ -33,7 +33,7 @@
                     <span class="ms-2 ms-lg-3 mt-1 mt-lg-3" style="color: {{slide.textcolor}};display: block;">Colors</span>
                     <div>
                         <button class="bg-warning d-inline-block ms-3 me-2 colorbtn" style="width: 20px; height: 20px;border-radius: 100%;"></button>
-                        {% for color in slide.colors %}
+                        {% for color in component.colors %}
                         <button class="d-inline-block me-2 colorbtn" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
                         {% endfor %}
                     </div>

@@ -1334,33 +1334,33 @@
                             "placeholder": "Enter text color",
                             "minLength": 0,
                             "maxLength": 20
-                        },                
+                        }
+                    ]
+                },
+                {
+                    "id": "colors",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 7,
+                    "label": "",
+                    "item_label": "color",
+                    "value": [],
+                    "fields": [
                         {
-                            "id": "slides.colors",
-                            "type": "collection",
-                            "format": "collection",
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "Color",
+                            "multilanguage": true,
+                            "id": "colors.text",
+                            "value": null,
+                            "description": "color",
+                            "format": "text",
                             "required": false,
-                            "minLength": 1,
-                            "maxLength": 7,
-                            "label": "",
-                            "item_label": "color",
-                            "value": [],
-                            "fields": [
-                                {
-                                    "type": "string",
-                                    "icon": "sicon-typography",
-                                    "label": "Color",
-                                    "multilanguage": true,
-                                    "id": "slides.colors.text",
-                                    "value": null,
-                                    "description": "color",
-                                    "format": "text",
-                                    "required": false,
-                                    "placeholder": "Enter color",
-                                    "minLength": 0,
-                                    "maxLength": 20
-                                }
-                            ]
+                            "placeholder": "Enter color",
+                            "minLength": 0,
+                            "maxLength": 20
                         }
                     ]
                 }
