@@ -1216,7 +1216,36 @@
             "title": "Brand Slider",
             "icon": "sicon-image1",
             "path": "home.custom-brands-slider",
-            "fields": []
+            "fields": [
+                {
+                    "id": "slides",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 10,
+                    "label": "",
+                    "item_label": "صورة",
+                    "value": [],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "id": "slides.image",
+                            "label": "صورة البنر",
+                            "format": "image",
+                            "required": true,
+                            "placeholder": "",
+                            "description": "235*160",
+                            "settings": {
+                                "height": 160,
+                                "width": 235
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             "key": "aed8b9c8-6350-44c6-9fd2-2a564dcd6e9d",

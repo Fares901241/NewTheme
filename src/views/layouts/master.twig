@@ -704,9 +704,94 @@
             }
         }
 
-
-
         {# End 2nd Slider #}
+
+        {# Start 3rd Slider #}
+        
+        .brand-carousel {
+            overflow: hidden;
+        }
+
+        .brand-prev-button,
+        .brand-next-button {
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+            z-index: 2;
+        }
+
+        .brand-next-button {
+            left: 60px;
+        }
+
+        .brand-carousel-images {
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 0.5s ease;
+        }
+
+        .brand-image-item {
+            flex: 0 0 auto;
+            width: calc(100% / 5);
+            /* Adjust the width to show 5 images */
+            text-align: center;
+        }
+
+        .brand-slider-img {
+            width: 90%;
+            height: auto;
+            object-fit: cover;
+            padding: 4px;
+            border: 1px solid #515151;
+            border-radius: 5px;
+        }
+
+        .brand-prev-button,
+        .brand-next-button {
+            width: 30px;
+            height: 30px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .brand-prev-button i,
+        .brand-next-button i {
+            font-size: 16px;
+        }
+
+        .brand-prev-button:hover,
+        .brand-next-button:hover {
+            background-color: #0056b3;
+        }
+
+        .brand-prev-button {
+            left: 20px;
+        }
+
+        .brand-next-button {
+            right: 10px;
+        }
+
+        @media (max-width: 767px) {
+            .brand-image-item {
+            width: 33%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .brand-image-item {
+            width: 50%;
+            }
+        }
+
+        {# End 3rd Slider #}
+
       </style>
 
     {# tracking services, custom css feature. #}
@@ -925,6 +1010,63 @@
     }
 
     {# end 2nd slider #}
+
+    {# start 2rd slider #}
+
+    try{
+        // Slider 3 - Brand Slider
+        document.addEventListener('DOMContentLoaded', function () {
+        const brandCarousel = document.getElementById('brandCarousel');
+        const brandPrevButton = brandCarousel.querySelector('.brand-prev-button');
+        const brandNextButton = brandCarousel.querySelector('.brand-next-button');
+        const brandImagesContainer = brandCarousel.querySelector(
+            '.brand-carousel-images'
+        );
+        const brandImageItems = brandCarousel.querySelectorAll('.brand-image-item');
+
+        let brandCurrentIndex = 0;
+        const brandTotalImages = brandImageItems.length;
+        const brandVisibleImages = 5; // Display 5 images for the brand slider
+
+        // Calculate the width of each image item including margins
+        const brandImageWidth =
+            brandImageItems[0].offsetWidth +
+            parseInt(getComputedStyle(brandImageItems[0]).marginLeft) * 2;
+
+        function updateBrandButtonStates() {
+            brandPrevButton.disabled = brandCurrentIndex === 0;
+            brandNextButton.disabled =
+            brandCurrentIndex >= brandTotalImages - brandVisibleImages;
+        }
+
+        brandNextButton.addEventListener('click', () => {
+            if (brandCurrentIndex < brandTotalImages - brandVisibleImages) {
+            brandCurrentIndex++;
+            }
+            brandImagesContainer.style.transform = `translateX(-${
+            brandCurrentIndex * brandImageWidth
+            }px)`;
+            updateBrandButtonStates();
+        });
+
+        brandPrevButton.addEventListener('click', () => {
+            if (brandCurrentIndex > 0) {
+            brandCurrentIndex--;
+            }
+            brandImagesContainer.style.transform = `translateX(-${
+            brandCurrentIndex * brandImageWidth
+            }px)`;
+            updateBrandButtonStates();
+        });
+
+        updateBrandButtonStates(); // Initial call to set the correct state of the navigation buttons
+        });
+
+    }catch(error){
+
+    }
+
+    {# end 3rd slider #}
 </script>
 
 {# Twilight Components #}

@@ -1,0 +1,17 @@
+<div class="container my-5 position-relative">
+  <div class="row">
+    <div class="col-12 slider-container" id="brandCarousel">
+      <button class="brand-prev-button btn btn-primary"><i class="bi bi-chevron-left"></i></button>
+      <button class="brand-next-button btn btn-primary"><i class="bi bi-chevron-right"></i></button>
+      <div class="brand-carousel mt-3">
+        <div class="brand-carousel-images">
+        {% for slide in component.slides %}
+          <div class="brand-image-item image-item">
+            <img src="{{slide.image}}" alt="Brand 1" class="brand-slider-img">
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
