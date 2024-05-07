@@ -37,7 +37,7 @@
                         <button class="d-inline-block me-2 colorbtn" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
                         {% endfor %}
                     </div>
-                    <div style="max-width:260px"><p class="px-2 px-lg-3 pt-1 pt-lg-3" style="color: {{slide.textcolor}};">{{slide.description}}</p></div>
+                    <div style="max-width:260px"><p class="px-2 px-lg-3 pt-1 pt-lg-3" style="color: {{slide.textcolor}};overflow: hidden; text-overflow: ellipsis; word-wrap: break-word;">{{slide.description}}</p></div>
                     <div data-tooltip="Price:-${{slide.price}}" class="button cartbtn m-3 rounded-4" style="cursor: pointer;">
                         <div class="button-wrapper cartbtn-wrapper">
                             <div class="text buytxt text-dark">Buy Now</div>
