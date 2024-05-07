@@ -1371,7 +1371,64 @@
             "title": "Card 4",
             "icon": "sicon-combine_cells",
             "path": "home.custom-card4",
-            "fields": []
+            "fields": [
+                {
+                    "id": "slides",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 10,
+                    "label": "",
+                    "item_label": "صورة",
+                    "value": [],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "id": "slides.image",
+                            "label": "صورة البنر",
+                            "format": "image",
+                            "required": true,
+                            "placeholder": "",
+                            "description": "max height 130",
+                            "settings": {
+                                "height": 130
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "Description",
+                            "multilanguage": true,
+                            "id": "slides.description",
+                            "value": null,
+                            "required": false,
+                            "format": "textarea",
+                            "description": "",
+                            "placeholder": "Enter product description",
+                            "hide": false,
+                            "minLength": 0,
+                            "maxLength": 100
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "Price",
+                            "multilanguage": true,
+                            "id": "slides.price",
+                            "value": null,
+                            "description": "product price",
+                            "format": "text",
+                            "required": false,
+                            "placeholder": "Enter product price",
+                            "minLength": 0,
+                            "maxLength": 10
+                        }
+                    ]
+                }
+            ]
         },
         {
             "key": "be70fe44-d190-4bab-88a1-5725421ae0c7",
