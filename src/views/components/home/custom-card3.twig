@@ -29,15 +29,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center"><img class="justify-self-center" style="height: 130px;" src="{{slide.image}}"/></div>
+                    <div class="text-center d-grid"><img style="height: 130px;justify-self:center;" src="{{slide.image}}"/></div>
                     <span class="ms-2 ms-lg-3 mt-1 mt-lg-3" style="color: {{slide.textcolor}};display: block;">Colors</span>
                     <div>
-                        <button class="bg-warning d-inline-block ms-3 me-2 colorbtn" style="width: 20px; height: 20px;border-radius: 100%;"></button>
+                        <button class="d-inline-block ms-3 me-2 colorbtn" style="background-color: {{slide.background}};width: 20px; height: 20px;border-radius: 100%;"></button>
                         {% for color in component.colors %}
                         <button class="d-inline-block me-2 colorbtn" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
                         {% endfor %}
                     </div>
-                    <p class="px-2 px-lg-3 pt-1 pt-lg-3" style="color: {{slide.textcolor}};">{{slide.description}}</p>
+                    <div style="max-width:260px"><p class="px-2 px-lg-3 pt-1 pt-lg-3" style="color: {{slide.textcolor}};">{{slide.description}}</p></div>
                     <div data-tooltip="Price:-${{slide.price}}" class="button cartbtn m-3 rounded-4" style="cursor: pointer;">
                         <div class="button-wrapper cartbtn-wrapper">
                             <div class="text buytxt text-dark">Buy Now</div>
