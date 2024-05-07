@@ -40,9 +40,9 @@
     </div>
 </nav> #}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white container text-center mt-lg-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-light container text-center mt-lg-2">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="" alt="" />Fares</a>
+      <a class="navbar-brand" href="#"><img src="{{component.LogoImage}}" alt="" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,12 +55,14 @@
               All categories
             </a>
             <ul class="dropdown-menu bg-primary">
-              <li><a class="dropdown-item text-light ddi" href="#">Action</a></li>
-              <li><a class="dropdown-item text-light ddi" href="#">Another action</a></li>
+            {% for catagory in component.Catagories %}
+                <li><a class="dropdown-item" href="#">{{catagory.name}}</a></li>
+            {% endfor %}
+              {# <li><a class="dropdown-item text-light ddi" href="#">Another action</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item text-light ddi" href="#">Something else here</a></li>
+              <li><a class="dropdown-item text-light ddi" href="#">Something else here</a></li> #}
             </ul>
           </li>
         </ul>
