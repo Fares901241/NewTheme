@@ -1196,6 +1196,177 @@
         }
         {# End 4th Card #}
 
+        {# Start Send Email #}
+
+        .cta {
+            position: relative;
+            margin: auto;
+            padding: 12px 18px;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 50px;
+            background: #b1dae7;
+            width: 45px;
+            height: 45px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta span {
+            position: relative;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #234567;
+        }
+        
+        .cta svg {
+            position: relative;
+            top: 0;
+            margin-left: 10px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: #234567;
+            stroke-width: 2;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .cta:hover:before {
+            width: 100%;
+            background: rgb(13, 110, 253);
+        }
+
+        .cta:hover span {
+            color: white;
+        }
+        
+        .cta:hover svg {
+            transform: translateX(0);
+        }
+        
+        .cta:active {
+            transform: scale(0.95);
+        }
+
+        .emailInputGroup {
+            margin: 1em 0 1em 0;
+            position: relative;
+        }
+        
+        .emailInputGroup input {
+            font-size: 100%;
+            padding: 0.8em;
+            outline: none;
+            border: 2px solid rgb(200, 200, 200);
+            background-color: transparent;
+            border-radius: 20px;
+            width: 100%;
+        }
+        
+        .emailInputGroup label {
+            font-size: 100%;
+            position: absolute;
+            left: 0;
+            padding: 0.8em;
+            margin-left: 0.5em;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            color: rgb(100, 100, 100);
+        }
+        
+        .emailInputGroup :is(input:focus, input:valid)~label {
+            transform: translateY(-50%) scale(.9);
+            margin: 0em;
+            margin-left: 1.3em;
+            padding: 0.4em;
+            background-color: white;
+        }
+        
+        .emailInputGroup :is(input:focus, input:valid) {
+            border-color: rgb(150, 150, 200);
+        }
+
+        @media screen and (max-width: 406px) {
+            .cta{
+                top: 9.1%;
+                left:38%
+            }
+            .cta span{
+                font-size: smaller;
+            }
+        } 
+
+        @media screen and (min-width: 407px) and (max-width: 439px) {
+            .cta{
+                top: 9.1%;
+                left:45%
+            }
+            .cta span{
+                font-size: smaller;
+            }
+        } 
+
+        @media screen and (min-width: 440px) and (max-width: 489px) {
+            .cta{
+                top: 9.1%;
+                left:50%
+            }
+            .cta span{
+                font-size: small;
+            }
+        } 
+
+        @media screen and (min-width: 490px) and (max-width: 529px) {
+            .cta{
+                top: 9.1%;
+                left:55%
+            }
+            .cta span{
+                font-size: small;
+            }
+        } 
+
+        @media screen and (min-width: 530px) and (max-width: 767px) {
+            .cta{
+                top: 9.1%;
+                left:50%
+            }
+        } 
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            .cta{
+                top: 9.1%;
+                left:64%
+            }
+        } 
+
+        @media screen and (min-width: 992px) and (max-width: 1206px) {
+            .cta{
+                top: 9.1%;
+                left:73%
+            }
+        }
+
+        @media screen and (min-width: 1207px) and (max-width: 4000px) {
+            .cta{
+                top: 9.1%;
+                left:77%
+            }
+        }
+
+        {# End Send Email #}
       </style>
 
     {# tracking services, custom css feature. #}
