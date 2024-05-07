@@ -1252,7 +1252,119 @@
             "title": "Card 3",
             "icon": "sicon-combine_cells",
             "path": "home.custom-card3",
-            "fields": []
+            "fields": [
+                {
+                    "id": "slides",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 10,
+                    "label": "",
+                    "item_label": "صورة",
+                    "value": [],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "id": "slides.image",
+                            "label": "صورة البنر",
+                            "format": "image",
+                            "required": true,
+                            "placeholder": "",
+                            "description": "max height 130",
+                            "settings": {
+                                "height": 130
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "Description",
+                            "multilanguage": true,
+                            "id": "slides.description",
+                            "value": null,
+                            "required": false,
+                            "format": "text",
+                            "description": "",
+                            "placeholder": "Enter product description",
+                            "hide": false,
+                            "minLength": 0,
+                            "maxLength": 100
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "Price",
+                            "multilanguage": true,
+                            "id": "slides.price",
+                            "value": null,
+                            "description": "product price",
+                            "format": "textarea",
+                            "required": false,
+                            "placeholder": "Enter product price",
+                            "minLength": 0,
+                            "maxLength": 10
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "Backgound Color",
+                            "multilanguage": true,
+                            "id": "slides.background",
+                            "value": null,
+                            "description": "card background",
+                            "format": "textarea",
+                            "required": false,
+                            "placeholder": "Enter background color",
+                            "minLength": 0,
+                            "maxLength": 20
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "Text Color",
+                            "multilanguage": true,
+                            "id": "slides.textcolor",
+                            "value": null,
+                            "description": "text color",
+                            "format": "textarea",
+                            "required": false,
+                            "placeholder": "Enter text color",
+                            "minLength": 0,
+                            "maxLength": 20
+                        },                
+                        {
+                            "id": "slides.colors",
+                            "type": "collection",
+                            "format": "collection",
+                            "required": true,
+                            "minLength": 1,
+                            "maxLength": 7,
+                            "label": "",
+                            "item_label": "صورة",
+                            "value": [],
+                            "fields": [
+                                {
+                                    "type": "string",
+                                    "icon": "sicon-typography",
+                                    "label": "Color",
+                                    "multilanguage": true,
+                                    "id": "colors.text",
+                                    "value": null,
+                                    "description": "color",
+                                    "format": "textarea",
+                                    "required": false,
+                                    "placeholder": "Enter color",
+                                    "minLength": 0,
+                                    "maxLength": 20
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "key": "ad29ac44-3a0b-4ed7-ba18-d7562941383a",

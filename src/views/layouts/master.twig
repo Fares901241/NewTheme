@@ -793,6 +793,264 @@
 
         {# End 3rd Slider #}
 
+        {# Start 3rd Card #}
+        .card2 {
+            border-radius: 20px;
+            transition: all .3s;
+        }
+
+        .card22 {
+        border-radius:0px;
+        transition: all .2s;
+        }
+
+        .card22:hover {
+        transform: scale(0.98);
+        border-radius: 20px;
+        }
+
+        .card2:hover {
+        box-shadow: 0px 0px 30px 1px rgba(0, 89, 255, 0.3);
+        }
+
+        .heart-container {
+            --heart-color: rgb(255, 91, 137);
+            position: relative;
+            width: 50px;
+            height: 50px;
+            transition: .3s;
+        }
+
+        .heart-container .checkbox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 20;
+        cursor: pointer;
+        }
+
+        .heart-container .svg-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .heart-container .svg-outline,
+                .heart-container .svg-filled {
+        fill: var(--heart-color);
+        position: absolute;
+        }
+
+        .heart-container .svg-filled {
+        animation: keyframes-svg-filled 1s;
+        display: none;
+        }
+
+        .heart-container .svg-celebrate {
+        position: absolute;
+        animation: keyframes-svg-celebrate .5s;
+        animation-fill-mode: forwards;
+        display: none;
+        stroke: var(--heart-color);
+        fill: var(--heart-color);
+        stroke-width: 2px;
+        }
+
+        .heart-container .checkbox:checked~.svg-container .svg-filled {
+        display: block
+        }
+
+        .heart-container .checkbox:checked~.svg-container .svg-celebrate {
+        display: block
+        }
+
+        @keyframes keyframes-svg-filled {
+        0% {
+            transform: scale(0);
+        }
+
+        25% {
+            transform: scale(1.2);
+        }
+
+        50% {
+            transform: scale(1);
+            filter: brightness(1.5);
+        }
+        }
+
+        @keyframes keyframes-svg-celebrate {
+        0% {
+            transform: scale(0);
+        }
+
+        50% {
+            opacity: 1;
+            filter: brightness(1.5);
+        }
+
+        100% {
+            transform: scale(1.4);
+            opacity: 0;
+            display: none;
+        }
+        }
+
+        .cartbtn {
+            --width: 100px;
+            --height: 35px;
+            --tooltip-height: 35px;
+            --tooltip-width: 90px;
+            --gap-between-tooltip-to-button: 18px;
+            --button-color: white;
+            --tooltip-color: #fff;
+            width: var(--width);
+            height: var(--height);
+            background: var(--button-color);
+            color: black;
+            position: relative;
+            text-align: center;
+            border-radius: 0.45em;
+            font-family: "Arial";
+            transition: background 0.3s;
+        }
+
+        .cartbtn::before {
+        position: absolute;
+        content: attr(data-tooltip);
+        width: var(--tooltip-width);
+        height: var(--tooltip-height);
+        background-color: #555;
+        font-size: 0.9rem;
+        color: white;
+        border-radius: .25em;
+        line-height: var(--tooltip-height);
+        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+        left: calc(50% - var(--tooltip-width) / 2);
+        }
+
+        .cartbtn::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top-color: #555;
+        left: calc(50% - 10px);
+        bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+        }
+
+        .cartbtn::after,.cartbtn::before {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+        }
+
+        .buytxt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .cartbtn-wrapper,.buytxt,.carticon {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        color: #fff;
+        }
+
+        .buytxt {
+        top: 0
+        }
+
+        .buytxt,.carticon {
+        transition: top 0.5s;
+        }
+
+        .carticon {
+        color: #fff;
+        top: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .carticon svg {
+        width: 24px;
+        height: 24px;
+        }
+
+        .cartbtn:hover {
+        background: #222;
+        }
+
+        .cartbtn:hover .buytxt {
+        top: -100%;
+        }
+
+        .cartbtn:hover .carticon {
+        top: 0;
+        }
+
+        .cartbtn:hover:before,.cartbtn:hover:after {
+        opacity: 1;
+        visibility: visible;
+        }
+
+        .cartbtn:hover:after {
+        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+        }
+
+        .cartbtn:hover:before {
+        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+        }
+        
+        
+        .colorbtn {
+            position: relative;
+            display: inline-block;
+            transition: all .2s;
+            border: 1px solid white;
+        }
+
+        .colorbtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .colorbtn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .colorbtn::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+        }
+
+        .colorbtn::after {
+        background-color: transparent;
+        }
+
+        .colorbtn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+        } 
+        
+        {# End 3rd Card #}
+
       </style>
 
     {# tracking services, custom css feature. #}

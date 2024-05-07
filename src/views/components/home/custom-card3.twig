@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row justify-content-center">
+    {% for slide in component.slides %}
+        <div class="col-10 col-md-5 col-lg-3 mx-1 c2 my-3">
+            <div class="card2 rounded-4" >
+                <div class="card22 rounded-4" style="background-color:{{slide.background}};display: grid;">
+                    <div class="m-2" style="justify-self: end;height: fit-content;">
+                        <div class="bg-light rounded-5 p-2">
+                            <div class="heart-container" style="width: 15px; height: 15px;" title="Like">
+                                <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                <div class="svg-container">
+                                    <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                        </path>
+                                    </svg>
+                                    <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                        <polygon points="10,10 20,20"></polygon>
+                                        <polygon points="10,50 20,50"></polygon>
+                                        <polygon points="20,80 30,70"></polygon>
+                                        <polygon points="90,10 80,20"></polygon>
+                                        <polygon points="90,50 80,50"></polygon>
+                                        <polygon points="80,80 70,70"></polygon>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center"><img class="justify-self-center" style="height: 130px;" src="{{slide.image}}"/></div>
+                    <span class="ms-2 ms-lg-3 mt-1 mt-lg-3" style="color: {{slide.textcolor}};display: block;">Colors</span>
+                    <div>
+                        <button class="bg-warning d-inline-block ms-3 me-2 colorbtn" style="width: 20px; height: 20px;border-radius: 100%;"></button>
+                        {% for color in slide.colors %}
+                        <button class="d-inline-block me-2 colorbtn" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
+                        {% endfor %}
+                    </div>
+                    <p class="px-2 px-lg-3 pt-1 pt-lg-3" style="color: {{slide.textcolor}};">{{slide.description}}</p>
+                    <div data-tooltip="Price:-${{slide.price}}" class="button cartbtn m-3 rounded-4" style="cursor: pointer;">
+                        <div class="button-wrapper cartbtn-wrapper">
+                            <div class="text buytxt text-dark">Buy Now</div>
+                            <span class="icon carticon">
+                                <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>                            
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    
