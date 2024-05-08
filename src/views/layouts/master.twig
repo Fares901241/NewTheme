@@ -1920,7 +1920,11 @@
     try{
         function changeImageByColor(id, color){
             let list1 = document.getElementsByClassName("activeimg");
-            let prevImage = [...list1].filter((l) => l.classList.contains(`${id}`));
+            console.log(list1);
+            let prevImage = [...list1].filter((l) => {
+                console.log(l);
+                l.classList.contains(`${id}`)
+                });
             prevImage = prevImage[0]
             let list2 = document.getElementsByClassName(`${id}img`);
             let currentImage = [...list2].filter((l) => l.classList.contains(`${color}`));
