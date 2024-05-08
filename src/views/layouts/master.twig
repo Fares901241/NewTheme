@@ -1861,37 +1861,46 @@
         const prevButton = document.querySelector('.brand-prev-button');
         const nextButton = document.querySelector('.brand-next-button');
         const images = document.querySelectorAll('.brand-image-item');
-        const imageWidth = images[0].getBoundingClientRect().width;
         let currentIndex = 0;
 
-        // Calculate maxIndex
-        const visibleImages = Math.floor(carousel.offsetWidth / imageWidth);
-        const maxIndex = images.length - visibleImages;
+        function updateCarousel() {
+            const imageWidth = images[0].getBoundingClientRect().width;
+            const visibleImages = Math.floor(carousel.offsetWidth / imageWidth);
+            const maxIndex = images.length - visibleImages;
+            return { visibleImages, maxIndex };
+        }
 
-        // Define imagesContainer
-        const imagesContainer = document.querySelector('.brand-carousel-images');
+        // Initial update
+        let { visibleImages, maxIndex } = updateCarousel();
 
         prevButton.addEventListener('click', () => {
             if (currentIndex > 0) {
             currentIndex--;
-            const translateXValue =
-                -currentIndex *
-                (images[0].offsetWidth +
-                parseInt(getComputedStyle(images[0]).marginLeft) * 2);
-            imagesContainer.style.transition = 'transform 0.5s ease';
-            imagesContainer.style.transform = `translateX(${translateXValue}px)`;
+            const translateXValue = -currentIndex * images[0].offsetWidth;
+            carousel.style.transition = 'transform 0.5s ease';
+            carousel.style.transform = `translateX(${translateXValue}px)`;
             }
         });
 
         nextButton.addEventListener('click', () => {
             if (currentIndex < maxIndex) {
             currentIndex++;
-            const translateXValue =
-                -currentIndex *
-                (images[0].offsetWidth +
-                parseInt(getComputedStyle(images[0]).marginLeft) * 2);
-            imagesContainer.style.transition = 'transform 0.5s ease';
-            imagesContainer.style.transform = `translateX(${translateXValue}px)`;
+            const translateXValue = -currentIndex * images[0].offsetWidth;
+            carousel.style.transition = 'transform 0.5s ease';
+            carousel.style.transform = `translateX(${translateXValue}px)`;
+            }
+        });
+
+        // Resize event listener
+        window.addEventListener('resize', () => {
+            // Update visibleImages and maxIndex
+            ({ visibleImages, maxIndex } = updateCarousel());
+            // Reset currentIndex if necessary
+            if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+            const translateXValue = -currentIndex * images[0].offsetWidth;
+            carousel.style.transition = 'transform 0.5s ease';
+            carousel.style.transform = `translateX(${translateXValue}px)`;
             }
         });
         });
