@@ -40,7 +40,7 @@
 
                     <span class="ms-2 ms-lg-3 mt-1 mt-lg-3" style="color: {{slide.textcolor}};display: block;">Colors</span>
                     <div>
-                        <button class="d-inline-block ms-3 me-2 {{slide.index}}color colorbtn activecolor" onclick="changeImageByColor('{{slide.icolor}}', '{{color.text}}')" style="background-color: {{slide.icolor}};width: 20px; height: 20px;border-radius: 100%;"></button>
+                        <button class="d-inline-block ms-3 me-2 {{slide.index}}color colorbtn activecolor" onclick="changeImageByColor('{{slide.index}}', '{{slide.icolor}}')" style="background-color: {{slide.icolor}};width: 20px; height: 20px;border-radius: 100%;"></button>
                         {% for color in component.colors %}
                             {% if color.index == slide.index %}
                                 <button class="d-inline-block me-2 {{slide.index}}color colorbtn" onclick="changeImageByColor('{{slide.index}}', '{{color.text}}')" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
