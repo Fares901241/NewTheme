@@ -818,7 +818,7 @@
 
         @media (max-width: 576px) {
             .brand-image-item {
-            width: 50%;
+            width: 51.4%;
             }
         }
 
@@ -1587,9 +1587,9 @@
 </noscript>
 <div class="app-inner flex flex-col min-h-full">
     {% hook 'body:start' %}
-    {% component 'header.header' %}
+    {# {% component 'header.header' %} #}
     {% block content %}{% endblock %}
-    {% component 'footer.footer' %}
+    {# {% component 'footer.footer' %} #}
 </div>
 {% hook 'body:end' %}
 <script defer src="{{ 'app.js' | asset }}"></script>
@@ -1788,9 +1788,9 @@
 
     {# end 2nd slider #}
 
-    {# start 2rd slider #}
+    {# start 3rd slider #}
 
-    try{
+    /*try{
         // Slider 3 - Brand Slider
         document.addEventListener('DOMContentLoaded', function () {
         const brandCarousel = document.getElementById('brandCarousel');
@@ -1803,8 +1803,9 @@
 
         let brandCurrentIndex = 0;
         const brandTotalImages = brandImageItems.length;
-        const brandVisibleImages = 5; // Display 5 images for the brand slider
+        //const brandVisibleImages = 5; // Display 5 images for the brand slider
 
+        let brandVisibleImages;
         // Calculate the width of each image item including margins
         const brandImageWidth =
             brandImageItems[0].offsetWidth +
@@ -1841,9 +1842,69 @@
 
     }catch(error){
 
-    }
+    }*/
 
     {# end 3rd slider #}
+
+    {# start new 3rd slider #}
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const brandCarousel = document.getElementById('brandCarousel');
+    const brandPrevButton = brandCarousel.querySelector('.brand-prev-button');
+    const brandNextButton = brandCarousel.querySelector('.brand-next-button');
+    const brandImagesContainer = brandCarousel.querySelector(
+        '.brand-carousel-images'
+    );
+    const brandImageItems = brandCarousel.querySelectorAll('.brand-image-item');
+
+    let brandCurrentIndex = 0;
+    const brandTotalImages = brandImageItems.length;
+
+    // Responsive number of visible images
+    let brandVisibleImages;
+    if (window.innerWidth <= 576) {
+        brandVisibleImages = 2; // Display 2 images for small devices
+    } else if (window.innerWidth <= 767) {
+        brandVisibleImages = 3; // Display 3 images for medium devices
+    } else {
+        brandVisibleImages = 5; // Display 5 images for large devices
+    }
+
+    // Calculate the width of each image item including margins
+    const brandImageWidth =
+        brandImageItems[0].offsetWidth +
+        parseInt(getComputedStyle(brandImageItems[0]).marginLeft) * 2;
+
+    function updateBrandButtonStates() {
+        brandPrevButton.disabled = brandCurrentIndex === 0;
+        brandNextButton.disabled =
+        brandCurrentIndex >= brandTotalImages - brandVisibleImages;
+    }
+
+    brandNextButton.addEventListener('click', () => {
+        if (brandCurrentIndex < brandTotalImages - brandVisibleImages) {
+        brandCurrentIndex++;
+        }
+        brandImagesContainer.style.transform = `translateX(-${
+        brandCurrentIndex * brandImageWidth
+        }px)`;
+        updateBrandButtonStates();
+    });
+
+    brandPrevButton.addEventListener('click', () => {
+        if (brandCurrentIndex > 0) {
+        brandCurrentIndex--;
+        }
+        brandImagesContainer.style.transform = `translateX(-${
+        brandCurrentIndex * brandImageWidth
+        }px)`;
+        updateBrandButtonStates();
+    });
+
+    updateBrandButtonStates(); // Initial call to set the correct state of the navigation buttons
+    });
+
+    {# end new 3rd slider #}
 
     {# start back to top #}
 
