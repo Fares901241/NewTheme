@@ -1927,6 +1927,7 @@
                 console.log(l.classList);
                 l.classList.contains(`${id}`)
                 });
+                console.log("prevImageBefore",prevImage);
             prevImage = prevImage[0]
             let list2 = document.getElementsByClassName(`${id}img`);
             console.log(list2);
@@ -1935,10 +1936,11 @@
                 console.log(l.classList);
                 l.classList.contains(`${color}`)
                 });
+                console.log("currentImageBefore",currentImage);
             currentImage = currentImage[0];
 
-            console.log(prevImage);
-            console.log(currentImage);
+            console.log("prevImageAfter",prevImage);
+            console.log("prevImageAfter",currentImage); 
             console.log(prevImage.classList);
             console.log(currentImage.classList);
             prevImage.classList.remove("activeimg");
