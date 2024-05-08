@@ -1280,6 +1280,34 @@
                         },
                         {
                             "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "Color",
+                            "multilanguage": true,
+                            "id": "slides.icolor",
+                            "value": null,
+                            "description": "color",
+                            "format": "text",
+                            "required": false,
+                            "placeholder": "Enter Intial color",
+                            "minLength": 0,
+                            "maxLength": 20
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "index",
+                            "multilanguage": true,
+                            "id": "slides.index",
+                            "value": null,
+                            "description": "product index",
+                            "format": "text",
+                            "required": false,
+                            "placeholder": "Enter product index",
+                            "minLength": 0,
+                            "maxLength": 10
+                        },
+                        {
+                            "type": "string",
                             "icon": "sicon-format-text-alt",
                             "label": "Description",
                             "multilanguage": true,
@@ -1348,6 +1376,34 @@
                     "item_label": "color",
                     "value": [],
                     "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "index",
+                            "multilanguage": true,
+                            "id": "colors.index",
+                            "value": null,
+                            "description": "product index",
+                            "format": "text",
+                            "required": false,
+                            "placeholder": "Enter product index",
+                            "minLength": 0,
+                            "maxLength": 10
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "id": "colors.image",
+                            "label": "صورة البنر",
+                            "format": "image",
+                            "required": true,
+                            "placeholder": "",
+                            "description": "max height 130",
+                            "settings": {
+                                "height": 130
+                            }
+                        },
                         {
                             "type": "string",
                             "icon": "sicon-typography",

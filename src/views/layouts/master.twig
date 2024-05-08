@@ -825,6 +825,15 @@
         {# End 3rd Slider #}
 
         {# Start 3rd Card #}
+
+        .card3img{
+            display:none;
+        }
+
+        .activeimg{
+            display:block;
+        }
+
         .card2 {
             border-radius: 20px;
             transition: all .3s;
@@ -1905,6 +1914,24 @@
     });
 
     {# end new 3rd slider #}
+
+    {# start 3rd card #}
+
+    try{
+        function changeImageByColor(id, color){
+            let list1 = document.getElementsByClassName("activeimg");
+            let prevImage = list1.filter((l) => l.classList.includes(`${id}`))[0];
+            let list2 = document.getElementsByClassName(`${id}img`);
+            let currentImage = list2.filter((l) => l.classList.includes(`${color}`))[0];
+
+            prevImage.classList.remove("activeimg");
+            currentImage.classList.add("activeimg");
+        }
+    }catch(error){
+
+    }
+
+    {# end 3rd card #}
 
     {# start back to top #}
 
