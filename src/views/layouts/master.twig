@@ -1922,10 +1922,11 @@
             let list1 = document.getElementsByClassName("activeimg");
             console.log(list1);
             console.log(id);
+            console.log(color);
             let prevImage = [...list1].filter((l) => {
                 console.log(l);
                 console.log(l.classList);
-                l.classList.contains(`${id}`)
+                l.classList.contains(`${id}img`)
                 });
                 console.log("prevImageBefore",prevImage);
             prevImage = prevImage[0]
