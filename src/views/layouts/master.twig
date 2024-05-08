@@ -1929,9 +1929,18 @@
                 });
             prevImage = prevImage[0]
             let list2 = document.getElementsByClassName(`${id}img`);
-            let currentImage = [...list2].filter((l) => l.classList.contains(`${color}`));
+            console.log(list2);
+            let currentImage = [...list2].filter((l) => {
+                console.log(l);
+                console.log(l.classList);
+                l.classList.contains(`${color}`)
+                });
             currentImage = currentImage[0];
 
+            console.log(prevImage);
+            console.log(currentImage);
+            console.log(prevImage.classList);
+            console.log(currentImage.classList);
             prevImage.classList.remove("activeimg");
             currentImage.classList.add("activeimg");
         }
