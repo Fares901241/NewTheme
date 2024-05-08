@@ -1926,7 +1926,7 @@
             let prevImage = [...list1].filter((l) => {
                 console.log(l);
                 console.log(l.classList);
-                l.classList.contains(id+"img");
+                return l.classList.contains(id+"img");
                 });
                 console.log("prevImageBefore",prevImage);
             prevImage = prevImage[0]
@@ -1935,7 +1935,7 @@
             let currentImage = [...list2].filter((l) => {
                 console.log(l);
                 console.log(l.classList);
-                l.classList.contains(color);
+                return l.classList.contains(color);
                 });
                 console.log("currentImageBefore",currentImage);
             currentImage = currentImage[0];
