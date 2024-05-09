@@ -1896,9 +1896,9 @@
         let { visibleImages, maxIndex } = updateCarousel();
 
         function updateBrandButtonStates() {
-            brandPrevButton.disabled = brandCurrentIndex === 0;
-            brandNextButton.disabled =
-            brandCurrentIndex >= brandTotalImages - brandVisibleImages;
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled =
+            currentIndex >= images.length - visibleImages;
         }
 
         prevButton.addEventListener('click', () => {
