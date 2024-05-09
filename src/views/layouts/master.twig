@@ -437,14 +437,14 @@
                 transition: transform 0.5s ease;
             }
 
-            .image-item {
+            .image-slider-item {
                 flex: 0 0 auto;
                 width: 12.5%;
                 height: 200px;
                 text-align: center;
             }
 
-            .image-item .first-slider-img {
+            .image-slider-item .first-slider-img {
                 width: 90%;
                 height: 75%;
                 object-fit: cover;
@@ -482,7 +482,7 @@
 
             @media (min-width: 768px) and (max-width: 991px) {
 
-                .image-item {
+                .image-slider-item {
                 width: 20%;
                 }
             }
@@ -503,14 +503,14 @@
                 left: 25px;
                 }
 
-                .image-item {
+                .image-slider-item {
                 width: 33.33%;
                 }
             }
 
             @media (max-width: 576px) {
 
-                .image-item {
+                .image-slider-item {
                 width: 51.4%;
                 }
             }
@@ -1660,7 +1660,7 @@
         const prevButton = document.querySelector('.custom-prev-button');
         const nextButton = document.querySelector('.custom-next-button');
         const imagesContainer = document.querySelector('.custom-carousel-images');
-        const imageItems = document.querySelectorAll('.image-item');
+        const imageItems = document.querySelectorAll('.image-slider-item');
         const ImageCount = document.querySelectorAll('.image-count').length;
 
         let currentIndex = 0;
