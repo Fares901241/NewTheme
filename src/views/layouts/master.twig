@@ -1895,6 +1895,12 @@
         // Initial update
         let { visibleImages, maxIndex } = updateCarousel();
 
+        function updateBrandButtonStates() {
+            brandPrevButton.disabled = brandCurrentIndex === 0;
+            brandNextButton.disabled =
+            brandCurrentIndex >= brandTotalImages - brandVisibleImages;
+        }
+
         prevButton.addEventListener('click', () => {
             if (currentIndex > 0) {
             currentIndex--;
@@ -1902,6 +1908,7 @@
             carousel.style.transition = 'transform 0.5s ease';
             carousel.style.transform = `translateX(${translateXValue}px)`;
             }
+            updateBrandButtonStates()
         });
 
         nextButton.addEventListener('click', () => {
@@ -1911,6 +1918,7 @@
             carousel.style.transition = 'transform 0.5s ease';
             carousel.style.transform = `translateX(${translateXValue}px)`;
             }
+            updateBrandButtonStates();
         });
 
         // Resize event listener
@@ -1925,6 +1933,9 @@
             carousel.style.transform = `translateX(${translateXValue}px)`;
             }
         });
+
+        updateBrandButtonStates();
+
         });
     }catch(error){
 
