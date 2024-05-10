@@ -1,10 +1,10 @@
 {
     "name": {
-        "ar": "Project Theme",
-        "en": "ProjectTheme"
+        "ar": "New Theme",
+        "en": "NewTheme"
     },
-    "repository": "https://github.com/Eslam-Aboelyazeed/projecttheme",
-    "author_email": "eslamabouelyazeed13@gmail.com",
+    "repository": "https://github.com/Fares901241/NewTheme",
+    "author_email": "eslamaboelyazeed22@gmail.com",
     "features": [
         "mega-menu",
         "fonts",
