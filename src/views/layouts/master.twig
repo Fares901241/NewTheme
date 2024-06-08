@@ -282,7 +282,7 @@
 
         {# Start Loader #}
 
-            body,
+            {# body,
             html {
             margin: 0;
             padding: 0;
@@ -292,7 +292,7 @@
             align-items: center;
             justify-content: center;
             font-family: Arial, sans-serif;
-            }
+            } #}
 
             #loader-wrapper {
             position: fixed;
@@ -1778,14 +1778,16 @@
 <div class="app-inner flex flex-col min-h-full">
     {% hook 'body:start' %}
     {# {% component 'header.header' %} #}
+    
     <div id="loader-wrapper">
         <div class="loader">
             <img src="assets/images/logo.png" alt="" class="image" />
         </div>
     </div>
-  <div id="content" style="display: none;">
-    {% block content %}{% endblock %}
-  </div>
+
+    <div id="content" style="display: none;">
+        {% block content %}{% endblock %}
+    </div>
 
 
     {# {% component 'footer.footer' %} #}
