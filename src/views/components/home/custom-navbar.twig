@@ -1,46 +1,4 @@
-{# <nav class="navbar navbar-expand-lg bg-light-subtle mt-4">
-    <div class="container justify-content-between">
-        {# <div class="row justify-content-between align-items-center"> 
-            <a class="navbar-brand me-5" href="#"><img src="{{component.LogoImage}}" style="border-radius: 5px;" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="col-1 collapse navbar-collapse" id="navbarSupportedContent"  style="position: relative;">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown ms-2">
-                        <button class="nav-link dropdown-toggle text-center bg-primary px-3 btn hbtn text-light" id="dropdownMenuButton" style="border-radius: 2em; font-size:smaller" aria-expanded="false">
-                            All Catagories
-                        </button>
-                        <ul class="dropdown-menu text-center bg-primary" style="font-size:smaller" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">All Catagories</a></li>
-                            {% for catagory in component.Catagories %}
-                                <li><a class="dropdown-item" href="#">{{catagory.name}}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li class="nav-item w-auto mt-3 mt-lg-5 mt-lg-0">
-                            <div id="searchdiv" style="position:relative;display:inline">
-                                <input class="form-control w-100 mx-2 sch" id="searchAny" style="border-radius: 2em;" type="search" placeholder="Search" aria-label="Search">
-                                <i class="bi bi-search fs-4 me-3 mglass" style="position:absolute; top:15%"></i>
-                            </div>
-                        <form class="d-flex w-100 me-3 mt-md-4 mt-lg-0 ms-lg-5 justify-content-md-center justify-content-md-start" style="display:inline-block" role="search">
-                            <button class="hbtn px-3" style="font-size:smaller">Help</button>
-                            <div class="px-5 d-inline">
-                                <span class="onhov"><i class="bi bi-person fs-5 px-1"></i>Account</span>
-                            </div>
-                            <div class="px-5 d-inline position-relative">
-                                <span class="onhov"><i class="bi bi-handbag fs-5 px-1"></i>Shopping</span>
-                                <div class="bg-primary rounded-5 text-light px-2 py-1" style="position: absolute;top: -65%;left: 25%;">16</div>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        {# </div> 
-    </div>
-</nav> #}
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light container text-center mt-lg-2">
+{# <nav class="navbar navbar-expand-lg navbar-light bg-light container text-center mt-lg-2">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="{{component.LogoImage}}" alt="" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -58,11 +16,6 @@
             {% for catagory in component.Catagories %}
                 <li><a class="dropdown-item" href="#">{{catagory.name}}</a></li>
             {% endfor %}
-              {# <li><a class="dropdown-item text-light ddi" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item text-light ddi" href="#">Something else here</a></li> #}
             </ul>
           </li>
         </ul>
@@ -88,4 +41,53 @@
         </ul>
       </div>
     </div>
+</nav> #}
+
+
+<nav class="navbar navbar-expand-lg navbar-light container-fluid text-center mt-lg-2" id="navbar-bg">
+  <div class="container-fluid">
+    <a class="navbar-brand d-lg-none d-flex flex-grow-1 justify-content-start" href="#"><img src="{{component.LogoImage}}"
+        alt="" width="60px" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-4 py-2 bg-primary rounded-5 text-white" href=" #" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            جميع الاقسام
+          </a>
+          <ul class="dropdown-menu bg-primary">
+            {% for catagory in component.Catagories %}
+                <li><a class="dropdown-item" href="#">{{catagory.name}}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex me-2">
+        <input class="form-control rounded-5" id="navbar-search" type="search" placeholder="🔍ابحث عن اي شيء"
+          aria-label="Search">
+      </form>
+      <a class="navbar-brand d-none d-lg-flex flex-grow-1 justify-content-center" href="#"><img src="pngwing.com.png"
+          alt="" width="60px" /></a>
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 flex-row justify-content-evenly">
+        <li class="nav-item">
+          <a class="nav-link px-4 py-2 bg-primary rounded-5 text-white" href="#"><i class="bi bi-question-circle"></i>
+            مساعده</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iss" href="#"><i class="bi bi-person"></i> حساب</a>
+        </li>
+        <li class="nav-item position-relative iss">
+          <a class="nav-link iss" href="#"><i class="bi bi-bag"></i> تسوق</a>
+          <span class="position-absolute ms-4 top-0 start-0 translate-middle badge rounded-5 bg-primary">
+            10
+            <span class="visually-hidden">رسائل غير مقروءه</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
