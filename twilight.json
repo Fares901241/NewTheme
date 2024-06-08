@@ -1514,6 +1514,13 @@
             "icon": "sicon-combine_cells",
             "path": "home.custom-card5",
             "fields": []
+        },
+        {
+            "key": "00d8ccb7-4b06-4f41-a0a1-51a76ca0e68d",
+            "title": "Brand Marquee",
+            "icon": "sicon-ellipsis-filled",
+            "path": "home.brand-marquee",
+            "fields": []
         }
     ],
     "support_url": null,
