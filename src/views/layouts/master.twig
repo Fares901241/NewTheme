@@ -1853,6 +1853,197 @@
 
         {# End Brand Marquee #}
 
+        {# Start Cart Page #}
+            {# @import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap");
+            * {
+            font-family: "Noto Kufi Arabic", sans-serif;
+            font-optical-sizing: auto;
+
+            font-style: normal;
+            } #}
+
+            .summaryCol {
+            display: flex;
+            justify-content: end;
+            align-items: baseline;
+            height: 100%;
+            width: auto;
+            }
+            .SummarySection {
+            width: 400px;
+            height: 400px;
+            background-color: #3e3e3e;
+            border-radius: 30px;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            }
+
+            .SummaryTitle {
+            text-align: end;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            }
+
+            .SummaryTitle .SubTotal {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            }
+
+            .Coupon {
+            margin-top: 20px;
+            }
+
+            .search {
+            display: inline-block;
+            position: relative;
+            }
+
+            .search input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            direction: rtl;
+            }
+
+            .search button[type="submit"] {
+            background-color: #4e99e9;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.9s ease;
+            }
+
+            .search button[type="submit"]:hover {
+            transform: scale(1.1);
+            color: rgb(255, 255, 255);
+            background-color: blue;
+            }
+
+            .btn {
+            margin-top: 10px;
+            border-radius: 30px;
+            width: 100%;
+            }
+
+            .productContainer {
+            height: 150px;
+            background-color: #3e3e3e;
+            border-radius: 30px;
+            color: white;
+            padding: 20px;
+            display: flex;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            }
+            .imageContainer {
+            width: 25%;
+            height: 100%;
+            padding: 5px;
+            overflow: hidden;
+            }
+            .imageContainer img {
+            width: 100%;
+            height: 100%;
+
+            border-radius: 30px;
+            }
+
+            .detailsContainer {
+            flex-grow: 1;
+            padding: 10px;
+            margin-right: 10px;
+            }
+
+            .productContainer .detailsContainer .productTitle {
+            text-align: end;
+            display: flex;
+            justify-content: space-between;
+            }
+
+            .productContainer .detailsContainer .productTitle button {
+            width: 30px;
+            height: 30px;
+            background: none;
+            outline: none;
+            border: none;
+            color: red;
+            border-radius: 50%;
+            padding: 5px;
+            margin-left: 10px;
+            transition: all 0.3s ease-in-out;
+            }
+
+            .productContainer .detailsContainer .productTitle button:hover {
+            color: white;
+            background-color: red;
+            }
+            .productContainer .detailsContainer .Price {
+            text-align: end;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            }
+            .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            }
+
+            label {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+            }
+
+            input[type="number"] {
+            width: 80px;
+            padding: 5px 12px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+            }
+
+            input[type="number"]:focus {
+            border-color: #007bff;
+            }
+
+            input[type="number"]::-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            input[type="number"] {
+            -moz-appearance: textfield; /* For Firefox */
+            }
+
+            input[type="number"]:hover {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+            }
+
+            input[type="number"]:disabled {
+            background-color: #e9ecef;
+            border-color: #ddd;
+            color: #6c757d;
+            }
+        
+        {# End Cart Page #}
+
       </style>
 
     {# tracking services, custom css feature. #}

@@ -1,0 +1,87 @@
+{% extends "layouts.master" %}
+{% block content %}
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-2"></div>
+      <div class="col-sm-12 col-lg-3 d-flex justify-content-center">
+        <div class="SummarySection">
+          <div class="SummaryTitle">
+            <h3>ملخص الطلب</h3>
+            <div class="SubTotal">
+              <h6>SAR 550</h6>
+              <h6>مجموع المنتجات</h6>
+            </div>
+          </div>
+          <div class="Coupon">
+            <div class="SummaryTitle">
+              <h6>هل لديك كود خصم</h6>
+              <br />
+              <div class="search">
+                <input placeholder="ادخل كودالخصم" type="text" />
+                <button type="submit">إضافة</button>
+              </div>
+            </div>
+          </div>
+          <div class="SummaryTitle">
+            <div class="SubTotal">
+              <h6>SAR 550</h6>
+              <h6>الإجمالى</h6>
+            </div>
+          </div>
+          <button class="btn btn-primary">إتمام الطلب</button>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+
+      <div class="col-sm-12 col-lg-4">
+        <div class="productContainer">
+          <div class="detailsContainer">
+            <div class="productTitle">
+              <button>X</button>
+              <h4>إسم المنتج</h4>
+            </div>
+            <div class="Price">
+              <h6>SAR 550</h6>
+
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="100"
+              />
+            </div>
+          </div>
+          <div class="imageContainer">
+            <img src="{{ asset('images/product-7.jpg') }}" alt="" />
+          </div>
+        </div>
+
+        <div class="productContainer">
+          <div class="detailsContainer">
+            <div class="productTitle">
+              <button>X</button>
+              <h4>إسم المنتج</h4>
+            </div>
+            <div class="Price">
+              <h6>SAR 550</h6>
+
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="100"
+              />
+            </div>
+          </div>
+          <div class="imageContainer">
+            <img src="{{ asset('images/{{ asset('images/product-7.jpg') }}') }}" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2"></div>
+    </div>
+  </div>
+{% endblock %}
