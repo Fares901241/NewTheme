@@ -144,6 +144,8 @@
         }
     </style>
 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"></script>
+
       <style>
         {# <!-- Start Navbar --> #}
         {# @keyframes slideDown {
@@ -1850,7 +1852,7 @@
             }
 
         {# End Brand Marquee #}
-        
+
       </style>
 
     {# tracking services, custom css feature. #}
@@ -1899,6 +1901,15 @@
                 loaderWrapper.style.display = 'none';
                 content.style.display = 'block';
             }, 3000); // Adjust the delay time as needed
+            });
+
+            window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader-init");
+            loader.classList.add("loader-init--hidden");
+            loader.addEventListener("transitionend", () => {
+                if (!document.querySelector(".loader-init")) return;
+                document.body.removeChild(loader);
+                });
             });
         }catch(err){
 
