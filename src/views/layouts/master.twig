@@ -1759,6 +1759,98 @@
         }
 
         {# End Back to Top #}
+
+        {# Start Offer Marquee #}
+
+            .offer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .offer-marquee-container {
+            width: 95%;
+            border-radius: 30px;
+            overflow: hidden;
+            background-color: #1a2130;
+            padding: 15px;
+            margin: 20px;
+            color: white;
+            }
+
+            .offer-marquee {
+            display: flex;
+            animation: offermarquee 15s linear infinite;
+            }
+
+            .offer-marquee h3 {
+            margin: 0 15px;
+            white-space: nowrap;
+            }
+
+            @keyframes offermarquee {
+                from {
+                    transform: translateX(-100%);
+                }
+
+                to {
+                    transform: translateX(100%);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .offer-marquee {
+                    animation: marquee 10s linear infinite;
+                }
+
+                .offer-marquee-container {
+                    width: 90%;
+                    margin: 5px;
+                }
+
+                .offer-marquee h3 {
+                    font-size: 16px;
+                    margin: 0 5px;
+                }
+            }
+
+        {# End Offer Marquee #}
+
+        {# Start Brand Marquee #}
+
+            .brands-marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: #706f6f;
+            padding: 10px 0;
+            }
+            .brands-marquee {
+            display: flex;
+            animation: brandsmarquee 15s linear infinite;
+            }
+            .brands-marquee img {
+            margin: 0 15px;
+            height: 100px;
+            }
+            @keyframes brandsmarquee {
+                from {
+                    transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(100%);
+                }
+            }
+            @media (max-width: 600px) {
+                .brands-marquee img {
+                    height: 50px;
+                }
+                .brands-marquee {
+                    animation: marquee 10s linear infinite;
+                }
+            }
+
+        {# End Brand Marquee #}
+        
       </style>
 
     {# tracking services, custom css feature. #}
