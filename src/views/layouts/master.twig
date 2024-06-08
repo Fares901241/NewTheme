@@ -1892,23 +1892,23 @@
     {# loader #}
 
         try{
-            window.addEventListener('load', () => {
+            /*window.addEventListener('load', () => {
             const loaderWrapper = document.getElementById('loader-wrapper');
             const content = document.getElementById('content');
 
-            // Simulate a delay to show the loader
             setTimeout(() => {
                 loaderWrapper.style.display = 'none';
                 content.style.display = 'block';
-            }, 3000); // Adjust the delay time as needed
-            });
+            }, 3000);
+            });*/
 
             window.addEventListener("load", () => {
-            const loader = document.querySelector(".loader-init");
-            loader.classList.add("loader-init--hidden");
-            loader.addEventListener("transitionend", () => {
-                if (!document.querySelector(".loader-init")) return;
-                document.body.removeChild(loader);
+                const loaderWrapper = document.getElementById('loader-wrapper');
+                const content = document.getElementById('content');
+                
+                loaderWrapper.addEventListener("transitionend", () => {
+                    loaderWrapper.style.display = 'none';
+                    content.style.display = 'block';
                 });
             });
         }catch(err){
