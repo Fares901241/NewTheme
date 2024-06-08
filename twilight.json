@@ -1521,6 +1521,13 @@
             "icon": "sicon-ellipsis-filled",
             "path": "home.brand-marquee",
             "fields": []
+        },
+        {
+            "key": "41247601-908b-4d7a-8208-13731d56e550",
+            "title": "Offer Marquee",
+            "icon": "sicon-ellipsis-filled",
+            "path": "home.offer-marquee",
+            "fields": []
         }
     ],
     "support_url": null,
