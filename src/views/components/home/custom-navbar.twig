@@ -46,8 +46,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-light container-fluid text-center mt-lg-2" id="navbar-bg">
   <div class="container-fluid">
-    <a class="navbar-brand d-lg-none d-flex flex-grow-1 justify-content-start" href="#"><img src="{{component.LogoImage}}"
-        alt="" width="60px" /></a>
+    <a class="navbar-brand d-lg-none d-flex flex-grow-1 justify-content-start">
+      <img src="{{component.LogoImage}}" alt="Logo" width="60px" />
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -59,7 +60,7 @@
             data-bs-toggle="dropdown" aria-expanded="false">
             جميع الاقسام
           </a>
-          <ul class="dropdown-menu bg-primary">
+          <ul class="dropdown-menu bg-primary text-white">
             {% for catagory in component.Catagories %}
                 <li><a class="dropdown-item" href="#">{{catagory.name}}</a></li>
             {% endfor %}
