@@ -1,7 +1,23 @@
-<div class="brands-marquee-container">
+{# <div class="brands-marquee-container">
     <div class="brands-marquee">
         {% for slide in component.slides %}
             <img src="{{slide.image}}" alt="" />
         {% endfor %}
     </div>
-</div>
+</div> #}
+
+<main class="brand-main">
+    <div
+    class="brand-marquee-slider"
+    reverse="true"
+    style="--width: 200px; --height: 200px; --quantity: 9"
+    >
+        <div class="brand-marquee-list">
+            {% for slide in component.slides %}
+                <div class="brand-marquee-item" style="--position: {{loop.index}}">
+                    <img src="{{slide.image}}" alt="Brand {{loop.index}}" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
