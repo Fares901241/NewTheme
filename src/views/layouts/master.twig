@@ -2193,9 +2193,10 @@
     </div>
 
     <div id="content" style="display: none;">
-        {% component 'home.custom-navbar' %}
+        {# {% component 'home.custom-navbar' %} #}
+        {% include '../components/home/custom-navbar.twig' %}
         {% block content %}{% endblock %}
-        {% component 'home.custom-footer' %}
+        {% include '../components/home/custom-footer.twig' %}
     </div>
 
 
