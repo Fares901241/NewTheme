@@ -2182,7 +2182,7 @@
 </noscript>
 <div class="app-inner flex flex-col min-h-full">
     {% hook 'body:start' %}
-    {# {% component 'header.header' %} #}
+    {# {% component 'home.custom-navbar' %} #}
 
     <div id="loader-wrapper">
         <div class="custom-loader">
@@ -2191,11 +2191,13 @@
     </div>
 
     <div id="content" style="display: none;">
+        {% component 'home.custom-navbar' %}
         {% block content %}{% endblock %}
+        {% component 'home.custom-footer' %}
     </div>
 
 
-    {# {% component 'footer.footer' %} #}
+    {# {% component 'home.custom-footer' %} #}
 </div>
 {% hook 'body:end' %}
 <script defer src="{{ 'app.js' | asset }}"></script>
