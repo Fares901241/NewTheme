@@ -44,7 +44,7 @@
 </nav> #}
 
 
-<nav class="navbar navbar-expand-lg navbar-light container-fluid text-center mt-lg-2" id="navbar-bg">
+{# <nav class="navbar navbar-expand-lg navbar-light container-fluid text-center mt-lg-2" id="navbar-bg">
   <div class="container-fluid">
     <a class="navbar-brand d-lg-none d-flex flex-grow-1 justify-content-start">
       <img src="{{component.LogoImage}}" alt="Logo" width="60px" />
@@ -73,6 +73,56 @@
       </form>
       <a class="navbar-brand d-none d-lg-flex flex-grow-1 justify-content-center">
         <img src="{{component.LogoImage}}" alt="Logo" width="60px" />
+      </a>
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 flex-row justify-content-evenly">
+        <li class="nav-item">
+          <a class="nav-link px-4 py-2 bg-primary rounded-5 text-white" href="#"><i class="bi bi-question-circle"></i>
+            مساعده</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iss" href="#"><i class="bi bi-person"></i> حساب</a>
+        </li>
+        <li class="nav-item position-relative iss">
+          <a class="nav-link iss" href="cart"><i class="bi bi-bag"></i> تسوق</a>
+          <span class="position-absolute ms-4 top-0 start-0 translate-middle badge rounded-5 bg-primary">
+            10
+            <span class="visually-hidden">رسائل غير مقروءه</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> #}
+
+<nav class="navbar navbar-expand-lg navbar-light container-fluid text-center mt-lg-2" id="navbar-bg">
+  <div class="container-fluid">
+    <a class="navbar-brand d-lg-none d-flex flex-grow-1 justify-content-start">
+      <img src="{{ asset('images/customLogo.png') }}" alt="Logo" width="60px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-4 py-2 bg-primary rounded-5 text-white" href=" #" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            جميع الاقسام
+          </a>
+          <ul class="dropdown-menu bg-primary text-white">
+            <li><a class="dropdown-item" href="#">احذيه</a></li>
+            <li><a class="dropdown-item" href="#">سترات</a></li>
+            <li><a class="dropdown-item" href="#">قمصان</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex me-2">
+        <input class="form-control rounded-5" id="navbar-search" type="search" placeholder="🔍ابحث عن اي شيء"
+          aria-label="Search">
+      </form>
+      <a class="navbar-brand d-none d-lg-flex flex-grow-1 justify-content-center">
+        <img src="{{ asset('images/customLogo.png') }}" alt="Logo" width="60px" />
       </a>
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0 flex-row justify-content-evenly">
         <li class="nav-item">
