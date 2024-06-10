@@ -2195,9 +2195,11 @@
     <div id="content" style="display: none;">
         {# {% component 'home.custom-navbar' %} #}
         {# {% include '../components/home/custom-navbar.twig' %} #}
-        {% component 'header.header' %} 
+
+        {# {% component 'header.header' %}  #}
         {% block content %}{% endblock %}
-        {% component 'footer.footer' %} 
+        {# {% component 'footer.footer' %}  #}
+
         {# {% include '../components/home/custom-footer.twig' %} #}
     </div>
 
