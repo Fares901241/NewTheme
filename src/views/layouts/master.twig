@@ -2183,6 +2183,8 @@
 <div class="app-inner flex flex-col min-h-full">
     {% hook 'body:start' %}
     {# {% component 'home.custom-navbar' %} #}
+    {% include '../components/home/custom-navbar.twig' %}
+    {% include '../components/home/custom-footer.twig' %}
 
     <div id="loader-wrapper">
         <div class="custom-loader">
