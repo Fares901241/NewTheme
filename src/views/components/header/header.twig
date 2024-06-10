@@ -5,18 +5,18 @@
 | cart.items_count | int     |                                 |
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
-{% set important_links = theme.settings.get('important_links') %}
-<header class="store-header">
-  {# Top Nav #}
+{# {% set important_links = theme.settings.get('important_links') %} #}
+{# <header class="store-header">
+
   <div class="top-navbar">
     <div class="container flex justify-between">
       <div class="flex-1 flex items-center gap-2">
-          {# Footer Menu #}
+
           {% if important_links %}
             <salla-menu source="footer" topnav></salla-menu>
           {% endif %}
 
-          {# Language & Currency Component #}
+
           <div class="header-buttons">
               {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
                   <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray basis-0">
@@ -27,7 +27,7 @@
               {% endif %}
           </div>
 
-          {# Scopes | Branches #}
+
           {% if store.scope %}
               <button class="btn--rounded-gray"
                       onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
@@ -35,7 +35,7 @@
               </button>
           {% endif %}
 
-          {# Search bar #}
+
           <div class="header-search flex-1">
             <salla-search inline oval height="36"></salla-search>
           </div>
@@ -45,7 +45,7 @@
     </div>
   </div>
 
-  {# Main Nav #}
+
   <div id="mainnav" class="main-nav-container shadow-default bg-white">
       <div class="inner bg-inherit">
           <div class="container">
@@ -80,7 +80,60 @@
           </div>
       </div>
   </div>
-</header>
-{% if store.scope %}
+</header> #}
+
+{# {% if store.scope %}
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
-{% endif %}
+{% endif %} #}
+
+
+{% set important_links = theme.settings.get('important_links') %}
+<nav class="navbar navbar-expand-lg navbar-light container-fluid text-center mt-lg-2" id="navbar-bg">
+  <div class="container-fluid">
+    <a class="navbar-brand d-lg-none d-flex flex-grow-1 justify-content-start">
+      <img src="{{ asset('images/customLogo.png') }}" alt="Logo" width="60px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-4 py-2 bg-primary rounded-5 text-white" href=" #" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            جميع الاقسام
+          </a>
+          <ul class="dropdown-menu bg-primary text-white">
+            <li><a class="dropdown-item" href="#">احذيه</a></li>
+            <li><a class="dropdown-item" href="#">سترات</a></li>
+            <li><a class="dropdown-item" href="#">قمصان</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex me-2">
+        <input class="form-control rounded-5" id="navbar-search" type="search" placeholder="🔍ابحث عن اي شيء"
+          aria-label="Search">
+      </form>
+      <a class="navbar-brand d-none d-lg-flex flex-grow-1 justify-content-center">
+        <img src="{{ asset('images/customLogo.png') }}" alt="Logo" width="60px" />
+      </a>
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 flex-row justify-content-evenly">
+        <li class="nav-item">
+          <a class="nav-link px-4 py-2 bg-primary rounded-5 text-white" href="#"><i class="bi bi-question-circle"></i>
+            مساعده</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iss" href="#"><i class="bi bi-person"></i> حساب</a>
+        </li>
+        <li class="nav-item position-relative iss">
+          <a class="nav-link iss" href="cart"><i class="bi bi-bag"></i> تسوق</a>
+          <span class="position-absolute ms-4 top-0 start-0 translate-middle badge rounded-5 bg-primary">
+            10
+            <span class="visually-hidden">رسائل غير مقروءه</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
