@@ -81,10 +81,9 @@
 | product.add_to_cart_label              | string                      |                                                                        |
 | product.currency                       | string                      |                                                                        |
 #}
-{% extends "layouts.master" %}
+{# {% extends "layouts.master" %}
 {% block content %}
     <div class="container">
-        {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
         <nav class="breadcrumbs w-full py-5">
             {% component 'header.breadcrumbs' %}
         </nav>
@@ -113,7 +112,6 @@
                         <i class="sicon-heart"></i>
                     </salla-button>
 
-                    {# Calories Badge #}
                     {% if product.calories %}
                         <div class="absolute z-[2] top-4 rtl:left-4 ltr:right-4 bg-white shadow-sm flex flex-col justify-center items-center rounded-full w-20 h-20 md:w-24 md:h-24">
                             <span class="text-red-500 text-xl leading-none font-bold">{{ product.calories }}</span>
@@ -210,7 +208,6 @@
                                         reviews="{{ product.rating.count }}"></salla-rating-stars>
                 {% endif %}
 
-                {# Price #}
                 <div class="flex whitespace-nowrap gap-4 items-center">
                   <div class="{{ product.is_on_sale ? '' : 'hidden' }} space-x-2 rtl:space-x-reverse whitespace-nowrap">
                       <h4 class="text-red-800 font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
@@ -232,7 +229,6 @@
                             {{ product_desc|raw }}
                         </article>
 
-                        {# Read More Button #}
                         <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
                             {{ trans('pages.products.read_more') }}
                         </a>
@@ -296,7 +292,6 @@
                 {% endif %}
                 {% hook 'product:single.description' %}
 
-                {# Installment Methods #}
                 <salla-installment price="{{ product.price }}"></salla-installment>
                 {% if product.has_metadata %}
                 <salla-metadata></salla-metadata>
@@ -357,7 +352,7 @@
                         </div>
                     </section>
                     <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none">
-                        {# Quantity #}
+
                         {% if product.is_hidden_quantity or product.type == 'booking' %}
                             <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
                         {% else %}
@@ -369,7 +364,7 @@
                                   class="border-gray-200 flex justify-end"></salla-quantity-input>
                             </div>
                         {% endif %}
-                        {# Add to cart #}
+
                         <salla-add-product-button
                                 quick-buy
                                 support-sticky-bar
@@ -382,7 +377,7 @@
                                 loader-position="end"
                                 type="submit"
                                 width="wide"
-                                {# Notify availability props#}
+                                
                                 {% if product.notify_availability %}
                                     {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
                                     channels="{{ product.notify_availability.channels|join(',') }}"
@@ -404,19 +399,194 @@
         <salla-offer></salla-offer>
     </div>
 
-    {# Comments Area #}
     {% component 'comments' %}
     
-    {# Similar Products Area #}
     <div class="container">
         <salla-products-slider source="related" source-value="{{product.id}}" block-title="{{trans('pages.products.similar_products')}}" display-all-url></salla-products-slider>
     </div>
-{% endblock %}
+{% endblock %} #}
 
-{% block scripts %}
+{# {% block scripts %}
     <script defer src="{{ 'product.js' | asset }}"></script>
     {% if product.has_3d_image %}
         <script type="module" defer src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     {% endif %}
+{% endblock %} #}
+
+
+{% extends "layouts.master" %}
+{% block content %}
+    <div class="productDetailsBody">
+        <div class="container">
+            <div class="title">تفاصيل المنتج</div>
+            <div class="detail">
+                <div class="content">
+                <h1 class="name">كرسى </h1>
+
+                <div class="price">300</div>
+                <div class="selectSize">
+                    <div class="select ">
+                    <div
+                        class="selected"
+                        data-default="إختر المقاس"
+                        data-one="Small"
+                        data-two="Meduim"
+                        data-three="Large"
+                    >
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 512 512"
+                        class="arrow"
+                        >
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                        ></path>
+                        </svg>
+                    </div>
+                    <div class="options">
+                        <div title="all">
+                        <input id="all" name="option" type="radio" checked="" />
+                        <label
+                            class="option"
+                            for="all"
+                            data-txt="إختر المقاس"
+                        ></label>
+                        </div>
+                        <div title="option-1">
+                        <input id="option-1" name="option" type="radio" />
+                        <label class="option" for="option-1" data-txt="Small"></label>
+                        </div>
+                        <div title="option-2">
+                        <input id="option-2" name="option" type="radio" />
+                        <label
+                            class="option"
+                            for="option-2"
+                            data-txt="Meduim"
+                        ></label>
+                        </div>
+                        <div title="option-3">
+                        <input id="option-3" name="option" type="radio" />
+                        <label class="option" for="option-3" data-txt="Large"></label>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button>السلة</button>
+                    <button>
+                    إضافة للسلة
+                    <span>
+                        <svg
+                        class=""
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 18 20"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"
+                        />
+                        </svg>
+                    </span>
+                    </button>
+                </div>
+                <div class="description">
+                وصف المنتج
+                </div>
+                </div>
+                <div class="image">
+                <input type="radio" name="color" id="color-1" checked hidden />
+                <input type="radio" name="color" id="color-2" hidden />
+                <input type="radio" name="color" id="color-3" hidden />
+                <input type="radio" name="color" id="color-4" hidden />
+
+                <div class="product">
+                    <img id="productDetailsImages" src="{{ asset('images/2.png') }}" alt="Product" />
+                </div>
+
+                <div class="product-nav">
+                    <label for="color-1"></label>
+                    <label for="color-2"></label>
+                    <label for="color-3"></label>
+                    <label for="color-4"></label>
+                </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="title">المراجعات </div>
+            <div class="commentSection" id="commentSection">
+                <div class="commentContainer" >
+                <div class="comment">
+                    <h3>Ahmed </h3>
+                    <p>منتج رائع  </p>
+                </div>
+                <img src="{{ asset('images/profile.png') }}" alt=""  >
+                </div>
+
+                <div class="commentContainer">
+                <div class="comment">
+                    <h3>Fatma </h3>
+                    <p>منتج رائع  </p>
+                </div>
+                <img src="{{ asset('images/profile.png') }}" alt=""  >
+                </div>
+                <div class="commentContainer">
+                <div class="comment">
+                    <h3>aya </h3>
+                    <p>منتج رائع  </p>
+                </div>
+                <img src="{{ asset('images/profile.png') }}" alt=""  >
+                </div>
+            </div>
+
+            <div class="title">أضف مراجعة </div>
+            <div class="addcommentSection">
+                <div class="form-container">
+                <form class="form">
+                    <div class="form-group">
+                    <label for="email">إسم المستخدم</label>
+                    <input type="text" id="username" name="username" required="">
+                    </div>
+                    <div class="form-group">
+                    <label for="textarea">تعليقك</label>
+                    <textarea name="textarea" id="comment" rows="10" cols="50" required="">          </textarea>
+                    </div>
+                    <button class="form-submit-btn" type="submit" onclick="addcomment(event)">إضافة</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
+{% block scripts %}
+    <script>
+        let commentContainer = document.getElementById("commentSection");
+        let username = document.getElementById("username");
+        let comment = document.getElementById("comment");
+        console.log(commentContainer)
+
+
+
+        function addcomment(e) {
+            e.preventDefault();
+            commentContainer.innerHTML += `<div class="commentContainer">
+            <div class="comment">
+            <h3>${username.value} </h3>
+            <p>${comment.value} </p>
+            </div>
+            <img src="profile.png" alt=""  >
+        </div>
+        `
+        }
+    </script>
+{% endblock %}
