@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="text-center d-grid">
-                        <a onclick='openProductDetails({{slide.image}})' style="justify-self:center;" href='/dev-usvffdv4wsree30i/loyalty'><img style="height: 130px;justify-self:center;" class="card3img {{slide.icolor}} {{slide.index}}img activeimg" src="{{slide.image}}"/></a>
+                        <a onclick='openProductDetails({{slide.image}})' style="justify-self:center;" href='{{product.url}}'><img style="height: 130px;justify-self:center;" class="card3img {{slide.icolor}} {{slide.index}}img activeimg" src="{{slide.image}}"/></a>
                         {% for color in component.colors %}
                             {% if color.index == slide.index %}
                                 <img style="height: 130px;justify-self:center;" class="card3img {{color.text}} {{slide.index}}img" src="{{color.image}}"/> 
