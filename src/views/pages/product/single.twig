@@ -421,9 +421,9 @@
             <div class="title">تفاصيل المنتج</div>
             <div class="detail">
                 <div class="content">
-                <h1 class="name">كرسى </h1>
+                <h1 class="name">{{product.name}} </h1>
 
-                <div class="price">300</div>
+                <div class="price">{{product.price}}</div>
                 <div class="selectSize">
                     <div class="select ">
                     <div
@@ -503,7 +503,7 @@
                 <input type="radio" name="color" id="color-4" hidden />
 
                 <div class="product">
-                    <img src="{{ asset('images/2.png') }}" alt="Product" />
+                    <img src="{{ product.image.url }}" alt="Product" />
                 </div>
 
                 <div class="product-nav">
@@ -565,6 +565,11 @@
 {% endblock %}
 
 {% block scripts %}
+    <script defer src="{{ 'product.js' | asset }}"></script>
+    {% if product.has_3d_image %}
+        <script type="module" defer src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    {% endif %}
+
     <script>
         let commentContainer = document.getElementById("commentSection");
         let username = document.getElementById("username");
