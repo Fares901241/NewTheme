@@ -304,7 +304,7 @@
         {% hook 'cart:items.start' %}
 
         {% for item in cart.items %}
-          <div class="productContainer">
+          <div class="productContainer" id="item-{{ item.id }}">
             <div class="detailsContainer">
               <div class="productTitle">
                 <salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete" aria-label="Remove from the cart"
@@ -358,4 +358,8 @@
       <div class="col-lg-2"></div>
     </div>
   </div>
+{% endblock %}
+
+{% block scripts %}
+  <script defer src="{{ 'checkout.js' | asset }}"></script>
 {% endblock %}
