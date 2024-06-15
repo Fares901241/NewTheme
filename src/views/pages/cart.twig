@@ -301,51 +301,55 @@
       <div class="col-lg-1"></div>
 
       <div class="col-sm-12 col-lg-4">
-        <div class="productContainer">
-          <div class="detailsContainer">
-            <div class="productTitle">
-              <button>X</button>
-              <h4>إسم المنتج</h4>
-            </div>
-            <div class="Price">
-              <h6>SAR 550</h6>
+        {% hook 'cart:items.start' %}
 
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                max="100"
-              />
-            </div>
-          </div>
-          <div class="imageContainer">
-            <img src="{{ asset('images/product-7.jpg') }}" alt="" />
-          </div>
-        </div>
+        {% for item in cart.items %}
+          <div class="productContainer">
+            <div class="detailsContainer">
+              <div class="productTitle">
+                <button>X</button>
+                <h4>{{item.product_name}}</h4>
+              </div>
+              <div class="Price">
+                <h6>{{item.product_price}}</h6>
 
-        <div class="productContainer">
-          <div class="detailsContainer">
-            <div class="productTitle">
-              <button>X</button>
-              <h4>إسم المنتج</h4>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  max="100"
+                />
+              </div>
             </div>
-            <div class="Price">
-              <h6>SAR 550</h6>
+            <div class="imageContainer">
+              <img src="{{item.product_image}}" alt="" />
+            </div>
+          </div>
 
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                max="100"
-              />
+          {# <div class="productContainer">
+            <div class="detailsContainer">
+              <div class="productTitle">
+                <button>X</button>
+                <h4>إسم المنتج</h4>
+              </div>
+              <div class="Price">
+                <h6>SAR 550</h6>
+
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  max="100"
+                />
+              </div>
             </div>
-          </div>
-          <div class="imageContainer">
-            <img src="{{ asset('images/product-7.jpg') }}" alt="" />
-          </div>
-        </div>
+            <div class="imageContainer">
+              <img src="{{ asset('images/product-7.jpg') }}" alt="" />
+            </div>
+          </div> #}
+        {% endfor %}
       </div>
 
       <div class="col-lg-2"></div>
