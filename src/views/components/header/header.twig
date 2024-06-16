@@ -128,10 +128,12 @@
         </li>
         <li class="nav-item position-relative iss">
           <a class="nav-link iss" href="/dev-usvffdv4wsree30i/cart"><i class="bi bi-bag"></i> تسوق</a>
+          {% hook 'cart:items.start' %}
           <span class="position-absolute ms-4 top-0 start-0 translate-middle badge rounded-5 bg-primary">
-            10
+            {{cart.items.length}}
             <span class="visually-hidden">رسائل غير مقروءه</span>
           </span>
+          {% hook 'cart:items.end' %}
         </li>
       </ul>
     </div>
