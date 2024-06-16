@@ -316,7 +316,7 @@
 
                 <salla-button
                   class="btn--coupon {{ cart.coupon?'has-coupon btn--danger':'has-not-coupon btn--default' }}"
-                  style="background-color: var(--bs-blue); color: white;"
+                  {# style="background-color: var(--bs-blue); color: white;" #}
                   loader-position="center" id="coupon-btn">
                   <span class="coupon-text">{{ trans('pages.cart.save_coupon') }}</span>
                   <i class="sicon-cancel icon text-xl w-8"></i>
@@ -347,7 +347,9 @@
 
           <div class="cart-submit-wrap">
             {% hook 'cart:submit.start' %}
-            <salla-button id="cart-submit" loader-position="center" class="text-center py-1 rounded-4" style="background-color: var(--bs-blue); color: white;" width="wide">
+            <salla-button id="cart-submit" loader-position="center"
+             {# class="text-center py-1 rounded-4" style="background-color: var(--bs-blue); color: white;" #}
+             width="wide">
               {{ trans('pages.cart.complete_order') }}
             </salla-button>
             {% hook 'cart:submit.end' %}
