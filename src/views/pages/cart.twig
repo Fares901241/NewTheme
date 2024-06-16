@@ -274,7 +274,7 @@
         <div class="SummarySection">
           <div class="SummaryTitle">
             <h3>ملخص الطلب</h3>
-            <div class="SubTotal">
+            {# <div class="SubTotal">
               <h6>SAR 550</h6>
               <h6>مجموع المنتجات</h6>
             </div>
@@ -295,7 +295,62 @@
               <h6>الإجمالى</h6>
             </div>
           </div>
-          <button class="btn btn-primary confirmCartBtn">إتمام الطلب</button>
+          <button class="btn btn-primary confirmCartBtn">إتمام الطلب</button> #}
+          <div id="shipping-cost" class="flex justify-between text-sm mb-5 {{ cart.has_shipping?'':'hidden' }}">
+            <span class="text-gray-500">{{ trans('pages.cart.shipping_cost') }}</span>
+            <b>{{ cart.real_shipping_cost|money }}</b>
+          </div>
+
+          {% if store.settings.cart.apply_coupon_enabled %}
+            <div class="border-t border-gray-200 border-b py-5 mb-5">
+              <label for="coupon"
+              class="block text-sm ">{{ trans('pages.cart.have_coupon') }}</label>
+              <div class="mt-2.5 relative">
+                <input placeholder="{{ trans('pages.cart.coupon_placeholder') }}"
+                {{ cart.coupon ? 'disabled':'' }}
+                class="rtl:pl-24 ltr:pr-24 form-input" value="{{ cart.coupon }}" id="coupon-input"
+                name="coupon"
+                aria-label="Apply coupon"
+                type="text">
+
+                <salla-button
+                  class="btn--coupon {{ cart.coupon?'has-coupon btn--danger':'has-not-coupon btn--default' }}"
+                  loader-position="center" id="coupon-btn">
+                  <span class="coupon-text">{{ trans('pages.cart.save_coupon') }}</span>
+                  <i class="sicon-cancel icon text-xl w-8"></i>
+                </salla-button>
+              </div>
+              <span class="text-xs text-red-700" id="coupon-error"></span>
+            </div>
+          {% endif %}
+
+          <!-- coupon discount -->
+          <div id="total-discount" class="flex justify-between text-sm {{ cart.discount?'':'hidden' }}">
+            <span class="text-gray-500 block  h-10">{{ trans('pages.cart.discount') }}</span>
+            <b>- {{ cart.real_discount|money }}</b>
+          </div>
+
+          <div class="flex justify-between text-lg mb-5">
+            <span class="text-gray-500">{{ trans('pages.cart.final_total') }}</span>
+            <b data-cart-total>{{ cart.total|money }}</b>
+          </div>
+
+          {% if store.settings.tax.taxable_prices_enabled %}
+            <div class="flex justify-between text-sm mb-5">
+              <small class="text-gray-500">
+                * {{ trans('pages.cart.prices_taxed') }}
+              </small>
+            </div>
+          {% endif %}
+
+          <div class="cart-submit-wrap">
+            {% hook 'cart:submit.start' %}
+            <salla-button id="cart-submit" loader-position="center" width="wide">
+              {{ trans('pages.cart.complete_order') }}
+            </salla-button>
+            {% hook 'cart:submit.end' %}
+          </div>
+          {# {% hook 'cart:summary.end' %} #}
         </div>
       </div>
       <div class="col-lg-1"></div>
