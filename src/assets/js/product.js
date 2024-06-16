@@ -78,3 +78,4 @@ class Product extends BasePage {
 }
 
 Product.initiateWhenReady(['product.single']);
+Product.initiateWhenReady(['index']);
