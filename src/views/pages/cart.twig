@@ -302,7 +302,7 @@
             <b>{{ cart.real_shipping_cost|money }}</b>
           </div>
 
-          {% if store.settings.cart.apply_coupon_enabled %}
+          {# {% if store.settings.cart.apply_coupon_enabled %} #}
             <div class="border-t border-gray-200 border-b py-5 mb-5">
               <label for="coupon"
               class="block text-sm ">{{ trans('pages.cart.have_coupon') }}</label>
@@ -323,7 +323,7 @@
               </div>
               <span class="text-xs text-red-700" id="coupon-error"></span>
             </div>
-          {% endif %}
+          {# {% endif %} #}
 
           <!-- coupon discount -->
           <div id="total-discount" class="flex justify-between text-sm {{ cart.discount?'':'hidden' }}">
@@ -346,7 +346,7 @@
 
           <div class="cart-submit-wrap">
             {% hook 'cart:submit.start' %}
-            <salla-button id="cart-submit" loader-position="center" width="wide">
+            <salla-button id="cart-submit" loader-position="center" style="background-color: var(--bs-blue); color: white;" width="wide">
               {{ trans('pages.cart.complete_order') }}
             </salla-button>
             {% hook 'cart:submit.end' %}
