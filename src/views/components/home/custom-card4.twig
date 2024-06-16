@@ -75,7 +75,28 @@
                     </div>
                     <p class="text-body mx-2 my-2 text-end" style="overflow: hidden; text-overflow: ellipsis; word-wrap: break-word;">القي نظره علي واحده من افضل مجموعات المنتجات في العالم</p>
                     <p class="mx-2 mb-4 mt-2 text-primary text-price text-end">{{product.price}}$ :سعر المنتج</p>
-                    <button class="c4-button"><i class="bi bi-cart-fill"></i> Add</button>
+                    {# <button class="c4-button"><i class="bi bi-cart-fill"></i> Add</button> #}
+                    <salla-add-product-button
+                        quick-buy
+                        support-sticky-bar
+                        {{product.is_require_shipping ? 'required-shipping' : ''}}
+                        amount="{{ product.base_currency_price }}"
+                        class="mt-5 w-full sticky-product-bar__btn"
+                        product-status="{{ product.status }}"
+                        product-type="{{ product.type }}"
+                        product-id="{{ product.id }}"
+                        loader-position="end"
+                        type="submit"
+                        width="wide"
+                        
+                        {% if product.notify_availability %}
+                            {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                            channels="{{ product.notify_availability.channels|join(',') }}"
+                            subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                            {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                        {% endif %}>
+                        <i class="bi bi-cart-fill"></i> {{ product.add_to_cart_label }}
+                    </salla-add-product-button>
                 </div>
             </a>
         </div>
