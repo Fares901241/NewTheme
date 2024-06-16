@@ -72,6 +72,9 @@ class Cart extends BasePage {
             return window.location.reload();
         }
 
+        let count = document.getElementById('cartItemsCount');
+        count.innerText = cartData.count; 
+
         // update the dom for cart options
         this.updateCartOptions(cartData?.options);
         // update each item data
