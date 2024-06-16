@@ -72,7 +72,7 @@ class Cart extends BasePage {
             return window.location.reload();
         }
 
-        console.log(cartData);
+        console.log("cart Data log info",cartData);
 
         let count = document.getElementById('cartItemsCount');
         count.innerText = cartData.count; 
