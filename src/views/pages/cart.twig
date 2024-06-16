@@ -303,19 +303,20 @@
           </div>
 
           {# {% if store.settings.cart.apply_coupon_enabled %} #}
-            <div class="border-t border-gray-200 border-b py-5 mb-5">
+            <div class="border-t border-gray-200 border-b py-5">
               <label for="coupon"
-              class="block text-sm ">{{ trans('pages.cart.have_coupon') }}</label>
+              class="block text-sm text-white">{{ trans('pages.cart.have_coupon') }}</label>
               <div class="mt-2.5 relative">
                 <input placeholder="{{ trans('pages.cart.coupon_placeholder') }}"
                 {{ cart.coupon ? 'disabled':'' }}
-                class="rtl:pl-24 ltr:pr-24 form-input" value="{{ cart.coupon }}" id="coupon-input"
+                class="rtl:pl-24 ltr:pr-24 form-input rounded-4" value="{{ cart.coupon }}" id="coupon-input"
                 name="coupon"
                 aria-label="Apply coupon"
                 type="text">
 
                 <salla-button
                   class="btn--coupon {{ cart.coupon?'has-coupon btn--danger':'has-not-coupon btn--default' }}"
+                  style="background-color: var(--bs-blue); color: white;"
                   loader-position="center" id="coupon-btn">
                   <span class="coupon-text">{{ trans('pages.cart.save_coupon') }}</span>
                   <i class="sicon-cancel icon text-xl w-8"></i>
@@ -346,7 +347,7 @@
 
           <div class="cart-submit-wrap">
             {% hook 'cart:submit.start' %}
-            <salla-button id="cart-submit" loader-position="center" style="background-color: var(--bs-blue); color: white;" width="wide">
+            <salla-button id="cart-submit" loader-position="center" class="text-center py-1 rounded-4" style="background-color: var(--bs-blue); color: white;" width="wide">
               {{ trans('pages.cart.complete_order') }}
             </salla-button>
             {% hook 'cart:submit.end' %}
