@@ -2821,10 +2821,12 @@
         function toggleDropdown() {
             dropdownMenu.classList.toggle('show');
         }*/
-        @param {import("@salla.sa/twilight/types/api/cart").CartSummary} cartData
+
+        import { CartSummary } from "@salla.sa/twilight/types/api/cart";
+
         let count = document.getElementById('cartItemsCount');
         //let cartItems = document.getElementsByClassName('productContainer');
-        count.innerText = cartData.count; 
+        count.innerText = CartSummary.count; 
     });    
     } catch (err) {
         
