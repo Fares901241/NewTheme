@@ -9,11 +9,13 @@
     <div class="col-12 slider-container">
       <div id="imageCarousel" class="custom-carousel">
         <div class="custom-carousel-images">
-            {% for slide in component.slides %}
+            {% for product in component.products %}
+              <a href="{{product.url}}">
                 <div class="image-slider-item image-count">
-                    <img src="{{slide.image}}" alt="Image 1" class="first-slider-img">
-                    <span class="image-title text-primary font-bold">{{slide.title}}</span>
+                    <img src="{{product.image.url}}" alt="{{product.name}}" class="first-slider-img">
+                    <span class="image-title text-primary font-bold">{{product.name}}</span>
                 </div>
+              </a>
             {% endfor %}
         </div>
       </div>
