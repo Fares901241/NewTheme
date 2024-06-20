@@ -93,10 +93,15 @@
     <a class="navbar-brand d-lg-none d-flex flex-grow-1 justify-content-start" href="/dev-usvffdv4wsree30i">
       <img src="{{ asset('images/customLogo.png') }}" alt="Logo" width="60px" />
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    {# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+    </button> #}
+
+    <button class="navbar-toggler" type="button" onclick="openRightMenu()">
+      <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-2 mb-2 mb-lg-0">
         <li class="nav-item dropdown">
@@ -142,3 +147,40 @@
     </div>
   </div>
 </nav>
+<div
+  class="w3-sidebar w3-bar-block w3-card w3-animate-right sidebarDisplayAction"
+  style="right: 0"
+  id="rightMenu"
+>
+  <ul class="navbar-nav ml-auto mb-2 mb-lg-0 flex-column">
+    <li class="w3-bar-item text-center">
+      <a class="nav-link px-4 py-2 bg-primary rounded-5 text-white" href="#"
+        ><i class="bi bi-question-circle"></i> Help</a
+      >
+    </li>
+    <li class="w3-bar-item text-center px-4 py-2 w3-button rounded-5">
+      <a class="nav-link iss" href="#"
+        ><i class="bi bi-person"></i> Account</a
+      >
+    </li>
+    <li class="w3-bar-item text-center px-4 py-2 w3-button rounded-5">
+      <a class="nav-link iss" href="#"
+        ><i class="bi bi-bag"></i> Shopping</a
+      >
+    </li>
+    <li class="w3-bar-item text-center">
+      <a class="nav-link iss" href="#"> Categories</a>
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 flex-column">
+        <li class="w3-bar-item text-center px-4 py-2 w3-button rounded-5">
+          <a class="nav-link iss" href="#"> ساعات</a>
+        </li>
+        <li class="w3-bar-item text-center px-4 py-2 w3-button rounded-5">
+          <a class="nav-link iss" href="#"> شنط</a>
+        </li>
+        <li class="w3-bar-item text-center px-4 py-2 w3-button rounded-5">
+          <a class="nav-link iss" href="#"> أحذية</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
