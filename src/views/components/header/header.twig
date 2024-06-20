@@ -101,7 +101,7 @@
     <button class="navbar-toggler" type="button" onclick="openRightMenu()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-2 mb-2 mb-lg-0">
         <li class="nav-item dropdown">
@@ -184,3 +184,14 @@
     </li>
   </ul>
 </div>
+
+{% block scripts %}
+  <script>
+    function openRightMenu() {
+      document.getElementById("rightMenu").classList.toggle("sidebarDisplayAction");
+
+      document.getElementById("rightMenu").style.width = "90%";
+      document.getElementById("rightMenu").style.height = "100vh";
+    }
+  </script>
+{% endblock %}
