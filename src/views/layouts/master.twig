@@ -2838,11 +2838,11 @@
     try{
         document.addEventListener('DOMContentLoaded', function () {
         const carousel = document.getElementById('imageCarousel');
-        const prevButton = document.querySelector('.custom-prev-button');
-        const nextButton = document.querySelector('.custom-next-button');
-        const imagesContainer = document.querySelector('.custom-carousel-images');
-        const imageItems = document.querySelectorAll('.image-slider-item');
-        const ImageCount = document.querySelectorAll('.image-count').length;
+        const prevButton = carousel.querySelector('.custom-prev-button');
+        const nextButton = carousel.querySelector('.custom-next-button');
+        const imagesContainer = carousel.querySelector('.custom-carousel-images');
+        const imageItems = carousel.querySelectorAll('.image-slider-item');
+        const ImageCount = carousel.querySelectorAll('.image-count').length;
 
         let currentIndex = 0;
         let visibleImages;
