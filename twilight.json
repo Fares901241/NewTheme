@@ -1453,6 +1453,13 @@
             "icon": "sicon-ellipsis-filled",
             "path": "home.offer-marquee",
             "fields": []
+        },
+        {
+            "key": "9a8f98b0-917b-422f-835a-93e6a8f69f69",
+            "title": "Category Links",
+            "icon": "sicon-clothes-hanger",
+            "path": "home.custom-category-links",
+            "fields": []
         }
     ],
     "support_url": null,
