@@ -862,36 +862,7 @@
             "title": "Filter Component",
             "icon": "sicon-underline",
             "path": "home.custom-filter",
-            "fields": [
-                {
-                    "id": "Filters",
-                    "type": "collection",
-                    "format": "collection",
-                    "required": true,
-                    "minLength": 1,
-                    "maxLength": 20,
-                    "label": null,
-                    "item_label": "Filter Names",
-                    "value": [],
-                    "fields": [
-                        {
-                            "type": "string",
-                            "icon": "sicon-format-text-alt",
-                            "value": null,
-                            "id": "Filters.text",
-                            "label": "filter text",
-                            "multilanguage": true,
-                            "required": false,
-                            "format": "text",
-                            "description": null,
-                            "placeholder": "Enter filter name:",
-                            "hide": false,
-                            "minLength": 0,
-                            "maxLength": 25
-                        }
-                    ]
-                }
-            ]
+            "fields": []
         },
         {
             "key": "57f6cb55-18b8-4e1f-8efd-36aa1ee8c6c3",

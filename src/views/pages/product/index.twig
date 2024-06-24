@@ -16,7 +16,7 @@
 | sort_options[].is_selected | bool        | Is current page sorted by it                                         |
 | search_query               | ?string     |                                                                      |
 #}
-{% extends "layouts.master" %}
+{# {% extends "layouts.master" %}
 {% block content %}
     <div class="container px-2.5 ms:px-5 mb-10">
     
@@ -60,7 +60,7 @@
                         source="{{ page.slug }}"
                         source-value="{{ page.id }}"
                         {{ filters ?'filters-Results':'' }}>
-					          </salla-products-list>
+					</salla-products-list>
                 </div>
                 {% hook 'product:index.items.end' %}
             </div>
@@ -71,11 +71,11 @@
     {% if store.settings.category.testimonial_enabled %}
         {% component 'home.testimonials' %}
     {% endif %}
-{% endblock %}
+{% endblock %} #}
 
-{% block scripts %}
+{# {% block scripts %}
     <script defer src="{{ 'product.js' | asset }}"></script>
-{% endblock %}
+{% endblock %} #}
 
 {# {% extends "layouts.master" %}
 {% block content %}
@@ -249,3 +249,83 @@
         }
     </script>
 {% endblock %} #}
+
+{% extends "layouts.master" %}
+{% block content %}
+    <div class="catBody">
+        <div class="categoryImage mb-4" style="background-image: url({{ asset('images/banner.jpg') }})">
+            <div class="title">{{category.name}}</div>
+        </div>
+
+        <div class="flex items-start flex-col md:flex-row">
+            {% if filters %}
+                <salla-filters class="md:w-72 lg:sticky lg:top-20 flex-none" id="filters-menu"></salla-filters>
+                <button class="btn--close-sm close-filters sicon-cancel hidden"></button>
+            {% endif %}
+
+            <div class="main-content flex-1 w-full {{ filters ? 'ltr:lg:ml-8 rtl:lg:mr-8' : '' }}">
+                <div class="mb-4 sm:mb-6 flex justify-between items-center">
+                    <h1 class="font-bold text-xl rtl:pl-3 ltr:pr-3" id="page-main-title">{{ page.title|raw }}</h1>
+                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                        {% if filters %}
+                            <a href="#filters-menu"
+                                class="filters-trigger bg-border-color text-primary lg:hidden mt-2">
+                                <i class="sicon-filter text-gray-text text-2xl me-2.5"></i>
+                            </a>
+                        {% endif %}
+                        {% if sort_options|length %}
+                            <div class="flex items-center">
+                                <label class="hidden sm:block rtl:ml-3 ltr:mr-3 whitespace-nowrap"
+                                        for="product-filter">{{ trans('pages.categories.sorting') }}</label>
+                                <select id="product-filter" class="form-input pt-0 pb-1 rtl:md:pl-10 ltr:md:pr-10">
+                                    {% for sort in sort_options %}
+                                        <option value="{{ sort.id }}" {{ sort.is_selected?'selected':'' }}>{{ sort.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                {% hook 'product:index.items.start' %}
+                <div class="flex min-h-screen">
+                    <salla-products-list class="flex-1 min-w-0 overflow-auto "
+                        source="{{ page.slug }}"
+                        source-value="{{ page.id }}"
+                        {{ filters ?'filters-Results':'' }}>
+                    </salla-products-list>
+                </div>
+                {% hook 'product:index.items.end' %}
+            </div>
+        </div>
+
+        {# <div class="categoriesContainer">
+            <div class="listProduct">
+            <div class="item">
+                <img src="./img/berfum.png" alt="" width="120" height="150" />
+                <h2 class="mt-3">عطور</h2>
+                <button class="CartBtn">
+                <span class="IconContainer">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 576 512"
+                    class="cart"
+                    >
+                    <path
+                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                    ></path>
+                    </svg>
+                </span>
+                <h3 class="text">إضافة للسلة</h3>
+                </button>
+            </div>
+            </div>
+        </div> #}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{{ 'product.js' | asset }}"></script>
+{% endblock %}
