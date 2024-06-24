@@ -1431,6 +1431,13 @@
             "icon": "sicon-clothes-hanger",
             "path": "home.custom-category-links",
             "fields": []
+        },
+        {
+            "key": "29cce644-f113-4f53-b7af-744f1939e20a",
+            "title": "Map",
+            "icon": "sicon-location",
+            "path": "header.custom-map",
+            "fields": []
         }
     ],
     "support_url": null,
