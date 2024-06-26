@@ -3096,6 +3096,61 @@
             }
 
         {# End Category Page #}
+
+        {# Start Side Offer #}
+            .OFSBCBody {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            }
+
+            .OFSBC {
+            position: fixed;
+            top: 20%;
+            right: -260px; /* Initially hidden off-screen */
+            width: 300px;
+            height: auto;
+            background-color: #f0f0f0;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: right 0.3s ease;
+            display: flex;
+            }
+
+            .OFSBC.open {
+            right: 0; /* Slide in on toggle */
+            }
+
+            .OFSBCSidebarHeader {
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            }
+
+            .OFSBCSidebarContent {
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            }
+
+            .OFSBCSidebarContent h2,
+            .OFSBCSidebarContent h3,
+            .OFSBCSidebarContent p {
+            margin: 10px 0;
+            }
+
+            .OFSBCSidebarContent .highlight {
+            color: red;
+            font-size: 1.5em;
+            font-weight: bold;
+            }
+
+        {# End Side Offer #}
       </style>
 
     {# tracking services, custom css feature. #}
@@ -3574,6 +3629,16 @@
 
         }
     {# end open product details #}
+
+    {# Start Side Offer #}
+        try{
+            function toggleSidebar() {
+                document.getElementById("OFSBCID").classList.toggle("open");
+            }
+        }catch(err){
+
+        }
+    {# End Side Offer #}
 </script>
 
 {# Twilight Components #}
