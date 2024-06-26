@@ -3095,6 +3095,16 @@
             }
             }
 
+            .categoryLink{
+                width: 210px;
+                height: 257px;
+            }
+
+            .categoryDiv{
+                height: 100%;
+                align-content: center;
+            }
+
         {# End Category Page #}
 
         {# Start Side Offer #}
@@ -3268,8 +3278,10 @@
     try{
         document.addEventListener('DOMContentLoaded', function () {
         const carousel = document.getElementById('imageCarousel');
-        const prevButton = carousel.querySelector('.custom-prev-button');
-        const nextButton = carousel.querySelector('.custom-next-button');
+        /*const prevButton = carousel.querySelector('.custom-prev-button');
+        const nextButton = carousel.querySelector('.custom-next-button');*/
+        const prevButton = document.getElementById('custom-prev-buttonId');
+        const nextButton = document.getElementById('custom-next-buttonId');
         const imagesContainer = carousel.querySelector('.custom-carousel-images');
         const imageItems = carousel.querySelectorAll('.image-slider-item');
         const ImageCount = carousel.querySelectorAll('.image-count').length;
@@ -3491,8 +3503,10 @@
     try{
         window.addEventListener('DOMContentLoaded', (event) => {
         const carousel = document.querySelector('.brand-carousel-images');
-        const prevButton = document.querySelector('.brand-prev-button');
-        const nextButton = document.querySelector('.brand-next-button');
+        /*const prevButton = document.querySelector('.brand-prev-button');
+        const nextButton = document.querySelector('.brand-next-button');*/
+        const prevButton = document.getElementById('brand-prev-buttonId');
+        const nextButton = document.getElementById('brand-next-buttonId');
         const images = document.querySelectorAll('.brand-image-item');
         let currentIndex = 0;
 
