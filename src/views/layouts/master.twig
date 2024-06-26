@@ -3219,7 +3219,7 @@
             setTimeout(() => {
                 loaderWrapper.style.display = 'none';
                 content.style.display = 'block';
-            }, 3000);
+            }, 2000);
             });
 
             /*window.addEventListener("load", () => {
@@ -3290,7 +3290,7 @@
         let visibleImages;
         let maxIndex;
 
-        calculateDimensions();
+        //calculateDimensions();
 
         function calculateDimensions() {
             const totalImages = ImageCount;
@@ -3309,6 +3309,7 @@
         }
 
         nextButton.addEventListener('click', () => {
+            calculateDimensions();
             if (currentIndex < maxIndex) {
             currentIndex++;
             } else {
@@ -3324,6 +3325,7 @@
         });
 
         prevButton.addEventListener('click', () => {
+            calculateDimensions();
             if (currentIndex > 0) {
             currentIndex--;
             } else {
