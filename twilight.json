@@ -1438,6 +1438,13 @@
             "icon": "sicon-location",
             "path": "home.custom-map",
             "fields": []
+        },
+        {
+            "key": "5dcb64da-25fb-41be-88c0-cbd02e190f0f",
+            "title": "Side Offer",
+            "icon": "sicon-arrow-left",
+            "path": "home.custom-side-offer",
+            "fields": []
         }
     ],
     "support_url": null,
