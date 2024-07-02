@@ -1,14 +1,14 @@
 <div class="container my-5">
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12 text-start text-md-end">
       <h2>{{component.title}}</h2>
-      <p class="mb-3">{{component.description}}</p>
+      <p>{{component.description}}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-12 slider-container">
       <div id="imageCarousel" class="custom-carousel">
-        <div class="custom-carousel-images">
+        <div class="custom-carousel-images py-4">
             {% for product in component.products %}
               
                 <div class="image-slider-item image-count">
