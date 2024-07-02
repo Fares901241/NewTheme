@@ -561,12 +561,12 @@
                                     subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
                                     {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
                                 {% endif %}>
-                            {{ product.add_to_cart_label }}
+                                <i class="bi bi-cart-fill"></i> {{ product.add_to_cart_label }}
                             </salla-add-product-button>
                         </section>
-                        {% if product.is_giftable %}
+                        {# {% if product.is_giftable %}
                             <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}"></salla-gifting>
-                        {% endif %}
+                        {% endif %} #}
                     </form>
                 </div>
                 <div class="description mt-3">
