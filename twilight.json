@@ -1182,7 +1182,7 @@
                             "selected": [],
                             "options": [],
                             "required": true,
-                            "multichoice": true,
+                            "multichoice": false,
                             "source": "products",
                             "searchable": true,
                             "maxLength": 1,
