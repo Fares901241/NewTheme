@@ -2,17 +2,19 @@
     <div class="row justify-content-between">
 
         {% for product in component.products %}
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-                <div class="card p-3 d-flex flex-row align-items-center justify-content-between shadow-sm"
-                    style="transition: box-shadow 0.3s;">
-                    <img class="rounded-circle" src="{{product.image.url}}" alt="Card image cap"
-                    style="width: 100px; height: 100px;">
-                    <div class="card-body" style="max-width: 65%">
-                        <h5 class="card-title text-primary fw-bold text-end">{{ product.name }}</h5>
-                        <p class="card-text text-end">القي نظره علي واحده من افضل مجموعات الاحذيه في العالم</p>
+            <a href="{{product.url}}" class="card1Item">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card p-3 d-flex flex-row align-items-center justify-content-between shadow-sm"
+                        style="transition: box-shadow 0.3s;">
+                        <img class="rounded-circle" src="{{product.image.url}}" alt="Card image cap"
+                        style="width: 100px; height: 100px;">
+                        <div class="card-body" style="max-width: 65%">
+                            <h5 class="card-title text-primary fw-bold text-end">{{ product.name }}</h5>
+                            <p class="card-text text-end">القي نظره علي واحده من افضل مجموعات الاحذيه في العالم</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         {% endfor %} 
   </div>
 </div>
