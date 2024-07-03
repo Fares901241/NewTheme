@@ -1,18 +1,18 @@
 <div class="container my-5">
     <div class="row justify-content-between">
 
-        {% for slide in component.slides %}
-        <div class="col-12 col-md-6 col-lg-4 mb-3">
-            <div class="card p-3 d-flex flex-row align-items-center justify-content-between shadow-sm"
-                style="transition: box-shadow 0.3s;">
-                <div class="card-body" style="max-width: 65%">
-                    <h5 class="card-title text-primary fw-bold">{{ slide.title }}</h5>
-                    <p class="card-text">{{ slide.description }}</p>
+        {% for product in component.products %}
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card p-3 d-flex flex-row align-items-center justify-content-between shadow-sm"
+                    style="transition: box-shadow 0.3s;">
+                    <img class="rounded-circle" src="{{product.image.url}}" alt="Card image cap"
+                    style="width: 100px; height: 100px;">
+                    <div class="card-body" style="max-width: 65%">
+                        <h5 class="card-title text-primary fw-bold text-end">{{ product.name }}</h5>
+                        <p class="card-text text-end">القي نظره علي واحده من افضل مجموعات الاحذيه في العالم</p>
+                    </div>
                 </div>
-                <img class="rounded-circle" src="{{slide.image}}" alt="Card image cap"
-                style="width: 100px; height: 100px;">
             </div>
-        </div>
         {% endfor %} 
   </div>
 </div>
