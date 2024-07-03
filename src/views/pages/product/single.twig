@@ -493,7 +493,7 @@
                     </span>
                     </button> #}
 
-                <div onload= "processElements()">
+                <div>
                     <form class="form product-form" enctype="multipart/form-data" method="post"
                         onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
                         <input type="hidden" name="id" value="{{ product.id }}">
@@ -714,6 +714,16 @@
 
         document.addEventListener('DOMContentLoaded', (event) => {
             processElements();
+
+            let observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.addedNodes.length > 0) {
+                        processElements();
+                    }
+                });
+            });
+
+            observer.observe(document.body, { childList: true, subtree: true });
         });
 
     </script>
