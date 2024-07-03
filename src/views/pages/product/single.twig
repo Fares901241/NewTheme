@@ -687,17 +687,28 @@
         `
         }
 
-        let addToCartBtnContainer = document.getElementsByClassName("s-add-product-button-main");
-        let addToCartBtnContainerArray = [...addToCartBtnContainer];
-        let addtionalSection = document.getElementsByClassName("s-add-product-button-mini-checkout");
-        let addtionalSectionArray = [...addtionalSection];
-        console.log("test100: ", addToCartBtnContainer);
-        console.log("test200: ", addtionalSection);
-        console.log("test300: ", addToCartBtnContainerArray);
-        console.log("test400: ", addtionalSectionArray);
-        console.log("test500: ", addToCartBtnContainerArray[0]);
-        console.log("test600: ", addtionalSectionArray[0]);
-        addToCartBtnContainerArray[0].classList += 'w-100';
-        addtionalSectionArray[0].classList += 'd-none';
+        function processElements() {
+            let addToCartBtnContainer = document.getElementsByClassName("s-add-product-button-main");
+            let additionalSection = document.getElementsByClassName("s-add-product-button-mini-checkout");
+
+            let addToCartBtnContainerArray = Array.from(addToCartBtnContainer);
+            let additionalSectionArray = Array.from(additionalSection);
+
+            console.log("test100: ", addToCartBtnContainerArray[0]);
+            console.log("test200: ", additionalSectionArray[0]);
+
+            if (addToCartBtnContainerArray.length > 0) {
+                addToCartBtnContainerArray[0].classList.add('w-100');
+            }
+
+            if (additionalSectionArray.length > 0) {
+                additionalSectionArray[0].classList.add('d-none');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            processElements();
+        });
+
     </script>
 {% endblock %}
