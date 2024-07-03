@@ -675,8 +675,6 @@
         let comment = document.getElementById("comment");
         console.log(commentContainer)
 
-
-
         function addcomment(e) {
             e.preventDefault();
             commentContainer.innerHTML += `<div class="commentContainer">
@@ -688,5 +686,11 @@
         </div>
         `
         }
+
+        let addToCartBtnContainer = document.querySelector(".s-add-product-button-main");
+        addToCartBtnContainer.classList += 'w-100';
+
+        let addtionalSection = document.querySelector(".s-add-product-button-mini-checkout");
+        addToCartBtnContainer.classList += 'd-none';
     </script>
 {% endblock %}
