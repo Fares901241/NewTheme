@@ -1173,18 +1173,20 @@
                     "value": [],
                     "fields": [
                         {
-                            "type": "string",
-                            "icon": "sicon-image",
-                            "value": null,
-                            "id": "slides.image",
-                            "label": "صورة البنر",
-                            "format": "image",
+                            "type": "items",
+                            "icon": "sicon-keyboard_arrow_down",
+                            "label": "منتجات",
+                            "id": "products",
+                            "format": "dropdown-list",
+                            "description": "",
+                            "selected": [],
+                            "options": [],
                             "required": true,
-                            "placeholder": "",
-                            "description": "max height 130",
-                            "settings": {
-                                "height": 130
-                            }
+                            "multichoice": true,
+                            "source": "products",
+                            "searchable": true,
+                            "maxLength": 1,
+                            "minLength": 1
                         },
                         {
                             "type": "string",

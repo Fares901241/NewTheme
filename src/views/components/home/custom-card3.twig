@@ -30,25 +30,27 @@
                         </div>
                     </div>
                     <div class="text-center d-grid">
-                        <a onclick='openProductDetails({{slide.image}})' style="justify-self:center;" href='products/{{ product.id }}'><img style="height: 130px;justify-self:center;" class="card3img {{slide.icolor}} {{slide.index}}img activeimg" src="{{slide.image}}"/></a>
+                        {% for product in slides.products %}
+                            <a style="justify-self:center;" href='{{ product.url }}'><img style="height: 200px;justify-self:center;" class="card3img {{slide.icolor}} {{slide.index}}img activeimg" src="{{product.image.url}}"/></a>
+                        {% endfor %}
                         {% for color in component.colors %}
                             {% if color.index == slide.index %}
-                                <img style="height: 130px;justify-self:center;" class="card3img {{color.text}} {{slide.index}}img" src="{{color.image}}"/> 
+                                <img style="height: 200px;justify-self:center;" class="card3img {{color.text}} {{slide.index}}img" src="{{color.image}}"/> 
                             {% endif %}
                         {% endfor %}
                     </div>
 
-                    <span class="ms-2 ms-lg-3 mt-1 mt-lg-3" style="color: {{slide.textcolor}};display: block;">Colors</span>
-                    <div>
-                        <button class="d-inline-block ms-3 me-2 {{slide.index}}color colorbtn activecolor" onclick="changeImageByColor('{{slide.index}}', '{{slide.icolor}}')" style="background-color: {{slide.icolor}};width: 20px; height: 20px;border-radius: 100%;"></button>
+                    <span class="me-2 me-lg-3 mt-1 mt-lg-3 text-end" style="color: {{slide.textcolor}};display: block;">الوان</span>
+                    <div class="text-end">
+                        <button class="d-inline-block me-3 ms-2 {{slide.index}}color colorbtn activecolor" onclick="changeImageByColor('{{slide.index}}', '{{slide.icolor}}')" style="background-color: {{slide.icolor}};width: 20px; height: 20px;border-radius: 100%;"></button>
                         {% for color in component.colors %}
                             {% if color.index == slide.index %}
-                                <button class="d-inline-block me-2 {{slide.index}}color colorbtn" onclick="changeImageByColor('{{slide.index}}', '{{color.text}}')" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
+                                <button class="d-inline-block ms-2 {{slide.index}}color colorbtn" onclick="changeImageByColor('{{slide.index}}', '{{color.text}}')" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
                             {% endif %}
                         {% endfor %}
                     </div>
-                    <div style="max-width:260px"><p class="px-2 px-lg-3 pt-1 pt-lg-3" style="color: {{slide.textcolor}};overflow: hidden; text-overflow: ellipsis; word-wrap: break-word;">{{slide.description}}</p></div>
-                    <div data-tooltip="Price:-${{slide.price}}" class="button cartbtn m-3 rounded-4" style="cursor: pointer;">
+                    <div style="max-width:260px"><p class="px-2 px-lg-3 pt-1 pt-lg-3 text-end" style="color: {{slide.textcolor}};overflow: hidden; text-overflow: ellipsis; word-wrap: break-word;">القي نظره علي واحده من افضل مجموعات المنتجات في العالم</p></div>
+                    {# <div data-tooltip="Price:-${{slide.price}}" class="button cartbtn m-3 rounded-4" style="cursor: pointer;">
                         <div class="button-wrapper cartbtn-wrapper">
                             <div class="text buytxt text-dark">Buy Now</div>
                             <span class="icon carticon">
@@ -57,7 +59,46 @@
                                 </svg>
                             </span>
                         </div>
-                    </div>                            
+                    </div> #}
+                    {% for product in slides.products %}
+                        <form class="form product-form" enctype="multipart/form-data" method="post"
+                            onsubmit="return salla.form.onSubmit('cart.addItem', event)">
+                            <input type="hidden" name="id" value="{{ product.id }}">
+                            {% if product.is_hidden_quantity or product.type == 'booking' %}
+                                <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
+                            {% else %}
+                                <div class="sticky-product-bar__quantity center-between mb-5" hidden>
+                                    <label class="form-label font-bold">
+                                        {{ trans('pages.products.quantity') }}
+                                    </label>
+                                    <salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity" aria-label="Quantity"
+                                    class="border-gray-200 flex justify-end"></salla-quantity-input>
+                                </div>
+                            {% endif %}
+
+                            <salla-add-product-button
+                                quick-buy
+                                support-sticky-bar
+                                {{product.is_require_shipping ? 'required-shipping' : ''}}
+                                amount="{{ product.base_currency_price }}"
+                                class="mt-2 w-full sticky-product-bar__btn"
+                                product-status="{{ product.status }}"
+                                product-type="{{ product.type }}"
+                                product-id="{{ product.id }}"
+                                loader-position="end"
+                                type="submit"
+                                width="wide"
+                                
+                                {% if product.notify_availability %}
+                                    {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                    channels="{{ product.notify_availability.channels|join(',') }}"
+                                    subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                    {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                {% endif %}>
+                                <i class="bi bi-cart-fill"></i> {{ product.add_to_cart_label }}
+                            </salla-add-product-button>
+                        </form>
+                    {% endfor %}
                 </div>
             </div>
         </div>
