@@ -42,12 +42,12 @@
 
                     <span class="me-2 me-lg-3 mt-1 mt-lg-3 text-end" style="color: {{slide.textcolor}};display: block;">الوان</span>
                     <div class="text-end">
-                        <button class="d-inline-block me-3 ms-2 {{slide.index}}color colorbtn activecolor" onclick="changeImageByColor('{{slide.index}}', '{{slide.icolor}}')" style="background-color: {{slide.icolor}};width: 20px; height: 20px;border-radius: 100%;"></button>
                         {% for color in component.colors %}
                             {% if color.index == slide.index %}
                                 <button class="d-inline-block ms-2 {{slide.index}}color colorbtn" onclick="changeImageByColor('{{slide.index}}', '{{color.text}}')" style="background-color: {{color.text}};width: 20px; height: 20px;border-radius: 100%;"></button>   
                             {% endif %}
                         {% endfor %}
+                        <button class="d-inline-block me-3 ms-2 {{slide.index}}color colorbtn activecolor" onclick="changeImageByColor('{{slide.index}}', '{{slide.icolor}}')" style="background-color: {{slide.icolor}};width: 20px; height: 20px;border-radius: 100%;"></button>
                     </div>
                     <div style="max-width:260px"><p class="px-2 px-lg-3 pt-1 pt-lg-3 text-end" style="color: {{slide.textcolor}};overflow: hidden; text-overflow: ellipsis; word-wrap: break-word;">القي نظره علي واحده من افضل مجموعات المنتجات في العالم</p></div>
                     {# <div data-tooltip="Price:-${{slide.price}}" class="button cartbtn m-3 rounded-4" style="cursor: pointer;">
