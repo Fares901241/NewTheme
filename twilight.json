@@ -1162,6 +1162,22 @@
             "path": "home.custom-card3",
             "fields": [
                 {
+                    "type": "items",
+                    "icon": "sicon-keyboard_arrow_down",
+                    "label": "منتجات",
+                    "id": "products",
+                    "format": "dropdown-list",
+                    "description": "",
+                    "selected": [],
+                    "options": [],
+                    "required": true,
+                    "multichoice": true,
+                    "source": "products",
+                    "searchable": true,
+                    "maxLength": 3,
+                    "minLength": 1
+                },
+                {
                     "id": "slides",
                     "type": "collection",
                     "format": "collection",
@@ -1172,22 +1188,6 @@
                     "item_label": "صورة",
                     "value": [],
                     "fields": [
-                        {
-                            "type": "items",
-                            "icon": "sicon-keyboard_arrow_down",
-                            "label": "منتجات",
-                            "id": "products",
-                            "format": "dropdown-list",
-                            "description": "",
-                            "selected": [],
-                            "options": [],
-                            "required": true,
-                            "multichoice": false,
-                            "source": "products",
-                            "searchable": true,
-                            "maxLength": 1,
-                            "minLength": 1
-                        },
                         {
                             "type": "string",
                             "icon": "sicon-typography",
