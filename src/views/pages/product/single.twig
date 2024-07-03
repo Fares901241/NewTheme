@@ -691,7 +691,7 @@
         let addtionalSection = document.getElementsByClassName("s-add-product-button-mini-checkout");
         console.log("test100: ", addToCartBtnContainer);
         console.log("test200: ", addtionalSection);
-        addToCartBtnContainer.classList += 'w-100';
-        addToCartBtnContainer.classList += 'd-none';
+        addToCartBtnContainer[0].classList += 'w-100';
+        addtionalSection[0].classList += 'd-none';
     </script>
 {% endblock %}
