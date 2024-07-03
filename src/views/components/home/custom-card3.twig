@@ -37,7 +37,11 @@
                         {% endfor %}
                         {% for color in component.colors %}
                             {% if color.index == slide.index %}
-                                <img style="height: 200px;justify-self:center;" class="card3img {{color.text}} {{slide.index}}img" src="{{color.image}}"/> 
+                                {% for product in component.products %}
+                                    {% if loop.index == slide.index %}
+                                        <a style="justify-self:center;" href='{{ product.url }}'><img style="height: 200px;justify-self:center;" class="card3img {{color.text}} {{slide.index}}img" src="{{color.image}}"/></a>
+                                    {% endif %}
+                                {% endfor %}
                             {% endif %}
                         {% endfor %}
                     </div>
