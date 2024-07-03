@@ -2,8 +2,8 @@
     <div class="row justify-content-between">
 
         {% for product in component.products %}
-            <a href="{{product.url}}" class="card1Item">
-                <div class="col-12 col-md-6 col-lg-4 mb-3">
+            <div class="col-12 col-md-6 col-lg-4 mb-3 card1Item">
+                <a href="{{product.url}}">
                     <div class="card p-3 d-flex flex-row align-items-center justify-content-between shadow-sm"
                         style="transition: box-shadow 0.3s;">
                         <img class="rounded-circle" src="{{product.image.url}}" alt="Card image cap"
@@ -13,8 +13,9 @@
                             <p class="card-text text-end">القي نظره علي واحده من افضل مجموعات الاحذيه في العالم</p>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         {% endfor %} 
+
   </div>
 </div>
