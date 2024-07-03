@@ -688,11 +688,15 @@
         }
 
         let addToCartBtnContainer = document.getElementsByClassName("s-add-product-button-main");
-        let addToCartBtnContainerArray = Array.from(addToCartBtnContainer);
+        let addToCartBtnContainerArray = [...addToCartBtnContainer];
         let addtionalSection = document.getElementsByClassName("s-add-product-button-mini-checkout");
-        let addtionalSectionArray = Array.from(addtionalSection);
-        console.log("test100: ", addToCartBtnContainerArray[0]);
-        console.log("test200: ", addtionalSectionArray[0]);
+        let addtionalSectionArray = [...addtionalSection];
+        console.log("test100: ", addToCartBtnContainer);
+        console.log("test200: ", addtionalSection);
+        console.log("test300: ", addToCartBtnContainerArray);
+        console.log("test400: ", addtionalSectionArray);
+        console.log("test500: ", addToCartBtnContainerArray[0]);
+        console.log("test600: ", addtionalSectionArray[0]);
         addToCartBtnContainerArray[0].classList += 'w-100';
         addtionalSectionArray[0].classList += 'd-none';
     </script>
