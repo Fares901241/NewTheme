@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="text-center d-grid">
-                        {% for product in slides.products %}
+                        {% for product in slide.products %}
                             <a style="justify-self:center;" href='{{ product.url }}'><img style="height: 200px;justify-self:center;" class="card3img {{slide.icolor}} {{slide.index}}img activeimg" src="{{product.image.url}}"/></a>
                         {% endfor %}
                         {% for color in component.colors %}
@@ -60,7 +60,7 @@
                             </span>
                         </div>
                     </div> #}
-                    {% for product in slides.products %}
+                    {% for product in slide.products %}
                         <form class="form product-form" enctype="multipart/form-data" method="post"
                             onsubmit="return salla.form.onSubmit('cart.addItem', event)">
                             <input type="hidden" name="id" value="{{ product.id }}">
