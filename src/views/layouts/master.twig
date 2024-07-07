@@ -619,7 +619,11 @@
             }
 
             #nightowl-switcher-default {
-                top: calc(-100px + 100vh) !important;
+                top: calc(-250px + 100vh) !important;
+            }
+
+            .nightowl-dark body {
+                filter: invert(100%) hue-rotate(180deg) !important;
             }
 
             @media (max-width: 600px) {
@@ -3645,6 +3649,10 @@
         {# End Category Page #}
 
         {# Start Side Offer #}
+            .nightowl-dark .OFSBCBody {
+                filter: invert(90%) hue-rotate(180deg);
+            }
+
             .OFSBCBody {
             margin: 0;
             font-family: Arial, sans-serif;
