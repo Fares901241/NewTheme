@@ -2425,11 +2425,11 @@
 
         {# Start Product Details Page #}
 
-            .productDetailsBody {
+            {# .productDetailsBody {
             margin: 0;
             font-family: Poppins;
-            }
-            .ProductDetailscontainer {
+            } #}
+            {# .ProductDetailscontainer {
             width: 900px;
             margin: auto;
             max-width: 90vw;
@@ -2909,6 +2909,504 @@
 
             .ProductDetailscontainer .selectSize .select {
                 overflow: visible;
+            }
+            } #}
+
+            .productDetailsBody {
+            margin: 0;
+            font-family: Poppins;
+            }
+
+            .ProductDetailscontainer {
+            width: 900px;
+            margin: auto;
+            max-width: 90vw;
+            text-align: center;
+            padding-top: 10px;
+            }
+            .ProductDetailscontainer .title {
+            font-size: xx-large;
+
+            padding: 20px 0;
+            margin-top: 10px;
+            }
+            /* detail page */
+
+            .ProductDetailscontainer .detail {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            text-align: right;
+            }
+            .ProductDetailscontainer .detail .image img {
+            width: 100%;
+            }
+            .ProductDetailscontainer .detail .image {
+            position: relative;
+            }
+            .ProductDetailscontainer .detail .image::before {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            content: "";
+            background-color: #94817733;
+            z-index: -1;
+            border-radius: 190px 100px 170px 180px;
+            left: calc(50% - 150px);
+            top: 50px;
+            }
+
+            .ProductDetailscontainer .detail .name {
+            font-size: xxx-large;
+            padding: 40px 0 0 0;
+            margin: 0 0 10px 0;
+            }
+            .ProductDetailscontainer .detail .price {
+            font-weight: bold;
+            font-size: x-large;
+            letter-spacing: 7px;
+            margin-bottom: 20px;
+            }
+            .ProductDetailscontainer .detail .buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: end;
+            }
+            .ProductDetailscontainer .detail .buttons button {
+            background-color: #eee;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 20px;
+            font-family: Poppins;
+            font-size: large;
+            transition: all 0.3s ease-in-out;
+            }
+            .ProductDetailscontainer .detail .buttons button:hover {
+            background-color: #a7a7a7;
+            }
+            .ProductDetailscontainer .detail .buttons svg {
+            width: 15px;
+            }
+            .ProductDetailscontainer .detail .buttons span {
+            background-color: #555454;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-left: 20px;
+            }
+            .ProductDetailscontainer .detail .buttons button:nth-child(2) {
+            background-color: #2f2f2f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #eee;
+            box-shadow: 0 10px 20px #2f2f2f77;
+            }
+            .ProductDetailscontainer .detail .description {
+            font-weight: 300;
+            }
+            /* -------- Select Size  */
+            .ProductDetailscontainer .selectSize {
+            height: 80px;
+            display: flex;
+            justify-content: end;
+            }
+            .ProductDetailscontainer .selectSize .select {
+            width: fit-content;
+            cursor: pointer;
+            position: relative;
+            transition: 300ms;
+            color: white;
+            /* overflow: hidden; */
+            overflow: visible;
+            }
+
+            .ProductDetailscontainer .selectSize .selected {
+            background-color: #2a2f3b;
+            padding: 5px;
+            margin-bottom: 3px;
+            border-radius: 5px;
+            position: relative;
+            z-index: 100000;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            }
+
+            .ProductDetailscontainer .selectSize .selected .arrow {
+            position: relative;
+            right: 0px;
+            height: 10px;
+            transform: rotate(-90deg);
+            width: 25px;
+            fill: white;
+            z-index: 100000;
+            transition: 300ms;
+            }
+
+            .ProductDetailscontainer .selectSize .options {
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #2a2f3b;
+            position: relative;
+            top: -100px;
+            opacity: 0;
+            transition: 300ms;
+            }
+
+            .ProductDetailscontainer .select:hover > .options {
+            opacity: 1;
+            top: 0;
+            }
+
+            .ProductDetailscontainer .selectSize .select:hover > .selected .arrow {
+            transform: rotate(0deg);
+            }
+
+            .ProductDetailscontainer .selectSize .option {
+            border-radius: 5px;
+            padding: 5px;
+            transition: 300ms;
+            background-color: #2a2f3b;
+            width: 150px;
+            font-size: 15px;
+            }
+            .ProductDetailscontainer .selectSize .option:hover {
+            background-color: #323741;
+            }
+
+            .ProductDetailscontainer .selectSize .options input[type="radio"] {
+            display: none;
+            }
+
+            .ProductDetailscontainer .selectSize .options label {
+            display: inline-block;
+            }
+            .ProductDetailscontainer .selectSize .options label::before {
+            content: attr(data-txt);
+            }
+
+            .ProductDetailscontainer
+            .selectSize
+            .options
+            input[type="radio"]:checked
+            + label {
+            display: none;
+            }
+
+            .ProductDetailscontainer
+            .selectSize
+            .options
+            input[type="radio"]#all:checked
+            + label {
+            display: none;
+            }
+
+            .ProductDetailscontainer
+            .selectSize
+            .select:has(.options input[type="radio"]#all:checked)
+            .selected::before {
+            content: attr(data-default);
+            }
+            .ProductDetailscontainer
+            .selectSize
+            .select:has(.options input[type="radio"]#option-1:checked)
+            .selected::before {
+            content: attr(data-one);
+            }
+            .ProductDetailscontainer
+            .selectSize
+            .select:has(.options input[type="radio"]#option-2:checked)
+            .selected::before {
+            content: attr(data-two);
+            }
+            .ProductDetailscontainer
+            .selectSize
+            .select:has(.options input[type="radio"]#option-3:checked)
+            .selected::before {
+            content: attr(data-three);
+            }
+
+            /* --------- product colors  */
+            .ProductDetailscontainer .product img {
+            max-width: 100%;
+            min-width: 20rem;
+            }
+
+            .ProductDetailscontainer .product::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: -5%;
+            left: 0;
+            background-color: hsl(30, 50%, 75%);
+            /* opacity: 0.5; */
+            mix-blend-mode: hue;
+            border-radius: 30px;
+            }
+
+            .ProductDetailscontainer .product-nav {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            }
+            .ProductDetailscontainer .product-nav label {
+            display: inline-block;
+            width: 3vmin;
+            height: 3vmin;
+            background-color: hsl(30, 50%, 75%);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 0 0.5em #fff, 0.5em 0.5em 1em -0.15em rgba(0, 0, 0, 0.25);
+            transition: 200ms all ease-in-out;
+            }
+
+            .ProductDetailscontainer .product-nav label + label {
+            margin-left: 2.5em;
+            }
+
+            .ProductDetailscontainer .product-nav label:nth-of-type(1),
+            #color-1:checked ~ .product::after {
+            background-color: hsl(30, 50%, 75%);
+            }
+            .ProductDetailscontainer .product-nav label:nth-of-type(2),
+            #color-2:checked ~ .product::after {
+            background-color: hsl(120, 50%, 75%);
+            }
+            .ProductDetailscontainer .product-nav label:nth-of-type(3),
+            #color-3:checked ~ .product::after {
+            background-color: hsl(210, 50%, 75%);
+            }
+            .ProductDetailscontainer .product-nav label:nth-of-type(4),
+            #color-4:checked ~ .product::after {
+            background-color: hsl(300, 50%, 75%);
+            }
+
+            #color-1:checked ~ .product-nav > label:nth-of-type(1),
+            #color-2:checked ~ .product-nav > label:nth-of-type(2),
+            #color-3:checked ~ .product-nav > label:nth-of-type(3),
+            #color-4:checked ~ .product-nav > label:nth-of-type(4) {
+            transform: scale(1.3);
+            }
+
+            #color-1:checked ~ .product-nav > label:nth-of-type(1) {
+            background-color: hsl(30, 70%, 45%);
+            }
+            #color-2:checked ~ .product-nav > label:nth-of-type(2) {
+            background-color: hsl(120, 70%, 45%);
+            }
+            #color-3:checked ~ .product-nav > label:nth-of-type(3) {
+            background-color: hsl(210, 70%, 45%);
+            }
+            #color-4:checked ~ .product-nav > label:nth-of-type(4) {
+            background-color: hsl(300, 70%, 45%);
+            }
+
+            .ProductDetailscontainer .commentSection {
+            width: 100%;
+            height: auto;
+
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            flex-direction: row;
+            gap: 30px;
+            margin-top: 30px;
+            }
+            .ProductDetailscontainer .commentContainer {
+            width: 100%;
+            border-radius: 20px;
+            height: 100px;
+
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: row;
+            }
+
+            .ProductDetailscontainer .commentContainer img {
+            /* background-color: #2f2f2f; */
+            border-radius: 10px;
+            width: 60px;
+            height: 60px;
+            padding: 10px;
+            }
+
+            .ProductDetailscontainer .commentContainer .comment {
+            display: felx;
+            flex-direction: column;
+            text-align: right;
+            font-size: 14px;
+            margin-right: 20px;
+            }
+            .ProductDetailscontainer .commentContainer .comment p {
+            font-size: 14px;
+            }
+
+            /* ----------------- add comment form */
+            .ProductDetailscontainer .addcommentSection {
+            /* width: 100%; */
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            padding: 20px;
+            transition: all 0.5s;
+            }
+            .ProductDetailscontainer .form-container {
+            width: 400px;
+            background-color: #2f4463;
+            border: 2px solid transparent;
+            padding: 32px 24px;
+            font-size: 14px;
+            font-family: inherit;
+            color: white;
+            display: flex;
+
+            flex-direction: column;
+            gap: 20px;
+            box-sizing: border-box;
+            border-radius: 16px;
+            }
+
+            .ProductDetailscontainer .form-container button:active {
+            scale: 0.95;
+            }
+
+            .ProductDetailscontainer .form-container .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            }
+
+            .ProductDetailscontainer .form-container .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            }
+
+            .ProductDetailscontainer .form-container .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #cac9c9;
+            font-weight: 600;
+            font-size: 16px;
+            }
+
+            .ProductDetailscontainer .form-container .form-group input[type="text"] {
+            width: 300px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            background-color: transparent;
+            border: 1px solid #ffffff67;
+            }
+
+            .ProductDetailscontainer .form-container .form-group textarea {
+            width: 300px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            resize: none;
+            color: #fff;
+            height: 96px;
+            border: 1px solid #ffffff67;
+            background-color: transparent;
+            font-family: inherit;
+            }
+
+            .ProductDetailscontainer .form-container .form-group input::placeholder {
+            opacity: 0.5;
+            }
+
+            .ProductDetailscontainer .form-container .form-group input:focus {
+            outline: none;
+            border-color: #e81cff;
+            }
+
+            .ProductDetailscontainer .form-container .form-group textarea:focus {
+            outline: none;
+            border-color: #e81cff;
+            }
+
+            .ProductDetailscontainer .form-container .form-submit-btn {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+            font-family: inherit;
+            color: white;
+            font-weight: 600;
+            width: 40%;
+            background: #0d6efd;
+            border: 1px solid #414141;
+            padding: 12px 16px;
+            font-size: inherit;
+            gap: 8px;
+            margin-top: 8px;
+            cursor: pointer;
+            border-radius: 6px;
+            }
+
+            .ProductDetailscontainer .form-container .form-submit-btn:hover {
+            background-color: #0a58ca;
+            }
+
+            /* // ipad */
+            @media only screen and (max-width: 992px) {
+            .ProductDetailscontainer .detail {
+                grid-template-columns: 40% 1fr;
+            }
+            .ProductDetailscontainer .commentSection {
+                flex-direction: column;
+            }
+            }
+
+            /* mobile */
+            @media only screen and (max-width: 768px) {
+            .ProductDetailscontainer .detail {
+                text-align: center;
+                grid-template-columns: 1fr;
+            }
+            .ProductDetailscontainer .detail .image img {
+                width: unset;
+                height: 40vh;
+            }
+            .ProductDetailscontainer .detail .name {
+                font-size: x-large;
+                margin: 0;
+            }
+            .ProductDetailscontainer .detail .buttons button {
+                font-size: small;
+            }
+            .ProductDetailscontainer .detail .buttons {
+                justify-content: center;
+            }
+            .ProductDetailscontainer .selectSize {
+                display: flex;
+                justify-content: center;
+                z-index: 1000;
+            }
+
+            .ProductDetailscontainer .selectSize .select {
+                overflow: visible;
+            }
+            .ProductDetailscontainer .commentSection {
+                flex-direction: column;
             }
             }
 

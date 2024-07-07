@@ -614,53 +614,94 @@
                 </div>
             </div>
 
-        <br>
-        <br>
-        <br>
-        <div class="title">المراجعات </div>
-        <div class="commentSection" id="commentSection">
-            <div class="commentContainer" >
-            <div class="comment">
-                <h3>Ahmed </h3>
-                <p>منتج رائع  </p>
-            </div>
-            <img src="{{ asset('images/profile.png') }}" alt=""  >
-            </div>
-
-            <div class="commentContainer">
-            <div class="comment">
-                <h3>Fatma </h3>
-                <p>منتج رائع  </p>
-            </div>
-            <img src="{{ asset('images/profile.png') }}" alt=""  >
-            </div>
-            <div class="commentContainer">
-            <div class="comment">
-                <h3>aya </h3>
-                <p>منتج رائع  </p>
-            </div>
-            <img src="{{ asset('images/profile.png') }}" alt=""  >
-            </div>
-        </div>
-
-        <div class="title">أضف مراجعة </div>
-        <div class="addcommentSection">
-            <div class="form-container">
-            <form class="form">
-                <div class="form-group">
-                <label for="email">إسم المستخدم</label>
-                <input type="text" id="username" name="username" required="">
+      <br />
+      <br />
+      <br />
+      <!-- Comments Section  -->
+      <p>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseWidthExample"
+          aria-expanded="false"
+          aria-controls="collapseWidthExample"
+        >
+          المراجعات
+        </button>
+      </p>
+      <div style="min-height: 120px">
+        <div
+          class="collapse collapse-horizontal"
+          id="collapseWidthExample"
+          style="transition: all 0.5s ease-in-out"
+        >
+          <div class="card card-body" style="width: auto">
+            <div class="commentSection" id="commentSection">
+              <div class="addcommentSection">
+                <div class="form-container">
+                  <form class="form">
+                    <div class="form-group">
+                      <label for="username">إسم المستخدم</label>
+                      <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="comment">تعليقك</label>
+                      <textarea
+                        name="textarea"
+                        id="comment"
+                        rows="10"
+                        cols="50"
+                        required
+                      ></textarea>
+                    </div>
+                    <button
+                      class="form-submit-btn"
+                      type="submit"
+                      onclick="addcomment(event)"
+                    >
+                      إضافة
+                    </button>
+                  </form>
                 </div>
-                <div class="form-group">
-                <label for="textarea">تعليقك</label>
-                <textarea name="textarea" id="comment" rows="10" cols="50" required="">          </textarea>
+              </div>
+              <div class="AllcommentsContainer" id="AllcommentsContainer">
+                <div class="commentContainer">
+                  <div class="comment">
+                    <h4>Ahmed</h4>
+                    <p>منتج رائع</p>
+                  </div>
+                  <img src="profile.png" alt="Profile" />
                 </div>
-                <button class="form-submit-btn" type="submit" onclick="addcomment(event)">إضافة</button>
-            </form>
+
+                <div class="commentContainer">
+                  <div class="comment">
+                    <h4>Fatma</h4>
+                    <p>منتج رائع</p>
+                  </div>
+                  <img src="profile.png" alt="Profile" />
+                </div>
+                <div class="commentContainer">
+                  <div class="comment">
+                    <h4>aya</h4>
+                    <p>منتج رائع</p>
+                  </div>
+                  <img src="profile.png" alt="Profile" />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+    <br />
+    <br />
+    <br />
 {% endblock %}
 
 {% block scripts %}
@@ -670,19 +711,19 @@
     {% endif %}
 
     <script defer>
-        let commentContainer = document.getElementById("commentSection");
+        let commentContainer = document.getElementById("AllcommentsContainer");
         let username = document.getElementById("username");
         let comment = document.getElementById("comment");
         console.log(commentContainer)
 
         function addcomment(e) {
-            e.preventDefault();
-            commentContainer.innerHTML += `<div class="commentContainer">
+        e.preventDefault();
+        commentContainer.innerHTML += `<div class="commentContainer">
             <div class="comment">
-            <h3>${username.value} </h3>
+            <h4>${username.value} </h4>
             <p>${comment.value} </p>
             </div>
-            <img src="{{ asset('images/profile.png') }}" alt=""  >
+            <img src="profile.png" alt=""  >
         </div>
         `
         }
