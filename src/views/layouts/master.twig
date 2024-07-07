@@ -151,7 +151,7 @@
         }
     </style>
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"></script>
+  {# <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"></script> #}
 
       <style>
         {# Start Font #}
@@ -3708,7 +3708,7 @@
 
         {# End Side Offer #}
       </style>
-
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     {# tracking services, custom css feature. #}
     {% hook 'head:end' %}
 </head>
@@ -3761,11 +3761,11 @@
             window.addEventListener('load', () => {
             const loaderWrapper = document.getElementById('loader-wrapper');
             const content = document.getElementById('content');
-            const nightowlSwitcherDefault = document.getElementById('nightowl-switcher-default');
+            //const nightowlSwitcherDefault = document.getElementById('nightowl-switcher-default');
             setTimeout(() => {
                 loaderWrapper.style.display = 'none';
                 content.style.display = 'block';
-                nightowlSwitcherDefault.style.display = 'flex !important';
+                //nightowlSwitcherDefault.style.display = 'flex !important';
             }, 2000);
             });
 
@@ -3819,6 +3819,35 @@
         
     }
     {# end navbar #}
+
+    {# Start Darkmode #}
+        try{
+            document.addEventListener('DOMContentLoaded', function() {
+                const options = {
+                bottom: '32px', // default: '32px'
+                right: '32px', // default: '32px'
+                left: 'unset', // default: 'unset'
+                time: '0.5s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: '#000', // default: '#fff'
+                buttonColorDark: '#100f2c', // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+                };
+
+                // Initialize Darkmode.js with custom options
+                const darkmode = new Darkmode(options);
+
+                // Add event listener to the button to toggle dark mode
+                document.getElementById('toggle-dark-theme').addEventListener('click', function() {
+                darkmode.toggle();
+                });
+            });
+        }catch(err){}
+
+    {# End Darkmode #}
 
     {# 1st slider #}
 
