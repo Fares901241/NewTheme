@@ -3707,6 +3707,15 @@
             }
 
         {# End Side Offer #}
+
+        {# Start Darkmode #}
+        
+            .darkmode--activated .fcta,.sliderText,.brand-marquee-slider,.card2,.catLinksTitle,.footerContainer {
+                background-color: initial !important;
+                color: initial !important;
+            }
+        
+        {# End Darkmode #}
       </style>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     {# tracking services, custom css feature. #}
@@ -3846,7 +3855,7 @@
                 });
 
 
-                // Function to add dark mode styles
+                /* Function to add dark mode styles
                 function applyDarkModeStyles() {
                 const style = document.createElement('style');
                 style.id = 'dark-mode-styles';
@@ -3880,7 +3889,7 @@
                 applyDarkModeStyles();
                 } else {
                 removeDarkModeStyles();
-                }
+                }*/
             });
         }catch(err){}
 
