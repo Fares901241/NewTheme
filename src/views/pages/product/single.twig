@@ -421,56 +421,56 @@
             <div class="title">تفاصيل المنتج</div>
             <div class="detail">
                 <div class="content">
-                <h1 class="name">{{product.name}} </h1>
+                    <h1 class="name">{{product.name}} </h1>
 
-                <div class="price">{{product.price}}</div>
-                <div class="selectSize">
-                    <div class="select ">
-                        <div
-                            class="selected"
-                            data-default="إختر المقاس"
-                            data-one="Small"
-                            data-two="Meduim"
-                            data-three="Large">
-                            <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="1em"
-                            viewBox="0 0 512 512"
-                            class="arrow"
-                            >
-                            <path
-                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
-                            ></path>
-                            </svg>
-                        </div>
-                        <div class="options">
-                            <div title="all">
-                            <input id="all" name="option" type="radio" checked="" />
-                            <label
-                                class="option text-white"
-                                for="all"
-                                data-txt="إختر المقاس"
-                            ></label>
+                    <div class="price">{{product.price}}</div>
+                    <div class="selectSize">
+                        <div class="select ">
+                            <div
+                                class="selected"
+                                data-default="إختر المقاس"
+                                data-one="Small"
+                                data-two="Meduim"
+                                data-three="Large">
+                                <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 512 512"
+                                class="arrow"
+                                >
+                                <path
+                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                                ></path>
+                                </svg>
                             </div>
-                            <div title="option-1">
-                            <input id="option-1" name="option" type="radio" />
-                            <label class="option text-white" for="option-1" data-txt="Small"></label>
-                            </div>
-                            <div title="option-2">
-                        
-                            <input id="option-2" name="option" type="radio" />
-                            <label class="option text-white" for="option-2" data-txt="Meduim"></label>
-                            </div>
-                            <div title="option-3">
-                            <input id="option-3" name="option" type="radio" />
-                            <label class="option text-white" for="option-3" data-txt="Large"></label>
+                            <div class="options">
+                                <div title="all">
+                                <input id="all" name="option" type="radio" checked="" />
+                                <label
+                                    class="option text-white"
+                                    for="all"
+                                    data-txt="إختر المقاس"
+                                ></label>
+                                </div>
+                                <div title="option-1">
+                                <input id="option-1" name="option" type="radio" />
+                                <label class="option text-white" for="option-1" data-txt="Small"></label>
+                                </div>
+                                <div title="option-2">
+                            
+                                <input id="option-2" name="option" type="radio" />
+                                <label class="option text-white" for="option-2" data-txt="Meduim"></label>
+                                </div>
+                                <div title="option-3">
+                                <input id="option-3" name="option" type="radio" />
+                                <label class="option text-white" for="option-3" data-txt="Large"></label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="buttons">
-                    <a href="/dev-usvffdv4wsree30i/cart" class="btn">السلة</a>
-                </div>
+                    <div class="buttons">
+                        <a href="/dev-usvffdv4wsree30i/cart" class="btn">السلة</a>
+                    </div>
 
                     {# <button>
                     إضافة للسلة
@@ -493,124 +493,124 @@
                     </span>
                     </button> #}
 
-                <div>
-                    <form class="form product-form" enctype="multipart/form-data" method="post"
-                        onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
-                        <input type="hidden" name="id" value="{{ product.id }}">
+                    <div>
+                        <form class="form product-form" enctype="multipart/form-data" method="post"
+                            onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
+                            <input type="hidden" name="id" value="{{ product.id }}">
 
 
-                        {% hook 'product:single.form.start' %}
+                            {% hook 'product:single.form.start' %}
 
-                        {% include 'pages.partials.product.options' %}
+                            {% include 'pages.partials.product.options' %}
 
-                        {% hook 'product:single.form.end' %}
+                            {% hook 'product:single.form.end' %}
 
-                        <section class="flex bg-white p-5 pb-2 sm:pb-0 rounded-md rounded-b-none">
-                            <div class="center-between w-full">
-                                <div class="flex whitespace-nowrap gap-4 items-center">
-                                    <div class="{{ product.is_on_sale ? '' : 'hidden' }} price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                                        <h2 class="total-price text-red-800 font-bold text-xl inline-block">{{product.sale_price|money}}</h2>
-                                        <span class="before-price text-gray-500 line-through">{{product.regular_price|money}}</span>
+                            <section class="flex bg-white p-5 pb-2 sm:pb-0 rounded-md rounded-b-none">
+                                <div class="center-between w-full">
+                                    <div class="flex whitespace-nowrap gap-4 items-center">
+                                        <div class="{{ product.is_on_sale ? '' : 'hidden' }} price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
+                                            <h2 class="total-price text-red-800 font-bold text-xl inline-block">{{product.sale_price|money}}</h2>
+                                            <span class="before-price text-gray-500 line-through">{{product.regular_price|money}}</span>
+                                        </div>
+                                        <div class="starting-or-normal-price gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">
+                                            {% if product.starting_price %} 
+                                            <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span>
+                                            {% endif %} 
+                                            <h2 class="total-price font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>
+                                        </div>
                                     </div>
-                                    <div class="starting-or-normal-price gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">
-                                        {% if product.starting_price %} 
-                                        <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span>
-                                        {% endif %} 
-                                        <h2 class="total-price font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>
-                                    </div>
-                                </div>
 
-                                <label class="form-label">
-                                    <b class="block">
-                                        {{ trans('pages.products.price') }}
-                                    </b>
-                                </label>
-                            </div>
-                        </section>
-                        {# <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none"> #}
-                        <section class="bg-white p-5 rounded-md rounded-b-none">
-
-                            {% if product.is_hidden_quantity or product.type == 'booking' %}
-                                <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
-                            {% else %}
-                                <div class="sticky-product-bar__quantity center-between mb-5">
-                                    <salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity" aria-label="Quantity"
-                                    class="border-gray-200 flex justify-end"></salla-quantity-input>
-                                    <label class="form-label font-bold">
-                                        {{ trans('pages.products.quantity') }}
+                                    <label class="form-label">
+                                        <b class="block">
+                                            {{ trans('pages.products.price') }}
+                                        </b>
                                     </label>
                                 </div>
-                            {% endif %}
+                            </section>
+                            {# <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none"> #}
+                            <section class="bg-white p-5 rounded-md rounded-b-none">
 
-                            {# <salla-add-product-button
-                                quick-buy
-                                support-sticky-bar
-                                {{product.is_require_shipping ? 'required-shipping' : ''}}
-                                amount="{{ product.base_currency_price }}"
-                                class="mt-2 w-full sticky-product-bar__btn"
-                                product-status="{{ product.status }}"
-                                product-type="{{ product.type }}"
-                                product-id="{{ product.id }}"
-                                loader-position="end"
-                                type="submit"
-                                width="wide"
+                                {% if product.is_hidden_quantity or product.type == 'booking' %}
+                                    <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
+                                {% else %}
+                                    <div class="sticky-product-bar__quantity center-between mb-5">
+                                        <salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity" aria-label="Quantity"
+                                        class="border-gray-200 flex justify-end"></salla-quantity-input>
+                                        <label class="form-label font-bold">
+                                            {{ trans('pages.products.quantity') }}
+                                        </label>
+                                    </div>
+                                {% endif %}
+
+                                {# <salla-add-product-button
+                                    quick-buy
+                                    support-sticky-bar
+                                    {{product.is_require_shipping ? 'required-shipping' : ''}}
+                                    amount="{{ product.base_currency_price }}"
+                                    class="mt-2 w-full sticky-product-bar__btn"
+                                    product-status="{{ product.status }}"
+                                    product-type="{{ product.type }}"
+                                    product-id="{{ product.id }}"
+                                    loader-position="end"
+                                    type="submit"
+                                    width="wide"
+                                    
+                                    {% if product.notify_availability %}
+                                        {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                        channels="{{ product.notify_availability.channels|join(',') }}"
+                                        subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                        {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                    {% endif %}>
+                                    <i class="bi bi-cart-fill"></i> {{ product.add_to_cart_label }}
+                                </salla-add-product-button> #}
                                 
-                                {% if product.notify_availability %}
-                                    {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
-                                    channels="{{ product.notify_availability.channels|join(',') }}"
-                                    subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
-                                    {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
-                                {% endif %}>
-                                <i class="bi bi-cart-fill"></i> {{ product.add_to_cart_label }}
-                            </salla-add-product-button> #}
-                            
-                            <salla-add-product-button
-                                quick-buy
-                                support-sticky-bar
-                                {{product.is_require_shipping ? 'required-shipping' : ''}}
-                                amount="{{ product.base_currency_price }}"
-                                class="mt-2 w-full sticky-product-bar__btn"
-                                product-status="{{ product.status }}"
-                                product-type="{{ product.type }}"
-                                product-id="{{ product.id }}"
-                                loader-position="end"
-                                type="submit"
-                                width="wide"
-                                
-                                {% if product.notify_availability %}
-                                    {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
-                                    channels="{{ product.notify_availability.channels|join(',') }}"
-                                    subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
-                                    {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
-                                {% endif %}>
-                                <i class="bi bi-cart-fill"></i> {{ product.add_to_cart_label }}
-                            </salla-add-product-button> 
-                        </section>
-                        {# {% if product.is_giftable %}
-                            <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}"></salla-gifting>
-                        {% endif %} #}
-                    </form>
-                </div>
-                <div class="description mt-3">
-                وصف المنتج
-                </div>
+                                <salla-add-product-button
+                                    quick-buy
+                                    support-sticky-bar
+                                    {{product.is_require_shipping ? 'required-shipping' : ''}}
+                                    amount="{{ product.base_currency_price }}"
+                                    class="mt-2 w-full sticky-product-bar__btn"
+                                    product-status="{{ product.status }}"
+                                    product-type="{{ product.type }}"
+                                    product-id="{{ product.id }}"
+                                    loader-position="end"
+                                    type="submit"
+                                    width="wide"
+                                    
+                                    {% if product.notify_availability %}
+                                        {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                        channels="{{ product.notify_availability.channels|join(',') }}"
+                                        subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                        {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                    {% endif %}>
+                                    <i class="bi bi-cart-fill"></i> {{ product.add_to_cart_label }}
+                                </salla-add-product-button> 
+                            </section>
+                            {# {% if product.is_giftable %}
+                                <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}"></salla-gifting>
+                            {% endif %} #}
+                        </form>
+                    </div>
+                    <div class="description mt-3">
+                    وصف المنتج
+                    </div>
                 </div>
                 <div class="productDetailsImage">
-                <input type="radio" name="color" id="color-1" checked hidden />
-                <input type="radio" name="color" id="color-2" hidden />
-                <input type="radio" name="color" id="color-3" hidden />
-                <input type="radio" name="color" id="color-4" hidden />
+                    <input type="radio" name="color" id="color-1" checked hidden />
+                    <input type="radio" name="color" id="color-2" hidden />
+                    <input type="radio" name="color" id="color-3" hidden />
+                    <input type="radio" name="color" id="color-4" hidden />
 
-                <div class="product d-grid">
-                    <img src="{{ product.image.url }}" style="justify-self:center;" alt="Product" />
-                </div>
+                    <div class="product d-grid">
+                        <img src="{{ product.image.url }}" style="justify-self:center;" alt="Product" />
+                    </div>
 
-                <div class="product-nav">
-                    <label for="color-1"></label>
-                    <label for="color-2"></label>
-                    <label for="color-3"></label>
-                    <label for="color-4"></label>
-                </div>
+                    <div class="product-nav">
+                        <label for="color-1"></label>
+                        <label for="color-2"></label>
+                        <label for="color-3"></label>
+                        <label for="color-4"></label>
+                    </div>
                 </div>
             </div>
             {# </div> #}
@@ -698,10 +698,10 @@
                 </div>
             </div>
         </div>
+        <br />
+        <br />
+        <br />
     </div>
-    <br />
-    <br />
-    <br />
 {% endblock %}
 
 {% block scripts %}
