@@ -620,6 +620,7 @@
 
             #nightowl-switcher-default {
                 top: calc(-250px + 100vh) !important;
+                display: none;
             }
 
             .nightowl-dark body {
@@ -3760,10 +3761,11 @@
             window.addEventListener('load', () => {
             const loaderWrapper = document.getElementById('loader-wrapper');
             const content = document.getElementById('content');
-
+            const nightowlSwitcherDefault = document.getElementById('nightowl-switcher-default');
             setTimeout(() => {
                 loaderWrapper.style.display = 'none';
                 content.style.display = 'block';
+                nightowlSwitcherDefault.style.display = 'flex';
             }, 2000);
             });
 
