@@ -620,7 +620,7 @@
 
             #nightowl-switcher-default {
                 top: calc(-250px + 100vh) !important;
-                display: none;
+                display: none !important;
             }
 
             .nightowl-dark body {
@@ -3765,7 +3765,7 @@
             setTimeout(() => {
                 loaderWrapper.style.display = 'none';
                 content.style.display = 'block';
-                nightowlSwitcherDefault.style.display = 'flex';
+                nightowlSwitcherDefault.style.display = 'flex !important';
             }, 2000);
             });
 
