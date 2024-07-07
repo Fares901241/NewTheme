@@ -3844,6 +3844,43 @@
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
                 darkmode.toggle();
                 });
+
+
+                // Function to add dark mode styles
+                function applyDarkModeStyles() {
+                const style = document.createElement('style');
+                style.id = 'dark-mode-styles';
+                style.innerHTML = `
+                    body.darkmode--activated {
+                    background-color: #121212 !important;
+                    color: #ffffff !important;
+                    }
+                    body.darkmode--activated .navbar {
+                    background-color: #333 !important;
+                    }
+                    body.darkmode--activated .btn-dark {
+                    background-color: #444 !important;
+                    border-color: #444 !important;
+                    }
+                `;
+                document.head.appendChild(style);
+                }
+
+                // Function to remove dark mode styles
+                function removeDarkModeStyles() {
+                const style = document.getElementById('dark-mode-styles');
+                if (style) {
+                    style.remove();
+                }
+                }
+
+                // Apply dark mode styles when dark mode is activated
+                darkmode.toggle();
+                if (darkmode.isActivated()) {
+                applyDarkModeStyles();
+                } else {
+                removeDarkModeStyles();
+                }
             });
         }catch(err){}
 
