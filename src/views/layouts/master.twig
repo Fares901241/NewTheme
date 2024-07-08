@@ -3739,7 +3739,8 @@
         {# End Darkmode #}
       </style>
     {# <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script> #}
-    <script defer src="https://cdn.jsdelivr.net/npm/darkreader@4.9.36/darkreader.min.js"></script>
+    {# <script defer src="https://cdn.jsdelivr.net/npm/darkreader@4.9.36/darkreader.min.js"></script> #}
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-toggle@0.6.0/dist/darkmode-toggle.min.js"></script>
     {# tracking services, custom css feature. #}
     {% hook 'head:end' %}
 </head>
@@ -3938,7 +3939,7 @@
                 DarkReader.disable();*/
             //});
 
-            document.addEventListener('DOMContentLoaded', (event) => {
+            /*document.addEventListener('DOMContentLoaded', (event) => {
                 let isDarkMode = false;
 
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
@@ -3952,6 +3953,16 @@
                     });
                     }
                     isDarkMode = !isDarkMode;
+                });
+            });*/
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const darkmodeToggle = document.createElement('dark-mode-toggle');
+                darkmodeToggle.setAttribute('appearance', 'switch');
+                document.body.appendChild(darkmodeToggle);
+
+                document.getElementById('toggle-dark-theme').addEventListener('click', function() {
+                    darkmodeToggle.mode = darkmodeToggle.mode === 'dark' ? 'light' : 'dark';
                 });
             });
         }catch(err){}
