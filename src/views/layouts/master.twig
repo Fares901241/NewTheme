@@ -3762,18 +3762,19 @@
 
             #toggle-dark-theme {
                 display: inline-block;
-                background-color: #222222; /* Darker button background */
+                background-color: white; /* Darker button background */
                 color: #ffffff; /* Button text color */
                 font-size: 16px;
                 padding: 10px 20px;
                 border: none;
-                border-radius: 5px;
+                /*border-radius: 5px;*/
                 cursor: pointer;
                 transition: background-color 0.3s ease;
             }
 
             #toggle-dark-theme:hover {
-                background-color: #444444; /* Darker hover color */
+                /*background-color: #444444;  Darker hover color */
+                filter: invert(1);
             }
 
         {# End dark mode button #}
@@ -3917,7 +3918,8 @@
                 //darkmode.toggle();
                 // Add event listener to the button to toggle dark mode
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
-                darkmode.toggle();
+                    darkmode.toggle();
+                    document.getElementById('toggle-dark-theme').style.backgroundColor = 'black';
                 });
 
             });
