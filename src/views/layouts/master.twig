@@ -3740,7 +3740,7 @@
       </style>
     {# <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script> #}
     {# <script defer src="https://cdn.jsdelivr.net/npm/darkreader@4.9.36/darkreader.min.js"></script> #}
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-toggle@0.6.0/dist/darkmode-toggle.min.js"></script>
+    {# <script src="https://cdn.jsdelivr.net/npm/darkmode-toggle@0.6.0/dist/darkmode-toggle.min.js"></script> #}
     {# tracking services, custom css feature. #}
     {% hook 'head:end' %}
 </head>
@@ -3786,6 +3786,7 @@
 <script defer src="{{ 'product.js' | asset }}"></script>
 <script defer src="{{ 'products.js' | asset }}"></script>
 <script defer src="{{ 'checkout.js' | asset }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/theme-switch@1.2.1/dist/theme-switch.min.js"></script>
 <script>
     {# loader #}
 
@@ -3956,13 +3957,34 @@
                 });
             });*/
 
-            document.addEventListener('DOMContentLoaded', function() {
+            /*document.addEventListener('DOMContentLoaded', function() {
                 const darkmodeToggle = document.createElement('dark-mode-toggle');
                 darkmodeToggle.setAttribute('appearance', 'switch');
                 document.body.appendChild(darkmodeToggle);
 
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
                     darkmodeToggle.mode = darkmodeToggle.mode === 'dark' ? 'light' : 'dark';
+                });
+            });*/
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize theme-switch
+                const themeSwitch = new ThemeSwitch({
+                    autoDetect: true,
+                    defaultTheme: 'light',
+                    darkTheme: {
+                    '--bg-color': '#121212',
+                    '--text-color': '#ffffff'
+                    },
+                    lightTheme: {
+                    '--bg-color': '#ffffff',
+                    '--text-color': '#000000'
+                    }
+                });
+
+                // Toggle dark mode on button click
+                document.getElementById('toggle-dark-theme').addEventListener('click', function() {
+                    themeSwitch.toggleTheme();
                 });
             });
         }catch(err){}
