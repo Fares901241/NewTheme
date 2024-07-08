@@ -3782,6 +3782,23 @@
                 filter: invert(1);
             }
 
+            #toggle-dark-theme-small {
+                display: inline-block;
+                background-color: white; /* Darker button background */
+                color: #ffffff; /* Button text color */
+                font-size: 16px;
+                padding: 10px 10px;
+                border: none;
+                /*border-radius: 5px;*/
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            #toggle-dark-theme-small:hover {
+                /*background-color: #444444;  Darker hover color */
+                filter: invert(1);
+            }
+
         {# End dark mode button #}
       </style>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
@@ -3928,6 +3945,15 @@
                         document.getElementById('toggle-dark-theme').style.backgroundColor = 'white';
                     }else{
                         document.getElementById('toggle-dark-theme').style.backgroundColor = 'black';
+                    }
+                });
+
+                document.getElementById('toggle-dark-theme-small').addEventListener('click', function() {
+                    darkmode.toggle();
+                    if(document.getElementById('toggle-dark-theme-small').style.backgroundColor == 'black'){
+                        document.getElementById('toggle-dark-theme-small').style.backgroundColor = 'white';
+                    }else{
+                        document.getElementById('toggle-dark-theme-small').style.backgroundColor = 'black';
                     }
                 });
 
