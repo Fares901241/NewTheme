@@ -3765,7 +3765,7 @@
                 background-color: white; /* Darker button background */
                 color: #ffffff; /* Button text color */
                 font-size: 16px;
-                padding: 10px 20px;
+                padding: 10px 10px;
                 border: none;
                 /*border-radius: 5px;*/
                 cursor: pointer;
@@ -3919,7 +3919,11 @@
                 // Add event listener to the button to toggle dark mode
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
                     darkmode.toggle();
-                    document.getElementById('toggle-dark-theme').style.backgroundColor = 'black';
+                    if(document.getElementById('toggle-dark-theme').style.backgroundColor == 'black'){
+                        document.getElementById('toggle-dark-theme').style.backgroundColor = 'white';
+                    }else{
+                        document.getElementById('toggle-dark-theme').style.backgroundColor = 'black';
+                    }
                 });
 
             });
