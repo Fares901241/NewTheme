@@ -3709,7 +3709,7 @@
         {# End Side Offer #}
 
         {# Start Darkmode #}
-        
+{#         
             .darkmode--activated {
                 background-color: initial !important;
                 color: initial !important;
@@ -3735,10 +3735,11 @@
         
             .categoryDiv {
                 background-color: black !important;
-            } 
+            }  #}
         {# End Darkmode #}
       </style>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    {# <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script> #}
+    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.36/darkreader.min.js"></script>
     {# tracking services, custom css feature. #}
     {% hook 'head:end' %}
 </head>
@@ -3853,7 +3854,7 @@
     {# Start Darkmode #}
         try{
             document.addEventListener('DOMContentLoaded', function() {
-                const options = {
+                /*const options = {
                 bottom: '32px', // default: '32px'
                 right: '32px', // default: '32px'
                 left: 'unset', // default: 'unset'
@@ -3873,7 +3874,7 @@
                 // Add event listener to the button to toggle dark mode
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
                 darkmode.toggle();
-                });
+                });*/
 
 
                 /* Function to add dark mode styles
@@ -3911,6 +3912,30 @@
                 } else {
                 removeDarkModeStyles();
                 }*/
+
+                let isDarkMode = false;
+
+                document.getElementById('toggle-dark-theme').addEventListener('click', function() {
+                if (isDarkMode) {
+                    DarkReader.disable();
+                } else {
+                    DarkReader.enable({
+                    brightness: 100,
+                    contrast: 100,
+                    sepia: 0,
+                    });
+                }
+                isDarkMode = !isDarkMode;
+                });
+
+                // Exclude specific elements from dark mode
+                DarkReader.setFetchMethod(fetch);
+                DarkReader.enable({
+                brightness: 100,
+                contrast: 100,
+                sepia: 0,
+                });
+                DarkReader.disable();
             });
         }catch(err){}
 
