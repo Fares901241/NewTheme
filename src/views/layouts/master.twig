@@ -3853,7 +3853,7 @@
 
     {# Start Darkmode #}
         try{
-            document.addEventListener('DOMContentLoaded', function() {
+            /*document.addEventListener('DOMContentLoaded', function() {
                 /*const options = {
                 bottom: '32px', // default: '32px'
                 right: '32px', // default: '32px'
@@ -3913,7 +3913,7 @@
                 removeDarkModeStyles();
                 }*/
 
-                let isDarkMode = false;
+                /*let isDarkMode = false;
 
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
                 if (isDarkMode) {
@@ -3936,6 +3936,23 @@
                 sepia: 0,
                 });
                 DarkReader.disable();*/
+            //});
+
+            document.addEventListener('DOMContentLoaded', (event) => {
+                let isDarkMode = false;
+
+                document.getElementById('toggle-dark-theme').addEventListener('click', function() {
+                    if (isDarkMode) {
+                    DarkReader.disable();
+                    } else {
+                    DarkReader.enable({
+                        brightness: 100,
+                        contrast: 100,
+                        sepia: 0,
+                    });
+                    }
+                    isDarkMode = !isDarkMode;
+                });
             });
         }catch(err){}
 
