@@ -3757,6 +3757,26 @@
             } #}
 
         {# End Darkmode #}
+
+        {# Start dark mode button #}
+
+            #toggle-dark-theme {
+                display: inline-block;
+                background-color: #222222; /* Darker button background */
+                color: #ffffff; /* Button text color */
+                font-size: 16px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            #toggle-dark-theme:hover {
+                background-color: #444444; /* Darker hover color */
+            }
+
+        {# End dark mode button #}
       </style>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     {# <script defer src="https://cdn.jsdelivr.net/npm/darkreader@4.9.36/darkreader.min.js"></script> #}
