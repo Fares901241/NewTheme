@@ -3645,7 +3645,6 @@
             .categoryDiv{
                 height: 100%;
                 align-content: center;
-                background-color: #eeeee6 !important;
             }
 
         {# End Category Page #}
@@ -3718,12 +3717,16 @@
 
             .darkmode--activated .fcta {
                 /*background-color: initial !important;*/
+                color: black !important;
+            }
+
+            .fcta {
                 color: white !important;
             }
 
-            {# .darkmode--activated .categoryDiv {
-                background-color: white !important;
-            } #}
+            .darkmode--activated .categoryDiv {
+                background-color: #eeeee6 !important;
+            } 
         
         {# End Darkmode #}
       </style>
@@ -3853,7 +3856,7 @@
                 buttonColorLight: '#fff', // default: '#fff'
                 saveInCookies: true, // default: true,
                 label: '🌓', // default: ''
-                autoMatchOsTheme: false // default: true
+                autoMatchOsTheme: true // default: true
                 };
 
                 // Initialize Darkmode.js with custom options
