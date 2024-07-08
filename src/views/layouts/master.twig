@@ -3881,9 +3881,9 @@
                 };
 
                 // Initialize Darkmode.js with custom options
-                if(!darkmode){
-                    const darkmode = new Darkmode(options);
-                }
+                
+                const darkmode = new Darkmode(options);
+                
                 //darkmode.toggle();
                 // Add event listener to the button to toggle dark mode
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
