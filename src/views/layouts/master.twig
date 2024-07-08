@@ -3645,6 +3645,7 @@
             .categoryDiv{
                 height: 100%;
                 align-content: center;
+                background-color: #eeeee6 !important;
             }
 
         {# End Category Page #}
@@ -3710,10 +3711,19 @@
 
         {# Start Darkmode #}
         
-            .darkmode--activated .fcta,.sliderText,.brand-marquee-slider,.card2,.catLinksTitle,.footerContainer {
+            .darkmode--activated .sliderText,.brand-marquee-slider,.card2,.catLinksTitle,.footerContainer {
                 background-color: initial !important;
                 color: initial !important;
             }
+
+            .darkmode--activated .fcta {
+                /*background-color: initial !important;*/
+                color: white !important;
+            }
+
+            {# .darkmode--activated .categoryDiv {
+                background-color: white !important;
+            } #}
         
         {# End Darkmode #}
       </style>
