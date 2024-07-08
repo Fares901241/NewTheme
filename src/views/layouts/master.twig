@@ -3738,7 +3738,7 @@
             }  #}
         {# End Darkmode #}
       </style>
-    {# <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script> #}
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     {# <script defer src="https://cdn.jsdelivr.net/npm/darkreader@4.9.36/darkreader.min.js"></script> #}
     {# <script src="https://cdn.jsdelivr.net/npm/darkmode-toggle@0.6.0/dist/darkmode-toggle.min.js"></script> #}
     {# tracking services, custom css feature. #}
@@ -3786,7 +3786,7 @@
 <script defer src="{{ 'product.js' | asset }}"></script>
 <script defer src="{{ 'products.js' | asset }}"></script>
 <script defer src="{{ 'checkout.js' | asset }}"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/theme-switch@1.2.1/dist/theme-switch.min.js"></script>
+{# <script defer src="https://cdn.jsdelivr.net/npm/theme-switch@1.2.1/dist/theme-switch.min.js"></script> #}
 <script>
     {# loader #}
 
@@ -3855,8 +3855,8 @@
 
     {# Start Darkmode #}
         try{
-            /*document.addEventListener('DOMContentLoaded', function() {
-                /*const options = {
+            document.addEventListener('DOMContentLoaded', function() {
+                const options = {
                 bottom: '32px', // default: '32px'
                 right: '32px', // default: '32px'
                 left: 'unset', // default: 'unset'
@@ -3865,80 +3865,81 @@
                 backgroundColor: '#000', // default: '#fff'
                 buttonColorDark: '#100f2c', // default: '#100f2c'
                 buttonColorLight: '#fff', // default: '#fff'
-                saveInCookies: true, // default: true,
+                saveInCookies: false, // default: true,
                 label: '🌓', // default: ''
-                autoMatchOsTheme: true // default: true
+                autoMatchOsTheme: false // default: true
                 };
 
                 // Initialize Darkmode.js with custom options
                 const darkmode = new Darkmode(options);
-
+                darkmode.toggle();
                 // Add event listener to the button to toggle dark mode
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
                 darkmode.toggle();
-                });*/
-
-
-                /* Function to add dark mode styles
-                function applyDarkModeStyles() {
-                const style = document.createElement('style');
-                style.id = 'dark-mode-styles';
-                style.innerHTML = `
-                    body.darkmode--activated {
-                    background-color: #121212 !important;
-                    color: #ffffff !important;
-                    }
-                    body.darkmode--activated .navbar {
-                    background-color: #333 !important;
-                    }
-                    body.darkmode--activated .btn-dark {
-                    background-color: #444 !important;
-                    border-color: #444 !important;
-                    }
-                `;
-                document.head.appendChild(style);
-                }
-
-                // Function to remove dark mode styles
-                function removeDarkModeStyles() {
-                const style = document.getElementById('dark-mode-styles');
-                if (style) {
-                    style.remove();
-                }
-                }
-
-                // Apply dark mode styles when dark mode is activated
-                darkmode.toggle();
-                if (darkmode.isActivated()) {
-                applyDarkModeStyles();
-                } else {
-                removeDarkModeStyles();
-                }*/
-
-                /*let isDarkMode = false;
-
-                document.getElementById('toggle-dark-theme').addEventListener('click', function() {
-                if (isDarkMode) {
-                    DarkReader.disable();
-                } else {
-                    DarkReader.enable({
-                    brightness: 100,
-                    contrast: 100,
-                    sepia: 0,
-                    });
-                }
-                isDarkMode = !isDarkMode;
                 });
 
-                // Exclude specific elements from dark mode
-                /*DarkReader.setFetchMethod(fetch);
+            });
+        
+            /* Function to add dark mode styles
+            function applyDarkModeStyles() {
+            const style = document.createElement('style');
+            style.id = 'dark-mode-styles';
+            style.innerHTML = `
+                body.darkmode--activated {
+                background-color: #121212 !important;
+                color: #ffffff !important;
+                }
+                body.darkmode--activated .navbar {
+                background-color: #333 !important;
+                }
+                body.darkmode--activated .btn-dark {
+                background-color: #444 !important;
+                border-color: #444 !important;
+                }
+            `;
+            document.head.appendChild(style);
+            }
+
+            // Function to remove dark mode styles
+            function removeDarkModeStyles() {
+            const style = document.getElementById('dark-mode-styles');
+            if (style) {
+                style.remove();
+            }
+            }
+
+            // Apply dark mode styles when dark mode is activated
+            darkmode.toggle();
+            if (darkmode.isActivated()) {
+            applyDarkModeStyles();
+            } else {
+            removeDarkModeStyles();
+            }*/
+
+            /*let isDarkMode = false;
+
+            document.getElementById('toggle-dark-theme').addEventListener('click', function() {
+            if (isDarkMode) {
+                DarkReader.disable();
+            } else {
                 DarkReader.enable({
                 brightness: 100,
                 contrast: 100,
                 sepia: 0,
                 });
-                DarkReader.disable();*/
-            //});
+            }
+            isDarkMode = !isDarkMode;
+            });
+
+            // Exclude specific elements from dark mode
+            /*DarkReader.setFetchMethod(fetch);
+            DarkReader.enable({
+            brightness: 100,
+            contrast: 100,
+            sepia: 0,
+            });
+            DarkReader.disable();*/
+        //});
 
             /*document.addEventListener('DOMContentLoaded', (event) => {
                 let isDarkMode = false;
@@ -3967,7 +3968,7 @@
                 });
             });*/
 
-            document.addEventListener('DOMContentLoaded', function() {
+            /*document.addEventListener('DOMContentLoaded', function() {
                 // Initialize theme-switch
                 const themeSwitch = new ThemeSwitch({
                     autoDetect: true,
@@ -3986,7 +3987,7 @@
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
                     themeSwitch.toggleTheme();
                 });
-            });
+            });*/
         }catch(err){}
 
     {# End Darkmode #}
