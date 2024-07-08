@@ -3943,16 +3943,20 @@
                     darkmode.toggle();
                     if(document.getElementById('toggle-dark-theme').style.backgroundColor == 'black'){
                         document.getElementById('toggle-dark-theme').style.backgroundColor = 'white';
+                        document.getElementById('toggle-dark-theme-small').style.backgroundColor = 'white';
                     }else{
                         document.getElementById('toggle-dark-theme').style.backgroundColor = 'black';
+                        document.getElementById('toggle-dark-theme-small').style.backgroundColor = 'black';
                     }
                 });
 
                 document.getElementById('toggle-dark-theme-small').addEventListener('click', function() {
                     darkmode.toggle();
                     if(document.getElementById('toggle-dark-theme-small').style.backgroundColor == 'black'){
+                        document.getElementById('toggle-dark-theme').style.backgroundColor = 'white';
                         document.getElementById('toggle-dark-theme-small').style.backgroundColor = 'white';
                     }else{
+                        document.getElementById('toggle-dark-theme').style.backgroundColor = 'black';
                         document.getElementById('toggle-dark-theme-small').style.backgroundColor = 'black';
                     }
                 });
