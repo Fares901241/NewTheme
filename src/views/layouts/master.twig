@@ -3732,10 +3732,20 @@
             .darkmode--activated .categoryDiv {
                 background-color: #eeeee6 !important;
             } 
+
         
             .categoryDiv {
                 background-color: black !important;
             }  #}
+
+            .darkmode--activated .brand-marquee-slider {
+                background-color: rgba(249, 250, 251) !important;
+            } 
+
+            .darkmode--activated .offer-container {
+                background-color: #1a2130 !important;
+            } 
+
         {# End Darkmode #}
       </style>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
@@ -3871,7 +3881,9 @@
                 };
 
                 // Initialize Darkmode.js with custom options
-                const darkmode = new Darkmode(options);
+                if(!darkmode){
+                    const darkmode = new Darkmode(options);
+                }
                 //darkmode.toggle();
                 // Add event listener to the button to toggle dark mode
                 document.getElementById('toggle-dark-theme').addEventListener('click', function() {
