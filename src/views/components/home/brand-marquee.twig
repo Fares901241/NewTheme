@@ -10,9 +10,9 @@
     <div
     class="brand-marquee-slider"
     reverse="true"
-    style="--width: 200px; --height: 200px; --quantity: 9"
+    style="--width: 200px; --height: 150px; --quantity: 9"
     >
-        <div class="brand-marquee-list">
+        <div class="brand-marquee-list mt-1">
             {% for slide in component.slides %}
                 <div class="brand-marquee-item" style="--position: {{loop.index}}">
                     <img src="{{slide.image}}" alt="Brand {{loop.index}}" />
